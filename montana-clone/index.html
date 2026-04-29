@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Montana Vision</title>
+
+    <!-- Fonts (close to the look in your screenshots: elegant serif + clean sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css?v=20260424" />
+  </head>
+
+  <body>
+    <!-- Top Nav -->
+    <header class="topbar" id="top">
+      <div class="topbar__inner">
+        <a class="brand" href="#top" aria-label="Montana Vision Home">
+          <img class="brand__mark" src="./assets/new.png" alt="Montana Vision Logo" />
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="nav__link is-active" href="#home" data-i18n="nav.home">Home</a>
+          <a class="nav__link" href="#showcase" data-i18n="nav.showcase">Showcase</a>
+          <a class="nav__link" href="#about" data-i18n="nav.about">About Us</a>
+          <a class="nav__link" href="#patent" data-i18n="nav.patent">Patent Info</a>
+          <a class="nav__link" href="#faq" data-i18n="nav.owner">Founder</a>
+          <a class="nav__link" href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="langSwitcher">
+          <button class="langBtn is-active" data-lang="en">EN</button>
+          <button class="langBtn" data-lang="de">DE</button>
+          <button class="langBtn" data-lang="hu">HU</button>
+        </div>
+
+        <button class="menuBtn" type="button" aria-label="Open menu" id="menuBtn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobileNav" id="mobileNav" hidden>
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+        <a href="#about" data-i18n="nav.about">About Us</a>
+        <a href="#patent" data-i18n="nav.patent">Patent Info</a>
+        <a href="#faq" data-i18n="nav.owner">Founder</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="home" aria-label="Hero">
+        <canvas class="heroEnergyCanvas" id="heroEnergyCanvas" aria-hidden="true"></canvas>
+
+        <div class="heroHologram" aria-hidden="true">
+          <div class="heroHologram__ring"></div>
+          <div class="heroHologram__core">
+            <span>NEWGREEN</span>
+            <strong>Efficiency Platform</strong>
+          </div>
+          <div class="heroHologram__scan"></div>
+        </div>
+
+        <div class="hero__bg" role="img" aria-label="Hero background"></div>
+        <div class="hero__grid" aria-hidden="true"></div>
+
+        <div class="hero__content">
+          <div class="hero__kicker" data-i18n-html="hero.kicker">CLEANING UP<br />ENTIRE INDUSTRIES</div>
+
+          <div class="hero__titleWrap">
+            <h1 class="hero__title" data-i18n-html="hero.title">MONTANA<br />VISION</h1>
+            <img class="hero__emblem" src="./assets/emblem.png" alt="" />
+          </div>
+
+          <p class="hero__lead" data-i18n-html="hero.lead">
+            You can use our technology wherever generators or turbines are used.
+            <br />
+            <span>MONTONA VISION</span> achieves a level of efficiency that can change entire industries.
+          </p>
+
+          <div class="hero__ctaGroup">
+            <a class="btn btn--solid" href="#contact">For Industrial Partners</a>
+            <a class="btn btn--ghost" href="#patent">View Patent Portfolio</a>
+          </div>
+
+          <a class="btn btn--ghost" href="#about" data-i18n="hero.cta">SEE MORE</a>
+
+          <div class="hero__footer">
+            <button class="hero__slideBtn hero__slideBtn--left" id="heroPrev" type="button" aria-label="Previous hero slide">
+              ← PREV
+            </button>
+            <button class="hero__slideBtn hero__slideBtn--right" id="heroNext" type="button" aria-label="Next hero slide">
+              NEXT →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDIA SHOWCASE -->
+      <section class="section section--ink section--showcase" id="showcase">
+        <div class="wrap">
+          <div class="showcase__head">
+            <p class="showcase__eyebrow" data-i18n="showcase.eyebrow">Owner, Cars, Company Story</p>
+            <h2 class="showcase__title" data-i18n="showcase.title">Media Showcase</h2>
+            <p class="showcase__intro" data-i18n="showcase.intro">
+              A closer look at the cars, the owner, and the technology behind Montana Vision.
+            </p>
+          </div>
+
+          <div class="galleryShell">
+            <div class="galleryToolbar">
+              <button class="galleryBtn" type="button" id="galleryPrev">←</button>
+              <span class="galleryHint">Scroll / drag to explore media</span>
+              <button class="galleryBtn" type="button" id="galleryNext">→</button>
+            </div>
+
+            <div class="mediaRail" id="mediaRail">
+              <article class="mediaTile mediaTile--large mediaTile--video">
+                <video controls preload="metadata" muted playsinline>
+                  <source src="./assets/FIDESTech_Main_Sequence_Draft_Editing_02.mp4" type="video/mp4" />
+                </video>
+                <div class="mediaTile__caption">
+                  <span>Main Video</span>
+                  <strong>Technology Film</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan in racing setting" />
+                <div class="mediaTile__caption">
+                  <span>Owner</span>
+                  <strong>Stephan Geschke</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img src="./assets/innovation-car.jpg" alt="Ford GT Mk IV" />
+                <div class="mediaTile__caption">
+                  <span>Concept</span>
+                  <strong>Montana GT Visual</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img src="./assets/vision-car.jpg" alt="Car closeup" />
+                <div class="mediaTile__caption">
+                  <span>Automotive</span>
+                  <strong>Performance Detail</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing view" />
+                <div class="mediaTile__caption">
+                  <span>Legacy</span>
+                  <strong>Racing Background</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img src="./assets/new.png" alt="Montana concept visual" />
+                <div class="mediaTile__caption">
+                  <span>Identity</span>
+                  <strong>Brand Visual</strong>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--stone2 section--usecases" id="usecases">
+        <div class="wrap">
+          <div class="usecasesHead">
+            <p class="usecasesHead__eyebrow">Deployment Landscape</p>
+            <h2 class="serifTitle">WHERE THE PLATFORM CREATES VALUE</h2>
+          </div>
+          <div class="usecasesGrid" aria-label="Primary use-case domains">
+            <article class="usecaseCard">
+              <h3>Road Traffic</h3>
+              <p>Cars, trucks, buses, and performance fleets with stronger fuel efficiency targets.</p>
+            </article>
+            <article class="usecaseCard">
+              <h3>Water Traffic</h3>
+              <p>From small motor boats to commercial vessels requiring emissions-focused upgrades.</p>
+            </article>
+            <article class="usecaseCard">
+              <h3>Power Generation</h3>
+              <p>Generator sets and backup systems where uptime and fuel quality are critical.</p>
+            </article>
+            <article class="usecaseCard">
+              <h3>Industrial Turbines</h3>
+              <p>Broader thermal systems where combustion optimization impacts operating cost.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT / VISION -->
+      <section class="section section--paper" id="about">
+        <div class="wrap">
+          <div class="aboutGrid">
+            <div class="aboutGrid__left">
+              <h2 class="display" data-i18n-html="about.title">
+                Die Vision hinter Montana –<br />
+                unsere Philosophie und Werte
+              </h2>
+
+              <div class="sideNote">
+                <div class="sideNote__title" data-i18n-html="about.sideTitle">Die Idee, die<br />Design und<br />Zukunft<br />verbindet</div>
+                <a class="link" href="#patent" data-i18n="about.learnMore">Learn More</a>
+              </div>
+            </div>
+
+            <div class="aboutGrid__mid">
+              <p data-i18n="about.p1">
+                NEWGREEN develops innovative propulsion and combustion technologies for doers and visionaries.
+                The mission is clear: cleaner environments, reduced emissions, and practical transition paths for
+                road traffic, water traffic, and industrial energy systems.
+              </p>
+
+              <p data-i18n="about.p2">
+                Great technologies are often doubted at first. Like printing, cars, and the internet,
+                NEWGREEN is built to prove value through real-world performance, strategic partnerships,
+                and persistent engineering.
+              </p>
+
+              <p data-i18n="about.p3">
+                The goal is not hype. The goal is measurable impact: lower fuel consumption,
+                cleaner exhaust, broader compliance with strict standards, and scalable concepts
+                that can be adapted across different engine platforms.
+              </p>
+            </div>
+
+            <div class="aboutGrid__right">
+              <div class="mediaCard">
+                <img src="./assets/vision-car.jpg" alt="Montana Vision Visual" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INNOVATION SECTION -->
+      <section class="section section--teal" id="patent">
+        <div class="wrap">
+          <div class="innovation">
+            <div class="innovation__left">
+              <div class="patentGallery" aria-label="Patent illustrations">
+                <figure class="patentGallery__item patentGallery__item--a">
+                  <img src="./assets/patentpic1.png" alt="Patent figure 1" loading="lazy" />
+                </figure>
+                <figure class="patentGallery__item patentGallery__item--b">
+                  <img src="./assets/patentpic2.png" alt="Patent figure 2" loading="lazy" />
+                </figure>
+                <figure class="patentGallery__item patentGallery__item--c">
+                  <img src="./assets/patentpic3.png" alt="Patent figure 3" loading="lazy" />
+                </figure>
+                <figure class="patentGallery__item patentGallery__item--d">
+                  <img src="./assets/patentpic4.png" alt="Patent figure 4" loading="lazy" />
+                </figure>
+              </div>
+            </div>
+
+            <div class="innovation__right">
+              <div class="subtitle" data-i18n="innovation.subtitle">Patent Portfolio Snapshot</div>
+              <h2 class="serifTitle" data-i18n-html="innovation.title">INTERNATIONAL FILING:<br />DIESEL ENGINE AND PISTON</h2>
+
+              <p class="muted" data-i18n="innovation.p1">
+                Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure
+                injection and charging function, including a corresponding piston design for high thermal loads
+                and improved sealing guidance.
+              </p>
+              <p class="muted" data-i18n="innovation.p2">
+                The application connects combustion optimization, fuel preparation behavior, and piston geometry,
+                supporting development paths for cleaner combustion systems across automotive, marine, and
+                industrial engine platforms.
+              </p>
+
+              <div class="patentMeta" aria-label="Key patent filing metadata">
+                <div class="patentMeta__item"><span>Publication</span><strong>WO 2023/118534 A1</strong></div>
+                <div class="patentMeta__item"><span>PCT File</span><strong>PCT/EP2022/087654</strong></div>
+                <div class="patentMeta__item"><span>Priority</span><strong>DE 10 2021 134 521.9</strong></div>
+                <div class="patentMeta__item"><span>Filed</span><strong>22 Dec 2022</strong></div>
+                <div class="patentMeta__item"><span>Published</span><strong>29 Jun 2023</strong></div>
+                <div class="patentMeta__item"><span>Inventor</span><strong>Stephan Geschke</strong></div>
+              </div>
+
+              <div class="featureList">
+                <div class="feature">
+                  <span class="icon">☁</span>
+                  <span data-i18n="innovation.feature1">Title: Diesel engine with high-pressure injection and charging function, and piston</span>
+                </div>
+                <div class="feature">
+                  <span class="icon">✳</span>
+                  <span data-i18n="innovation.feature2">Applicants: NEWGREEN AG (CH) and NEWGREEN AMERICAN INC. (US)</span>
+                </div>
+                <div class="feature">
+                  <span class="icon">⚙</span>
+                  <span data-i18n="innovation.feature3">IPC classes include F02F 3/22, F01M 1/06, F02F 3/02</span>
+                </div>
+              </div>
+
+              <div class="patentTimeline" aria-label="Patent and IP timeline">
+                <article class="patentTimeline__card">
+                  <h3>1997 Base Protection</h3>
+                  <p>Patent and utility model protection granted for the early catalyst technology (ref. patent no. 19713442).</p>
+                </article>
+                <article class="patentTimeline__card">
+                  <h3>2017 New Piston Development</h3>
+                  <p>Patent-pending development phase for updated component architecture and fuel system enhancements.</p>
+                </article>
+                <article class="patentTimeline__card">
+                  <h3>2023 WIPO Publication</h3>
+                  <p>International publication WO 2023/118534 A1 under the PCT framework with broad designated states.</p>
+                </article>
+              </div>
+
+              <div class="patentDocs" aria-label="Patent document files">
+                <a class="patentDoc" href="./assets/patent1.pdf" target="_blank" rel="noopener">
+                  <span class="patentDoc__tag">PDF</span>
+                  <strong>Patent Document 1</strong>
+                  <span class="patentDoc__name">patent1.pdf</span>
+                </a>
+                <a class="patentDoc" href="./assets/patent2.pdf" target="_blank" rel="noopener">
+                  <span class="patentDoc__tag">PDF</span>
+                  <strong>Patent Document 2</strong>
+                  <span class="patentDoc__name">patent2.pdf</span>
+                </a>
+                <a class="patentDoc" href="./assets/patent3.pdf" target="_blank" rel="noopener">
+                  <span class="patentDoc__tag">PDF</span>
+                  <strong>Patent Document 3</strong>
+                  <span class="patentDoc__name">patent3.pdf</span>
+                </a>
+                <a class="patentDoc" href="./assets/patent4.pdf" target="_blank" rel="noopener">
+                  <span class="patentDoc__tag">PDF</span>
+                  <strong>Patent Document 4</strong>
+                  <span class="patentDoc__name">patent4.pdf</span>
+                </a>
+                <a class="patentDoc" href="./assets/patent5.pdf" target="_blank" rel="noopener">
+                  <span class="patentDoc__tag">PDF</span>
+                  <strong>Patent Document 5</strong>
+                  <span class="patentDoc__name">patent5.pdf</span>
+                </a>
+                <a class="patentDoc" href="./assets/patent6.pdf" target="_blank" rel="noopener">
+                  <span class="patentDoc__tag">PDF</span>
+                  <strong>Patent Document 6</strong>
+                  <span class="patentDoc__name">patent6.pdf</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY / TEAM LOOK SECTION -->
+      <section class="section section--stone ownerSection" id="faq">
+        <div class="wrap">
+          <div class="ownerHero">
+            <div class="ownerHero__intro">
+              <p class="ownerEyebrow" data-i18n="owner.eyebrow">Founder Profile</p>
+
+              <h2 class="ownerTitle">
+                STEPHAN GESCHKE
+                <span data-i18n="owner.titleRole">Founder, Inventor, Motorsport Engineer</span>
+              </h2>
+
+              <p class="ownerLead" data-i18n="owner.lead">
+                Born in Berlin in 1960, Stephan Geschke combines championship-level
+                powerboat racing experience with mechanical engineering, marine
+                performance, combustion research, and long-term propulsion development.
+              </p>
+
+              <div class="ownerStats">
+                <div><strong>1979</strong><span data-i18n="owner.stat1">German Champion</span></div>
+                <div><strong>1982</strong><span data-i18n="owner.stat2">European Champion</span></div>
+                <div><strong>1983</strong><span data-i18n="owner.stat3">World Champion</span></div>
+                <div><strong>1984</strong><span data-i18n="owner.stat4">6 Heures de Paris Winner</span></div>
+              </div>
+
+              <div class="ownerQuickGrid">
+                <div>
+                  <span data-i18n="owner.bornLabel">Born</span>
+                  <strong data-i18n="owner.bornValue">January 27, 1960</strong>
+                </div>
+                <div>
+                  <span data-i18n="owner.baseLabel">Base</span>
+                  <strong data-i18n="owner.baseValue">Staad, Switzerland</strong>
+                </div>
+                <div>
+                  <span data-i18n="owner.roleLabel">Current Role</span>
+                  <strong data-i18n="owner.roleValue">Founder, NEWGREEN AG / INC / Ltd</strong>
+                </div>
+                <div>
+                  <span data-i18n="owner.doctoralLabel">Doctoral Track</span>
+                  <strong data-i18n="owner.doctoralValue">Mechanical Engineering since 2022</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="ownerHero__visual">
+              <img class="ownerPortrait" src="./assets/stephan.png" alt="Stephan Geschke portrait" />
+
+              <div class="ownerBoatCard ownerBoatCard--main">
+                <img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan Geschke powerboat racing" />
+                <div>
+                  <span data-i18n="owner.racingLabel">Racing Legacy</span>
+                  <strong data-i18n="owner.racingValue">Powerboat performance background</strong>
+                </div>
+              </div>
+
+              <div class="ownerBoatCard ownerBoatCard--small">
+                <img src="./assets/boat2.png" alt="Race boat detail" />
+              </div>
+
+              <a
+                class="btn btn--solid ownerCvBtn"
+                href="./assets/Final%20CV%202.05.%2025%20pdf.pdf"
+                target="_blank"
+                rel="noopener"
+                data-i18n="owner.cvBtn"
+              >
+                Open full CV (PDF)
+              </a>
+            </div>
+          </div>
+
+          <div class="ownerTimeline">
+            <article>
+              <span data-i18n="owner.timeline1Range">1976 - 1984</span>
+              <h3 data-i18n="owner.timeline1Title">Powerboat Racing</h3>
+              <p data-i18n="owner.timeline1Text">Active race driver with national, European, and world championship results.</p>
+            </article>
+
+            <article>
+              <span data-i18n="owner.timeline2Range">1987 - 2000</span>
+              <h3 data-i18n="owner.timeline2Title">Geschke Marine Performance</h3>
+              <p data-i18n="owner.timeline2Text">Boat and engine trading, repair, maintenance, and early emissions research.</p>
+            </article>
+
+            <article>
+              <span data-i18n="owner.timeline3Range">2005 - 2011</span>
+              <h3 data-i18n="owner.timeline3Title">Pro-One AG</h3>
+              <p data-i18n="owner.timeline3Text">Prototype development, hybrid-drive research, and early vehicle technology work.</p>
+            </article>
+
+            <article>
+              <span data-i18n="owner.timeline4Range">2021 - Present</span>
+              <h3 data-i18n="owner.timeline4Title">NEWGREEN</h3>
+              <p data-i18n="owner.timeline4Text">Combustion optimization, patent development, and Montana Motors prototyping.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section section--stone2" id="contact">
+        <div class="wrap">
+          <div class="contact">
+            <div class="contact__head">
+              <h2 class="bigBlockTitle" data-i18n-html="contact.title">REACH OUT TO SHAPE<br />YOUR INDUSTRY</h2>
+              <div class="contactMeta">
+                <div class="contactMeta__item">
+                  <span class="icon">📞</span>
+                  <span data-i18n="contact.phone">+41 76 505 09 00</span>
+                </div>
+                <div class="contactMeta__item">
+                  <span class="icon">✉</span>
+                  <span data-i18n="contact.email">s.geschke@newgreen.eu</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__grid">
+              <div class="contact__left">
+                <p class="muted" data-i18n="contact.body">
+                  NEWGREEN is actively building strategic partnerships in research, engineering,
+                  prototyping, and commercialization. For patent, investment, pilot, and technical collaboration
+                  requests, contact the founder team directly.
+                </p>
+
+                <div class="officeImg">
+                  <img src="./assets/office.jpg" alt="Office" />
+                </div>
+              </div>
+
+              <form class="form" onsubmit="return false;">
+                <div class="form__row">
+                  <input type="text" placeholder="Name" data-i18n-placeholder="contact.name" />
+                  <input type="text" placeholder="Company Name" data-i18n-placeholder="contact.company" />
+                </div>
+                <div class="form__row">
+                  <input type="tel" placeholder="Your phone" data-i18n-placeholder="contact.phonePlaceholder" />
+                  <input type="email" placeholder="Your Email" data-i18n-placeholder="contact.emailPlaceholder" />
+                </div>
+                <textarea rows="5" placeholder="Your Message" data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+                <button class="btn btn--solid" type="submit" data-i18n="contact.send">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="wrap footer__inner">
+          <div class="footer__left">
+            <div class="footer__brand" data-i18n="footer.brand">Montana Vision</div>
+            <div class="footer__small" data-i18n="footer.rights">All Rights Reserved © Your Company — 2025</div>
+          </div>
+
+          <div class="footer__links">
+            <a href="#top" data-i18n="footer.home">Homepage</a>
+            <a href="#about" data-i18n="footer.about">About Us</a>
+            <a href="#contact" data-i18n="footer.contact">Contact</a>
+            <a href="./impressum.html" data-i18n="footer.impressum">Impressum</a>
+            <a href="./datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+            <a href="#faq" data-i18n="footer.terms">Terms</a>
+            <button class="footerCookieBtn" type="button" id="footerCookieSettings" data-i18n="footer.cookies">Cookie Settings</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <div class="cvModal" id="cvModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Stephan Geschke CV preview">
+      <div class="cvModal__backdrop" data-close-cv></div>
+      <div class="cvModal__panel" role="document">
+        <div class="cvModal__header">
+          <div>
+            <p class="cvModal__eyebrow">Stephan Geschke</p>
+            <h2 class="cvModal__title">Curriculum Vitae</h2>
+          </div>
+          <button class="cvModal__close" type="button" data-close-cv aria-label="Close CV preview">×</button>
+        </div>
+        <div class="cvModal__body">
+          <iframe
+            class="cvModal__frame"
+            data-pdf-src="./assets/Final%20CV%202.05.%2025%20pdf.pdf"
+            title="Stephan Geschke CV PDF"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookieBanner" id="cookieBanner" hidden role="dialog" aria-live="polite" aria-label="Cookie consent">
+      <div class="cookieBanner__content">
+        <div class="cookieBanner__text">
+          <h3 data-i18n="cookie.title">Privacy Settings</h3>
+          <p data-i18n="cookie.body">
+            We use necessary storage for website operation. Optional categories (preferences, analytics, marketing) are used only with your consent.
+          </p>
+        </div>
+        <div class="cookieBanner__actions">
+          <button type="button" class="btn btn--ghost cookieBtn" id="cookieReject" data-i18n="cookie.reject">Reject Optional</button>
+          <button type="button" class="btn btn--ghost cookieBtn" id="cookieOpenSettings" data-i18n="cookie.settings">Settings</button>
+          <button type="button" class="btn btn--solid cookieBtn" id="cookieAccept" data-i18n="cookie.accept">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookieModal" id="cookieModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Cookie settings dialog">
+      <div class="cookieModal__backdrop" data-close-cookie></div>
+      <div class="cookieModal__panel" role="document">
+        <div class="cookieModal__header">
+          <h3 data-i18n="cookie.modalTitle">Cookie Preferences</h3>
+          <button class="cookieModal__close" type="button" data-close-cookie aria-label="Close cookie settings">×</button>
+        </div>
+        <div class="cookieModal__body">
+          <label class="cookieToggle">
+            <span>
+              <strong data-i18n="cookie.necessaryTitle">Necessary</strong>
+              <small data-i18n="cookie.necessaryText">Required for core functionality and legal consent storage.</small>
+            </span>
+            <input type="checkbox" checked disabled />
+          </label>
+          <label class="cookieToggle">
+            <span>
+              <strong data-i18n="cookie.prefTitle">Preferences</strong>
+              <small data-i18n="cookie.prefText">Stores optional UX preferences.</small>
+            </span>
+            <input type="checkbox" id="consentPreferences" />
+          </label>
+          <label class="cookieToggle">
+            <span>
+              <strong data-i18n="cookie.analyticsTitle">Analytics</strong>
+              <small data-i18n="cookie.analyticsText">Would enable traffic measurement tools.</small>
+            </span>
+            <input type="checkbox" id="consentAnalytics" />
+          </label>
+          <label class="cookieToggle">
+            <span>
+              <strong data-i18n="cookie.marketingTitle">Marketing</strong>
+              <small data-i18n="cookie.marketingText">Would enable advertising and retargeting tags.</small>
+            </span>
+            <input type="checkbox" id="consentMarketing" />
+          </label>
+        </div>
+        <div class="cookieModal__actions">
+          <button type="button" class="btn btn--ghost" id="cookieSaveSelection" data-i18n="cookie.saveSelection">Save Selection</button>
+          <button type="button" class="btn btn--solid" id="cookieAcceptAllModal" data-i18n="cookie.accept">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mediaLightbox"
+      id="mediaLightbox"
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Media preview"
+    >
+      <div class="mediaLightbox__backdrop" data-close-lightbox></div>
+      <div class="mediaLightbox__panel" role="document">
+        <button class="mediaLightbox__close" type="button" data-close-lightbox aria-label="Close preview">×</button>
+        <img class="mediaLightbox__image" id="mediaLightboxImage" alt="" />
+      </div>
+    </div>
+
+    <script src="./script.js?v=20260424"></script>
+  </body>
+</html>

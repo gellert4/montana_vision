@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impressum | Montana Vision</title>
+    <style>
+      :root {
+        --bg: #0f1512;
+        --card: #18201b;
+        --line: rgba(255,255,255,0.16);
+        --text: rgba(255,255,255,0.9);
+        --muted: rgba(255,255,255,0.72);
+        --accent: #8fd069;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+        background: radial-gradient(900px 500px at 10% 0%, #1f2b24, var(--bg));
+        color: var(--text);
+      }
+      .wrap {
+        width: min(900px, calc(100% - 32px));
+        margin: 36px auto 48px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .home {
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.03);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 42px);
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 18px;
+        background: linear-gradient(165deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      }
+      .card p { margin: 0 0 10px; line-height: 1.6; color: var(--muted); }
+      .card strong { color: var(--text); }
+      .warn {
+        margin-top: 14px;
+        padding: 12px;
+        border-left: 3px solid var(--accent);
+        background: rgba(143,208,105,0.1);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">
+        <h1>Impressum</h1>
+        <a class="home" href="./index.html">Zurueck zur Startseite</a>
+      </div>
+
+      <section class="card">
+        <p><strong>Angaben gemaess Paragraph 5 TMG / Paragraph 18 MStV</strong></p>
+        <p><strong>Unternehmen:</strong> NEWGREEN AG</p>
+        <p><strong>Adresse:</strong> Seepark 10, 9422 Staad SG, Schweiz</p>
+        <p><strong>Vertretungsberechtigt:</strong> Stephan Geschke</p>
+        <p><strong>E-Mail:</strong> s.geschke@newgreen.eu</p>
+        <p><strong>Telefon:</strong> +41 76 505 09 00</p>
+        <p><strong>Website:</strong> www.newgreen.eu</p>
+        <p><strong>Verantwortlich fuer redaktionelle Inhalte gemaess Paragraph 18 Abs. 2 MStV:</strong> Stephan Geschke, Anschrift wie oben</p>
+
+        <div class="warn">
+          Pflichtangaben vervollstaendigen: Handelsregister, Registernummer, USt-IdNr. und ggf. zustaendige Aufsichtsbehoerde.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

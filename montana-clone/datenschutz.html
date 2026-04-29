@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datenschutz | Montana Vision</title>
+    <style>
+      :root {
+        --bg: #0f1512;
+        --card: #18201b;
+        --line: rgba(255,255,255,0.16);
+        --text: rgba(255,255,255,0.9);
+        --muted: rgba(255,255,255,0.72);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+        background: radial-gradient(900px 500px at 10% 0%, #1f2b24, var(--bg));
+        color: var(--text);
+      }
+      .wrap {
+        width: min(980px, calc(100% - 32px));
+        margin: 36px auto 48px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .home {
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.03);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 42px);
+      }
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+        background: linear-gradient(165deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      }
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 20px;
+      }
+      .card p { margin: 0 0 10px; line-height: 1.6; color: var(--muted); }
+      .card strong { color: var(--text); }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="top">
+        <h1>Datenschutzerklaerung</h1>
+        <a class="home" href="./index.html">Zurueck zur Startseite</a>
+      </div>
+
+      <div class="grid">
+        <section class="card">
+          <h2>1. Verantwortlicher</h2>
+          <p><strong>NEWGREEN AG</strong><br />Seepark 10, 9422 Staad SG, Schweiz<br />E-Mail: s.geschke@newgreen.eu<br />Telefon: +41 76 505 09 00</p>
+        </section>
+
+        <section class="card">
+          <h2>2. Verarbeitete Daten und Zwecke</h2>
+          <p>Beim Besuch dieser Website werden technisch erforderliche Daten verarbeitet (z.B. IP-Adresse, Zeitpunkt, Browserinformationen), um die Website sicher und stabil bereitzustellen.</p>
+          <p>Wenn Sie das Kontaktformular nutzen, verarbeiten wir die von Ihnen eingegebenen Daten zur Bearbeitung Ihrer Anfrage.</p>
+        </section>
+
+        <section class="card">
+          <h2>3. Rechtsgrundlagen</h2>
+          <p>Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche/vertragliche Kommunikation), Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Betrieb und IT-Sicherheit), bei Einwilligung Art. 6 Abs. 1 lit. a DSGVO.</p>
+        </section>
+
+        <section class="card">
+          <h2>4. Speicherdauer</h2>
+          <p>Personenbezogene Daten werden nur so lange gespeichert, wie es fuer den jeweiligen Zweck erforderlich ist bzw. gesetzliche Aufbewahrungspflichten bestehen.</p>
+        </section>
+
+        <section class="card">
+          <h2>5. Empfaenger</h2>
+          <p>Empfaenger koennen technische Dienstleister (Hosting, IT) sein, soweit dies fuer den Betrieb der Website erforderlich ist und entsprechende Datenschutzvereinbarungen bestehen.</p>
+        </section>
+
+        <section class="card">
+          <h2>6. Cookies und Einwilligung</h2>
+          <p>Die Website verwendet einen Consent-Mechanismus. Nicht notwendige Kategorien (Praeferenzen, Statistik, Marketing) werden erst nach aktiver Einwilligung gesetzt.</p>
+        </section>
+
+        <section class="card">
+          <h2>7. Ihre Rechte</h2>
+          <p>Sie haben Rechte auf Auskunft, Berichtigung, Loeschung, Einschraenkung, Datenuebertragbarkeit, Widerspruch und Beschwerde bei einer Aufsichtsbehoerde.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
