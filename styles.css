@@ -1651,6 +1651,15 @@ body.cookieModalOpen {
 }
 
 @media (max-width: 620px) {
+  :root {
+    --wrap: min(1180px, calc(100% - 24px));
+  }
+
+  .hero__content {
+    padding-top: 72px;
+    padding-bottom: 32px;
+  }
+
   .patentDocs {
     grid-template-columns: 1fr;
   }
