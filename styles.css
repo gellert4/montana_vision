@@ -430,13 +430,6 @@ section[id] {
     0 18px 28px rgba(0,0,0,0.55);
   animation: heroBreath 5s ease-in-out infinite;
 }
-.hero__emblem {
-  position: absolute;
-  width: min(240px, 34vw);
-  height: auto;
-  transform: translateY(8px);
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.55));
-}
 .hero__lead {
   max-width: 780px;
   margin: 10px 0 22px;
