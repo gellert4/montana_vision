@@ -28,8 +28,8 @@ body {
   font-family: var(--sans);
   color: #111;
   background:
-    radial-gradient(1400px 800px at 12% -20%, rgba(143, 208, 105, 0.16), transparent 56%),
-    radial-gradient(1200px 700px at 88% 120%, rgba(67, 143, 132, 0.15), transparent 62%),
+    radial-gradient(1400px 800px at 12% -20%, rgba(255, 255, 255, 0.12), transparent 56%),
+    radial-gradient(1200px 700px at 88% 120%, rgba(255, 255, 255, 0.08), transparent 62%),
     #0a0f0d;
   overflow-x: hidden;
 }
@@ -46,8 +46,8 @@ body::after {
 body::before {
   background:
     radial-gradient(closest-side, rgba(255,255,255,0.05), transparent 72%) 12% 18%/28% 28% no-repeat,
-    radial-gradient(closest-side, rgba(143,208,105,0.06), transparent 72%) 78% 72%/34% 34% no-repeat,
-    radial-gradient(closest-side, rgba(103,166,152,0.06), transparent 72%) 52% 44%/30% 30% no-repeat;
+    radial-gradient(closest-side, rgba(255,255,255,0.04), transparent 72%) 78% 72%/34% 34% no-repeat,
+    radial-gradient(closest-side, rgba(255,255,255,0.04), transparent 72%) 52% 44%/30% 30% no-repeat;
   animation: ambientShift 18s ease-in-out infinite alternate;
 }
 
@@ -368,9 +368,8 @@ section[id] {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(1200px 700px at 50% 120%, rgba(120,160,90,0.45), rgba(0,0,0,0.7)),
-    var(--hero-image, url("./assets/hero.jpg")) center/cover no-repeat;
+  background: url("./assets/homepage_water.png") center center / cover no-repeat;
+  background-color: #0a0f0d;
   filter: saturate(0.95) contrast(1.05);
   transform: scale(calc(1 + (var(--hero-progress) * 0.05)));
 }
@@ -430,6 +429,7 @@ section[id] {
     0 18px 28px rgba(0,0,0,0.55);
   animation: heroBreath 5s ease-in-out infinite;
 }
+.hero__title { display: none !important; }
 .hero__lead {
   max-width: 780px;
   margin: 10px 0 22px;
@@ -438,6 +438,56 @@ section[id] {
   line-height: 1.7;
 }
 .hero__lead span { letter-spacing: 0.08em; }
+
+/* Cleanup overrides: hide any residual green hologram/orb and seam artifacts */
+.heroHologram,
+.heroHologram__ring,
+.heroHologram__core,
+.heroHologram__scan,
+.heroOrb,
+.heroOrb * {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Remove pseudo-element overlays that could create bottom lines or seams */
+.hero::before,
+.hero::after,
+.hero__bg::before,
+.hero__bg::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Ensure no bottom border or subtle lines are visible */
+.hero,
+.hero__bg {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Final hero overrides: remove green orb/scan, seams, and force full-bleed cover image */
+.hero {  height: 100vh;  min-height: 100vh;  background: #050912;  overflow: hidden; }
+.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/homepage_water.png") center center / cover no-repeat !important;  background-color: #050912 !important; }
+.hero__content,.hero__content::before,.hero__content::after,.hero__grid,.heroEnergyCanvas,.heroHologram,.hero__footer,.hero::before,.hero::after,.hero__bg::before,.hero__bg::after {  display: none !important;  content: none !important; }
+.hero + .section {  margin-top: 0 !important;  padding-top: 96px !important;  border-radius: 0 !important;  box-shadow: none !important; }
+.hero + .section::before {  display: none !important;  content: none !important; }
+
+/* Remove any residual orb/green-circle animations */
+.hero__content::before,
+.hero__content::after,
+.heroHologram,
+.heroHologram__ring,
+.heroHologram__core,
+.heroHologram__scan,
+.heroOrb,
+.heroOrb * {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
 
 .hero__ctaGroup {
   margin: 4px 0 14px;
@@ -1783,15 +1833,6 @@ body.cookieModalOpen {
   filter: saturate(0.8) contrast(1.15) brightness(0.82);
 }
 
-.hero__bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(143, 208, 105, 0.2), transparent 24%),
-    linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.58));
-}
-
 .hero__grid {
   background-image:
     linear-gradient(rgba(183,239,153,0.09) 1px, transparent 1px),
@@ -1806,18 +1847,6 @@ body.cookieModalOpen {
   text-shadow:
     0 0 28px rgba(143, 208, 105, 0.16),
     0 18px 34px rgba(0,0,0,0.72);
-}
-
-.hero__titleWrap::after {
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 2px;
-  top: 50%;
-  left: -5%;
-  background: linear-gradient(90deg, transparent, rgba(183,239,153,0.55), transparent);
-  opacity: 0.55;
-  animation: titleScan 4s ease-in-out infinite;
 }
 
 .hero__kicker {
@@ -1901,9 +1930,9 @@ body.cookieModalOpen {
 .section--stone,
 .section--stone2 {
   background:
-    radial-gradient(900px 520px at 10% 0%, rgba(143,208,105,0.1), transparent 62%),
-    radial-gradient(900px 520px at 90% 100%, rgba(47,93,90,0.18), transparent 62%),
-    linear-gradient(180deg, #070b08 0%, #101810 52%, #172117 100%);
+    radial-gradient(900px 520px at 10% 0%, rgba(255,255,255,0.1), transparent 62%),
+    radial-gradient(900px 520px at 90% 100%, rgba(255,255,255,0.08), transparent 62%),
+    linear-gradient(180deg, rgba(7,11,8,0.88) 0%, rgba(16,24,16,0.84) 52%, rgba(23,33,23,0.82) 100%);
   color: rgba(255,255,255,0.9);
 }
 
@@ -1926,8 +1955,8 @@ body.cookieModalOpen {
 
 .section--paper {
   background:
-    radial-gradient(900px 520px at 12% 0%, rgba(143,208,105,0.12), transparent 62%),
-    linear-gradient(180deg, #c9c8be 0%, #d8d5cc 100%);
+    radial-gradient(900px 520px at 12% 0%, rgba(255,255,255,0.12), transparent 62%),
+    linear-gradient(180deg, rgba(201,200,190,0.92) 0%, rgba(216,213,204,0.9) 100%);
 }
 
 /* Glass card style, reused */
@@ -2545,20 +2574,6 @@ body.mediaLightboxOpen {
   }
 }
 
-/* Seamless merge between hero and first section */
-.hero__bg::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: clamp(150px, 22vh, 240px);
-  background:
-    radial-gradient(100% 66% at 50% 0%, rgba(143,208,105,0.1), transparent 72%),
-    linear-gradient(180deg, rgba(7,11,8,0) 0%, rgba(7,11,8,0.52) 62%, rgba(7,11,8,0.8) 100%);
-  pointer-events: none;
-}
-
 .hero + .section {
   margin-top: -82px;
   padding-top: 166px;
@@ -2569,9 +2584,9 @@ body.mediaLightboxOpen {
 
 .hero + .section.section--showcase {
   background:
-    radial-gradient(900px 520px at 10% 0%, rgba(143,208,105,0.1), transparent 62%),
-    radial-gradient(900px 520px at 90% 100%, rgba(47,93,90,0.18), transparent 62%),
-    linear-gradient(180deg, rgba(7,11,8,0.88) 0%, #0f1710 36%, #172117 100%);
+    radial-gradient(900px 520px at 10% 0%, rgba(255,255,255,0.1), transparent 62%),
+    radial-gradient(900px 520px at 90% 100%, rgba(255,255,255,0.08), transparent 62%),
+    linear-gradient(180deg, rgba(7,11,8,0.88) 0%, rgba(15,23,16,0.88) 36%, rgba(23,33,23,0.9) 100%);
 }
 
 .hero + .section::before {
@@ -2586,15 +2601,36 @@ body.mediaLightboxOpen {
   display: none;
 }
 
+.hero + .section::before {
+  display: none !important;
+  content: none !important;
+}
+
+.heroEnergyCanvas,
+.heroHologram,
+.hero__grid,
+.hero__footer,
+.hero__slideBtn,
+.hero::before,
+.hero::after,
+.hero__bg::before,
+.hero__bg::after {
+  display: none !important;
+  content: none !important;
+}
+
+.hero__bg {
+  opacity: 1 !important;
+  filter: none !important;
+  background:
+    url("./assets/homepage_water.png") center center / cover no-repeat !important;
+  background-color: #0a0f0d !important;
+}
+
 @media (max-width: 980px) {
   .hero + .section {
-    margin-top: -54px;
+    margin-top: 0 !important;
     padding-top: 128px;
-  }
-
-  .hero + .section::before {
-    height: 144px;
-    filter: blur(7px);
   }
 }
 

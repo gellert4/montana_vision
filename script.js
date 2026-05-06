@@ -208,51 +208,6 @@ window.addEventListener("scroll", updateTopbarMotion, { passive: true });
 window.addEventListener("resize", updateTopbarMotion);
 updateTopbarMotion();
 
-// Hero slide switcher
-const heroSection = document.querySelector(".hero");
-const heroPrev = document.getElementById("heroPrev");
-const heroNext = document.getElementById("heroNext");
-
-const heroSlides = [
-  {
-    image: "./assets/hero.jpg",
-    isAlt: false,
-  },
-  {
-    image: "./assets/new.png",
-    isAlt: true,
-  },
-];
-
-let heroSlideIndex = 0;
-
-const applyHeroSlide = () => {
-  if (!heroSection) return;
-
-  const slide = heroSlides[heroSlideIndex] || heroSlides[0];
-  heroSection.style.setProperty("--hero-image", `url(\"${slide.image}\")`);
-  heroSection.classList.toggle("is-alt", Boolean(slide.isAlt));
-};
-
-const updateHeroScrollFx = () => {
-  if (!heroSection) return;
-  heroSection.style.setProperty("--hero-progress", "0");
-};
-
-const moveHeroSlide = (dir) => {
-  heroSlideIndex = (heroSlideIndex + dir + heroSlides.length) % heroSlides.length;
-  applyHeroSlide();
-};
-
-heroPrev?.addEventListener("click", () => moveHeroSlide(-1));
-heroNext?.addEventListener("click", () => moveHeroSlide(1));
-
-applyHeroSlide();
-updateHeroScrollFx();
-
-window.addEventListener("scroll", updateHeroScrollFx, { passive: true });
-window.addEventListener("resize", updateHeroScrollFx);
-
 // Language Switching
 const translations = {
   en: {
@@ -266,11 +221,10 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      kicker: "CLEANING UP<br />ENTIRE INDUSTRIES",
-      title: "MONTANA<br />VISION",
-      lead:
-        'Montana Vision is a shareholder and innovation umbrella.<br /><span>NEWGREEN</span> is its flagship technology platform for cleaner propulsion and higher efficiency.',
-      cta: "SEE MORE",
+      kicker: "",
+      title: "",
+      lead: "",
+      cta: "",
     },
     showcase: {
       eyebrow: "Owner, Cars, Company Story",
@@ -401,11 +355,10 @@ const translations = {
       contact: "Kontakt",
     },
     hero: {
-      kicker: "WIR ENTLASTEN<br />GANZE INDUSTRIEN",
-      title: "MONTANA<br />VISION",
-      lead:
-        'Unsere Technologie kann überall eingesetzt werden, wo Generatoren oder Turbinen verwendet werden.<br /><span>MONTONA VISION</span> erreicht ein Effizienzniveau, das ganze Branchen verändern kann.',
-      cta: "MEHR ANZEIGEN",
+      kicker: "",
+      title: "",
+      lead: "",
+      cta: "",
     },
     showcase: {
       eyebrow: "Inhaber, Autos, Unternehmensgeschichte",
