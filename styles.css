@@ -372,6 +372,7 @@ section[id] {
   background-color: #0a0f0d;
   filter: saturate(0.95) contrast(1.05);
   transform: scale(calc(1 + (var(--hero-progress) * 0.05)));
+  animation: heroPulse 6s ease-in-out infinite;
 }
 .hero__grid {
   position: absolute;
@@ -439,6 +440,32 @@ section[id] {
 }
 .hero__lead span { letter-spacing: 0.08em; }
 
+.heroTagline {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  margin: 0;
+  color: rgba(255,255,255,0.55);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 40%);
+  animation: fogMove 14s ease-in-out infinite alternate;
+  opacity: 0.48;
+}
+
 /* Cleanup overrides: hide any residual green hologram/orb and seam artifacts */
 .heroHologram,
 .heroHologram__ring,
@@ -452,10 +479,7 @@ section[id] {
 }
 
 /* Remove pseudo-element overlays that could create bottom lines or seams */
-.hero::before,
-.hero::after,
-.hero__bg::before,
-.hero__bg::after {
+.hero__bg::before {
   display: none !important;
   content: none !important;
 }
@@ -1671,11 +1695,6 @@ body.cookieModalOpen {
     height: 100vh;
   }
 
-  .hero::before,
-  .hero::after {
-    display: none;
-  }
-
   .hero__footer { font-size: 10px; }
 
   .section + .section {
@@ -2575,30 +2594,15 @@ body.mediaLightboxOpen {
 }
 
 .hero + .section {
-  margin-top: -82px;
-  padding-top: 166px;
+  margin-top: -18px;
+  padding-top: 120px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  box-shadow: none;
+  box-shadow: 0 -8px 18px rgba(0,0,0,0.12);
 }
 
 .hero + .section.section--showcase {
-  background:
-    radial-gradient(900px 520px at 10% 0%, rgba(255,255,255,0.1), transparent 62%),
-    radial-gradient(900px 520px at 90% 100%, rgba(255,255,255,0.08), transparent 62%),
-    linear-gradient(180deg, rgba(7,11,8,0.88) 0%, rgba(15,23,16,0.88) 36%, rgba(23,33,23,0.9) 100%);
-}
-
-.hero + .section::before {
-  height: 196px;
-  background:
-    radial-gradient(84% 118px at 50% 0%, rgba(143,208,105,0.14), transparent 74%),
-    linear-gradient(180deg, rgba(7,11,8,0) 0%, rgba(7,11,8,0.42) 48%, rgba(7,11,8,0.86) 100%);
-  filter: blur(10px);
-}
-
-.hero + .section::after {
-  display: none;
+  background: inherit;
 }
 
 .hero + .section::before {
@@ -2611,10 +2615,7 @@ body.mediaLightboxOpen {
 .hero__grid,
 .hero__footer,
 .hero__slideBtn,
-.hero::before,
-.hero::after,
-.hero__bg::before,
-.hero__bg::after {
+.hero__bg::before {
   display: none !important;
   content: none !important;
 }
@@ -2627,10 +2628,164 @@ body.mediaLightboxOpen {
   background-color: #0a0f0d !important;
 }
 
+@keyframes fogMove {
+  from { transform: translateY(0px) scale(1); }
+  to { transform: translateY(-12px) scale(1.03); }
+}
+
+@keyframes heroPulse {
+  0%, 100% { filter: saturate(0.95) contrast(1.05) brightness(1); }
+  50% { filter: saturate(0.95) contrast(1.05) brightness(1.04); }
+}
+
+/* Slightly simplify the rest of the site to match the cleaner hero */
+.section::after {
+  display: none !important;
+  content: none !important;
+}
+
+.section + .section {
+  margin-top: -18px;
+  padding-top: 120px;
+  box-shadow: 0 -8px 18px rgba(0,0,0,0.12);
+}
+
+.section--darkWater,
+.section--ink,
+.section--showcase,
+.section--teal,
+.section--stone,
+.section--stone2 {
+  position: relative;
+  overflow: hidden;
+  color: rgba(255,255,255,0.92);
+}
+
+.section--darkWater,
+.section--ink,
+.section--showcase,
+.section--teal {
+  background:
+    linear-gradient(
+      180deg,
+      #030507 0%,
+      #071018 18%,
+      #0a1720 42%,
+      #102534 68%,
+      #18384d 82%,
+      #315d7a 100%
+    );
+}
+
+.section--stone,
+.section--stone2 {
+  background:
+    linear-gradient(
+      180deg,
+      #05080c 0%,
+      #08131b 30%,
+      #0e202d 60%,
+      #163145 80%,
+      #224b66 100%
+    );
+}
+
+.section--darkWater::before,
+.section--ink::before,
+.section--showcase::before,
+.section--teal::before,
+.section--stone::before,
+.section--stone2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(120,190,255,0.18), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05), transparent 35%);
+  pointer-events: none;
+}
+
+.section--darkWater::after,
+.section--ink::after,
+.section--showcase::after,
+.section--teal::after,
+.section--stone::after,
+.section--stone2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(180,220,255,0.5), transparent);
+  box-shadow:
+    0 0 12px rgba(120,190,255,0.35),
+    0 0 30px rgba(120,190,255,0.18);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.section--paper {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      #e2dfd7 0%,
+      #d7d3ca 55%,
+      #c8c3b7 100%
+    );
+  color: var(--paperText);
+}
+
+.section--paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.45), transparent 50%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.proofCard,
+.usecaseCard,
+.showcaseCard,
+.cvCard,
+.ownerMeta,
+.patentMeta__item,
+.patentTimeline__card,
+.patentDoc,
+.mediaTile {
+  backdrop-filter: none;
+  border-color: rgba(255,255,255,0.12);
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.proofCard:hover,
+.usecaseCard:hover,
+.showcaseCard:hover,
+.cvCard:hover,
+.patentDoc:hover,
+.mediaTile:hover {
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.24);
+}
+
+.hero::before,
+.hero::after {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow:
+    0 22px 44px rgba(0,0,0,0.28),
+    0 0 18px rgba(255,255,255,0.06);
+}
+
 @media (max-width: 980px) {
   .hero + .section {
     margin-top: 0 !important;
-    padding-top: 128px;
+    padding-top: 110px;
   }
 }
 
