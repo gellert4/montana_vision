@@ -368,7 +368,7 @@ section[id] {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("./assets/homepage_water.png") center center / cover no-repeat;
+  background: url("./assets/water_background.png") center center / cover no-repeat;
   background-color: #0a0f0d;
   filter: saturate(0.95) contrast(1.05);
   transform: scale(calc(1 + (var(--hero-progress) * 0.05)));
@@ -493,7 +493,7 @@ section[id] {
 
 /* Final hero overrides: remove green orb/scan, seams, and force full-bleed cover image */
 .hero {  height: 100vh;  min-height: 100vh;  background: #050912;  overflow: hidden; }
-.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/homepage_water.png") center center / cover no-repeat !important;  background-color: #050912 !important; }
+.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/water_background.png") center center / cover no-repeat !important;  background-color: #050912 !important; }
 .hero__content,.hero__content::before,.hero__content::after,.hero__grid,.heroEnergyCanvas,.heroHologram,.hero__footer,.hero::before,.hero::after,.hero__bg::before,.hero__bg::after {  display: none !important;  content: none !important; }
 .hero + .section {  margin-top: 0 !important;  padding-top: 96px !important;  border-radius: 0 !important;  box-shadow: none !important; }
 .hero + .section::before {  display: none !important;  content: none !important; }
@@ -2624,7 +2624,7 @@ body.mediaLightboxOpen {
   opacity: 1 !important;
   filter: none !important;
   background:
-    url("./assets/homepage_water.png") center center / cover no-repeat !important;
+    url("./assets/water_background.png") center center / cover no-repeat !important;
   background-color: #0a0f0d !important;
 }
 
@@ -2804,7 +2804,7 @@ body.mediaLightboxOpen {
   opacity: 1 !important;
   filter: none !important;
   transform: none !important;
-  background: url("./assets/homepage_water.png") center center / cover no-repeat !important;
+  background: url("./assets/water_background.png") center center / cover no-repeat !important;
   z-index: 0;
 }
 
