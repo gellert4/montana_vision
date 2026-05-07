@@ -2789,4 +2789,136 @@ body.mediaLightboxOpen {
   }
 }
 
+/* HERO BACKGROUND BASE */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #050912;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  background: url("./assets/homepage_water.png") center center / cover no-repeat !important;
+  z-index: 0;
+}
+
+/* REMOVE OLD BAD EFFECTS */
+.heroEnergyCanvas,
+.heroHologram,
+.hero__grid,
+.hero__footer,
+.hero__slideBtn,
+.hero__content::before,
+.hero__content::after,
+.hero::before,
+.hero::after,
+.hero__bg::before,
+.hero__bg::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* KEEP TAGLINE ABOVE IMAGE */
+.hero__content {
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* SOFT CENTER BRIGHTENING */
+.heroLightPulse {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 55%, rgba(130, 200, 255, 0.22), transparent 38%),
+    radial-gradient(circle at 50% 82%, rgba(255, 255, 255, 0.16), transparent 28%);
+  mix-blend-mode: screen;
+  animation: heroLightBreath 7s ease-in-out infinite;
+}
+
+/* RANDOM STAR LAYER */
+.heroStars {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 28%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 32% 18%, rgba(255,255,255,0.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 24%, rgba(255,255,255,0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 34%, rgba(255,255,255,0.85) 0 1px, transparent 2px),
+    radial-gradient(circle at 90% 22%, rgba(255,255,255,0.7) 0 1px, transparent 2px),
+    radial-gradient(circle at 24% 45%, rgba(255,255,255,0.55) 0 1px, transparent 2px),
+    radial-gradient(circle at 86% 48%, rgba(255,255,255,0.65) 0 1px, transparent 2px);
+  animation: starTwinkle 5.5s ease-in-out infinite;
+}
+
+/* SMALL RANDOM SPARKS */
+.heroSpark {
+  position: absolute;
+  z-index: 4;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.9),
+    0 0 18px rgba(120,190,255,0.75);
+  pointer-events: none;
+  opacity: 0;
+  animation: sparkFlash 6s infinite;
+}
+
+.heroSpark1 { top: 22%; left: 24%; animation-delay: 0s; }
+.heroSpark2 { top: 31%; left: 78%; animation-delay: 1.7s; }
+.heroSpark3 { top: 18%; left: 61%; animation-delay: 3.1s; }
+.heroSpark4 { top: 46%; left: 88%; animation-delay: 4.4s; }
+
+@keyframes heroLightBreath {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.18;
+    filter: brightness(0.8);
+  }
+  35% {
+    opacity: 0.5;
+    filter: brightness(1.6);
+  }
+  70% {
+    opacity: 0.28;
+    filter: brightness(1);
+  }
+}
+
+@keyframes sparkFlash {
+  0%, 78%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  82% {
+    opacity: 1;
+    transform: scale(2.8);
+  }
+  86% {
+    opacity: 0.25;
+    transform: scale(1.2);
+  }
+}
+
 
