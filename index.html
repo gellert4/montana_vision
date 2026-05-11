@@ -460,18 +460,29 @@
                 </div>
               </div>
 
-              <form class="form" onsubmit="return false;">
+              <!-- Web3Forms integration: form posts to https://api.web3forms.com/submit -->
+              <form id="contactForm" class="form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- public access key (from Web3Forms dashboard) -->
+                <input type="hidden" name="access_key" value="4e366ad4-d6ac-41af-b093-89edcf0e6643" />
+                <input type="hidden" name="subject" value="New Montana Vision Inquiry" />
+                <input type="hidden" name="from_name" value="Montana Vision" />
+
                 <div class="form__row">
-                  <input type="text" placeholder="Name" data-i18n-placeholder="contact.name" />
-                  <input type="text" placeholder="Company Name" data-i18n-placeholder="contact.company" />
+                  <input type="text" name="name" placeholder="Full Name" required />
+                  <input type="email" name="email" placeholder="Email Address" required />
                 </div>
+
                 <div class="form__row">
-                  <input type="tel" placeholder="Your phone" data-i18n-placeholder="contact.phonePlaceholder" />
-                  <input type="email" placeholder="Your Email" data-i18n-placeholder="contact.emailPlaceholder" />
+                  <input type="text" name="company" placeholder="Company" />
+                  <input type="text" name="phone" placeholder="Phone Number" />
                 </div>
-                <textarea rows="5" placeholder="Your Message" data-i18n-placeholder="contact.messagePlaceholder"></textarea>
-                <button class="btn btn--solid" type="submit" data-i18n="contact.send">Send Message</button>
+
+                <textarea name="message" rows="7" placeholder="Tell us about your project, partnership, or inquiry..." required></textarea>
+
+                <button type="submit" class="btn btn--solid">Send Inquiry</button>
               </form>
+
+              <div id="contactResult" role="status" aria-live="polite" style="margin-top:12px;color:var(--paperText);"></div>
             </div>
           </div>
         </div>
@@ -595,5 +606,50 @@
     </div>
 
     <script src="./script.js?v=20260424"></script>
+
+    <!-- Web3Forms client submit handler (keeps user on page and shows inline status) -->
+    <script>
+      (function () {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const result = document.getElementById('contactResult');
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+
+          // ensure access_key is present (hidden input already added)
+          if (!formData.get('access_key')) {
+            formData.append('access_key', '4e366ad4-d6ac-41af-b093-89edcf0e6643');
+          }
+
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Sending...';
+          submitBtn.disabled = true;
+          result.textContent = '';
+
+          try {
+            const response = await fetch(form.action, { method: 'POST', body: formData });
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+              result.style.color = 'var(--hero-newgreen)';
+              result.textContent = 'Message sent successfully. Thank you!';
+              form.reset();
+            } else {
+              result.style.color = 'salmon';
+              result.textContent = data.message || 'Something went wrong. Please try again.';
+            }
+          } catch (err) {
+            result.style.color = 'salmon';
+            result.textContent = 'Network error — please try again.';
+          } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
