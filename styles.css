@@ -549,6 +549,38 @@ img, video {
   visibility: hidden !important;
 }
 
+/* Mobile override: ensure hero background fits narrow iPhones (iPhone 13 width ~390px) */
+@media (max-width: 430px) {
+  .hero {
+    /* allow the hero to adapt better on short screens */
+    height: auto !important;
+    min-height: 60vh !important;
+    overflow: visible !important;
+  }
+
+  /* Scale the background to the viewport width so the image doesn't appear 'too wide' */
+  .hero__bg {
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* Ensure decorative pseudo-elements are hidden */
+  .hero::before,
+  .hero::after,
+  .hero__bg::before,
+  .hero__bg::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Slightly reduce the topbar logo so it doesn't overlap */
+  .brand__mark {
+    width: clamp(90px, 26vw, 140px) !important;
+    height: auto !important;
+  }
+}
+
 .hero__ctaGroup {
   margin: 4px 0 14px;
   display: flex;
