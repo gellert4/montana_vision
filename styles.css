@@ -1588,6 +1588,21 @@ button[onclick*="clearCookieConsent"] {
   .langSwitcher { display: none; }
   .menuBtn { display: inline-block; margin-left: auto; }
 
+  /* show a compact language switcher inside the mobile menu */
+  .mobileNav .langSwitcher--mobile {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .mobileNav .langSwitcher--mobile .langBtn {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
   .aboutGrid,
   .innovation,
   .future,
