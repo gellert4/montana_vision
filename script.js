@@ -193,6 +193,7 @@ const translations = {
       phonePlaceholder: "Your phone",
       emailPlaceholder: "Your Email",
       messagePlaceholder: "Your Message",
+      subject: "New Montana Vision Inquiry",
       send: "Send Message",
     },
     cookie: {
@@ -329,6 +330,7 @@ const translations = {
       phonePlaceholder: "Ihre Telefonnummer",
       emailPlaceholder: "Ihre E-Mail",
       messagePlaceholder: "Ihre Nachricht",
+      subject: "Neue Montana Vision Anfrage",
       send: "Nachricht senden",
     },
     cookie: {
@@ -460,12 +462,13 @@ const translations = {
       phone: "+ 41 76 5050 09 00",
       email: "Office@montana.eu",
       body:
-        "Sed ut unde omnis iste natus sit volur tatem accus antium laudan tium totam rem aperiam eaque ipsa ab illo inventore veritatis et beatae vitae explicabo.",
+        "A MONTANA VISION kutatási, mérnöki, prototípus-fejlesztési és üzleti együttműködésekre épít stratégiai partnerségeket. Szabadalmi, befektetési, pilot- és műszaki megkeresésekkel közvetlenül a csapatot keresse.",
       name: "Név",
-      company: "Cégnév",
+      company: "Vállalat",
       phonePlaceholder: "Telefonszáma",
       emailPlaceholder: "E-mail címe",
       messagePlaceholder: "Üzenete",
+      subject: "Új Montana Vision megkeresés",
       send: "Üzenet küldése",
     },
     cookie: {
@@ -532,6 +535,12 @@ const setLanguage = (lang) => {
     const key = element.getAttribute("data-i18n-placeholder");
     const text = getTranslation(activeLang, key);
     if (text) element.setAttribute("placeholder", text);
+  });
+
+  document.querySelectorAll("[data-i18n-value]").forEach((element) => {
+    const key = element.getAttribute("data-i18n-value");
+    const text = getTranslation(activeLang, key);
+    if (text) element.setAttribute("value", text);
   });
 
   langBtns.forEach((btn) => {

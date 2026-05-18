@@ -504,22 +504,22 @@
               <form id="contactForm" class="form" action="https://api.web3forms.com/submit" method="POST">
                 <!-- public access key (from Web3Forms dashboard) -->
                 <input type="hidden" name="access_key" value="4e366ad4-d6ac-41af-b093-89edcf0e6643" />
-                <input type="hidden" name="subject" value="New Montana Vision Inquiry" />
+                <input type="hidden" name="subject" value="New Montana Vision Inquiry" data-i18n-value="contact.subject" />
                 <input type="hidden" name="from_name" value="Montana Vision" />
 
                 <div class="form__row">
-                  <input type="text" name="name" placeholder="Full Name" required />
-                  <input type="email" name="email" placeholder="Email Address" required />
+                  <input type="text" name="name" placeholder="Full Name" data-i18n-placeholder="contact.name" required />
+                  <input type="email" name="email" placeholder="Email Address" data-i18n-placeholder="contact.emailPlaceholder" required />
                 </div>
 
                 <div class="form__row">
-                  <input type="text" name="company" placeholder="Company" />
-                  <input type="text" name="phone" placeholder="Phone Number" />
+                  <input type="text" name="company" placeholder="Company" data-i18n-placeholder="contact.company" />
+                  <input type="text" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.phonePlaceholder" />
                 </div>
 
-                <textarea name="message" rows="7" placeholder="Tell us about your project, partnership, or inquiry..." required></textarea>
+                <textarea name="message" rows="7" placeholder="Tell us about your project, partnership, or inquiry..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
 
-                <button type="submit" class="btn btn--solid">Send Inquiry</button>
+                <button type="submit" class="btn btn--solid" data-i18n="contact.send">Send Inquiry</button>
               </form>
 
               <div id="contactResult" role="status" aria-live="polite" style="margin-top:12px;color:var(--paperText);"></div>
