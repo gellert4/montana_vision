@@ -88,7 +88,18 @@ section[id] {
   opacity: 1;
   visibility: visible;
   transform: none;
+  pointer-events: none;
   transition: background 0.25s ease, height 0.25s ease, box-shadow 0.25s ease;
+}
+
+.topbar__inner {
+  pointer-events: none;
+}
+
+.topbar__inner *,
+.mobileNav,
+.mobileNav * {
+  pointer-events: auto;
 }
 
 .topbar.topbar--scrolled {

@@ -597,19 +597,6 @@ setLanguage(currentLang);
 initScrollAutoplayVideos();
 initRevealAnimations();
 
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.get("reset-consent") === "1") {
-  localStorage.removeItem(CONSENT_KEY);
-}
-
-const existingConsent = getConsent();
-if (existingConsent) {
-  applyConsentState(existingConsent);
-  hideCookieBanner();
-} else {
-  showCookieBanner();
-}
-
 const initHeroEnergyCanvas = () => {
   const canvas = document.getElementById("heroEnergyCanvas");
   if (!canvas) return;
