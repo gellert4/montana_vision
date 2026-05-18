@@ -13,7 +13,37 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./styles.css?v=20260424" />
+    <link rel="stylesheet" href="./styles.css?v=20260511" />
+
+    <!-- TermsFeed Cookie Consent -->
+    <script src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        cookieconsent.run({
+          "notice_banner_type": "simple",
+          "consent_type": "implied",
+          "palette": "dark",
+          "language": "en",
+          "page_load_consent_levels": ["strictly-necessary","functionality","tracking","targeting"],
+          "notice_banner_reject_button_hide": false,
+          "preferences_center_close_button_hide": false,
+          "page_refresh_confirmation_buttons": false,
+          "website_name": "https://gellert4.github.io",
+          "colors": {
+            "popup": { "background": "#f5e4d2", "text": "#282834" },
+            "button": { "background": "#670907", "text": "#ffffff" }
+          },
+          "position": "bottom",
+          "content": {
+            "message": "This website uses cookies to provide you the best experience.",
+            "dismiss": "Accept",
+            "deny": "Reject",
+            "link": "Learn more",
+            "href": "./datenschutz.html"
+          }
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -504,9 +534,12 @@
             <a href="./datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
             <a href="#faq" data-i18n="footer.terms">Terms</a>
             <button class="footerCookieBtn" type="button" id="footerCookieSettings" data-i18n="footer.cookies">Cookie Settings</button>
+            <a href="#" id="open_preferences_center">Cookie Preferences</a>
           </div>
         </div>
       </footer>
+
+      <!-- Main scripts below (TermsFeed banner handled separately) -->
     </main>
 
     <div class="cvModal" id="cvModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Stephan Geschke CV preview">
@@ -529,66 +562,6 @@
       </div>
     </div>
 
-    <div class="cookieBanner" id="cookieBanner" hidden role="dialog" aria-live="polite" aria-label="Cookie consent">
-      <div class="cookieBanner__content">
-        <div class="cookieBanner__text">
-          <h3 data-i18n="cookie.title">Privacy Settings</h3>
-          <p data-i18n="cookie.body">
-            We use necessary storage for website operation. Optional categories (preferences, analytics, marketing) are used only with your consent.
-          </p>
-        </div>
-        <div class="cookieBanner__actions">
-          <button type="button" class="btn btn--ghost cookieBtn" id="cookieReject" data-i18n="cookie.reject">Reject Optional</button>
-          <button type="button" class="btn btn--ghost cookieBtn" id="cookieOpenSettings" data-i18n="cookie.settings">Settings</button>
-          <button type="button" class="btn btn--solid cookieBtn" id="cookieAccept" data-i18n="cookie.accept">Accept All</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="cookieModal" id="cookieModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Cookie settings dialog">
-      <div class="cookieModal__backdrop" data-close-cookie></div>
-      <div class="cookieModal__panel" role="document">
-        <div class="cookieModal__header">
-          <h3 data-i18n="cookie.modalTitle">Cookie Preferences</h3>
-          <button class="cookieModal__close" type="button" data-close-cookie aria-label="Close cookie settings">×</button>
-        </div>
-        <div class="cookieModal__body">
-          <label class="cookieToggle">
-            <span>
-              <strong data-i18n="cookie.necessaryTitle">Necessary</strong>
-              <small data-i18n="cookie.necessaryText">Required for core functionality and legal consent storage.</small>
-            </span>
-            <input type="checkbox" checked disabled />
-          </label>
-          <label class="cookieToggle">
-            <span>
-              <strong data-i18n="cookie.prefTitle">Preferences</strong>
-              <small data-i18n="cookie.prefText">Stores optional UX preferences.</small>
-            </span>
-            <input type="checkbox" id="consentPreferences" />
-          </label>
-          <label class="cookieToggle">
-            <span>
-              <strong data-i18n="cookie.analyticsTitle">Analytics</strong>
-              <small data-i18n="cookie.analyticsText">Would enable traffic measurement tools.</small>
-            </span>
-            <input type="checkbox" id="consentAnalytics" />
-          </label>
-          <label class="cookieToggle">
-            <span>
-              <strong data-i18n="cookie.marketingTitle">Marketing</strong>
-              <small data-i18n="cookie.marketingText">Would enable advertising and retargeting tags.</small>
-            </span>
-            <input type="checkbox" id="consentMarketing" />
-          </label>
-        </div>
-        <div class="cookieModal__actions">
-          <button type="button" class="btn btn--ghost" id="cookieSaveSelection" data-i18n="cookie.saveSelection">Save Selection</button>
-          <button type="button" class="btn btn--solid" id="cookieAcceptAllModal" data-i18n="cookie.accept">Accept All</button>
-        </div>
-      </div>
-    </div>
-
     <div
       class="mediaLightbox"
       id="mediaLightbox"
@@ -605,7 +578,7 @@
       </div>
     </div>
 
-    <script src="./script.js?v=20260424"></script>
+    <script src="./script.js?v=20260512"></script>
 
     <!-- Web3Forms client submit handler (keeps user on page and shows inline status) -->
     <script>

@@ -4,90 +4,9 @@ const cvModal = document.getElementById("cvModal");
 const openCvBtn = document.getElementById("openCvBtn");
 const cvFrame = cvModal?.querySelector(".cvModal__frame");
 const topbar = document.querySelector(".topbar");
-const cookieBanner = document.getElementById("cookieBanner");
-const cookieModal = document.getElementById("cookieModal");
-const cookieReject = document.getElementById("cookieReject");
-const cookieAccept = document.getElementById("cookieAccept");
-const cookieOpenSettings = document.getElementById("cookieOpenSettings");
-const openCookieSettings = document.getElementById("openCookieSettings");
-const footerCookieSettings = document.getElementById("footerCookieSettings");
-const cookieSaveSelection = document.getElementById("cookieSaveSelection");
-const cookieAcceptAllModal = document.getElementById("cookieAcceptAllModal");
-const consentPreferences = document.getElementById("consentPreferences");
-const consentAnalytics = document.getElementById("consentAnalytics");
-const consentMarketing = document.getElementById("consentMarketing");
 
-const CONSENT_KEY = "siteConsentV1";
-
-const defaultConsent = {
-  necessary: true,
-  preferences: false,
-  analytics: false,
-  marketing: false,
-  updatedAt: null,
-};
-
-const getConsent = () => {
-  try {
-    const raw = localStorage.getItem(CONSENT_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    return {
-      ...defaultConsent,
-      ...parsed,
-      necessary: true,
-    };
-  } catch {
-    return null;
-  }
-};
-
-const saveConsent = (consent) => {
-  const payload = {
-    ...defaultConsent,
-    ...consent,
-    necessary: true,
-    updatedAt: new Date().toISOString(),
-  };
-  localStorage.setItem(CONSENT_KEY, JSON.stringify(payload));
-  return payload;
-};
-
-const applyConsentState = (consent) => {
-  if (consentPreferences) consentPreferences.checked = Boolean(consent.preferences);
-  if (consentAnalytics) consentAnalytics.checked = Boolean(consent.analytics);
-  if (consentMarketing) consentMarketing.checked = Boolean(consent.marketing);
-};
-
-const hideCookieBanner = () => {
-  if (!cookieBanner) return;
-  cookieBanner.hidden = true;
-  cookieBanner.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("cookieBannerVisible");
-};
-
-const showCookieBanner = () => {
-  if (!cookieBanner) return;
-  cookieBanner.hidden = false;
-  cookieBanner.setAttribute("aria-hidden", "false");
-  document.body.classList.add("cookieBannerVisible");
-};
-
-const openCookieModal = () => {
-  if (!cookieModal) return;
-  const consent = getConsent() || defaultConsent;
-  applyConsentState(consent);
-  cookieModal.hidden = false;
-  cookieModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("cookieModalOpen");
-};
-
-const closeCookieModal = () => {
-  if (!cookieModal) return;
-  cookieModal.hidden = true;
-  cookieModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("cookieModalOpen");
-};
+// Cookie handling is now managed by TermsFeed Cookie Consent (script in head)
+// No custom cookie logic needed
 
 menuBtn?.addEventListener("click", () => {
   const isHidden = mobileNav?.hasAttribute("hidden");
@@ -134,47 +53,6 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && cvModal && !cvModal.hidden) {
     closeCvModal();
   }
-  if (event.key === "Escape" && cookieModal && !cookieModal.hidden) {
-    closeCookieModal();
-  }
-});
-
-cookieReject?.addEventListener("click", () => {
-  saveConsent({ preferences: false, analytics: false, marketing: false });
-  hideCookieBanner();
-  closeCookieModal();
-});
-
-cookieAccept?.addEventListener("click", () => {
-  saveConsent({ preferences: true, analytics: true, marketing: true });
-  hideCookieBanner();
-  closeCookieModal();
-});
-
-cookieOpenSettings?.addEventListener("click", openCookieModal);
-openCookieSettings?.addEventListener("click", openCookieModal);
-footerCookieSettings?.addEventListener("click", openCookieModal);
-
-cookieSaveSelection?.addEventListener("click", () => {
-  saveConsent({
-    preferences: Boolean(consentPreferences?.checked),
-    analytics: Boolean(consentAnalytics?.checked),
-    marketing: Boolean(consentMarketing?.checked),
-  });
-  hideCookieBanner();
-  closeCookieModal();
-});
-
-cookieAcceptAllModal?.addEventListener("click", () => {
-  saveConsent({ preferences: true, analytics: true, marketing: true });
-  hideCookieBanner();
-  closeCookieModal();
-});
-
-cookieModal?.addEventListener("click", (event) => {
-  const closeTarget = event.target.closest("[data-close-cookie]");
-  if (!closeTarget) return;
-  closeCookieModal();
 });
 
 // active link highlight (simple)

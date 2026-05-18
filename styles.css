@@ -1536,156 +1536,43 @@ input::placeholder, textarea::placeholder { color: rgba(0,0,0,0.38); }
   border-color: rgba(255,255,255,0.5);
 }
 
-body.cookieBannerVisible .footerCookieBtn {
-  opacity: 0.45;
-  pointer-events: none;
+/* TermsFeed Cookie Consent Banner Styles */
+#c-settings-button,
+.c-settings-button-wrapper {
+  z-index: 9999 !important;
 }
 
-/* ========== Cookie Consent ========== */
-.cookieBanner {
-  position: fixed;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  z-index: 120;
+.cm {
+  z-index: 9999 !important;
 }
 
-.cookieBanner__content {
-  display: grid;
-  grid-template-columns: 1.5fr auto;
-  gap: 16px;
-  align-items: center;
-  padding: 16px;
-  border-radius: 14px;
-  background: rgba(8, 12, 10, 0.95);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 20px 42px rgba(0,0,0,0.45);
+.cm__banner {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
 }
 
-.cookieBanner__text h3 {
-  margin: 0 0 6px;
-  color: rgba(255,255,255,0.95);
-  font-size: 17px;
-}
-
-.cookieBanner__text p {
-  margin: 0;
-  color: rgba(255,255,255,0.76);
-  line-height: 1.55;
-  font-size: 13px;
-}
-
-.cookieBanner__actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.cookieBtn {
-  height: 40px;
-  font-size: 11px;
-}
-
-.cookieModal {
-  position: fixed;
-  inset: 0;
-  z-index: 130;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-}
-
-.cookieModal[hidden] {
-  display: none;
-}
-
-.cookieModal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(5px);
-}
-
-.cookieModal__panel {
-  position: relative;
-  width: min(680px, calc(100vw - 24px));
-  background: linear-gradient(180deg, rgba(18,23,19,0.98), rgba(10,14,11,0.98));
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 24px 50px rgba(0,0,0,0.52);
-  overflow: hidden;
-}
-
-.cookieModal__header {
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cookieModal__header h3 {
-  margin: 0;
-  color: rgba(255,255,255,0.92);
-}
-
-.cookieModal__close {
-  border: 1px solid rgba(255,255,255,0.24);
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.9);
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  font-size: 24px;
-  line-height: 1;
+/* Preferences center link styling */
+#open_preferences_center {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: underline;
   cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-.cookieModal__body {
-  padding: 14px 16px;
-  display: grid;
-  gap: 10px;
+#open_preferences_center:hover {
+  opacity: 1;
 }
 
-.cookieToggle {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  align-items: start;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.04);
-}
-
-.cookieToggle strong {
-  color: rgba(255,255,255,0.9);
-}
-
-.cookieToggle small {
-  display: block;
-  margin-top: 4px;
-  color: rgba(255,255,255,0.66);
-}
-
-.cookieToggle input {
-  width: 18px;
-  height: 18px;
-  margin-top: 2px;
-  accent-color: #8fd069;
-}
-
-.cookieModal__actions {
-  border-top: 1px solid rgba(255,255,255,0.12);
-  padding: 12px 16px 14px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-body.cookieModalOpen {
-  overflow: hidden;
+/* Hide the clear cookie button on production (optional) */
+button[onclick*="clearCookieConsent"] {
+  display: none;
 }
 
 /* ========== Responsive ========== */
@@ -1723,20 +1610,6 @@ body.cookieModalOpen {
 
   .patentDocs {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .cookieBanner {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-  }
-
-  .cookieBanner__content {
-    grid-template-columns: 1fr;
-  }
-
-  .cookieBanner__actions {
-    justify-content: flex-start;
   }
 
   .patentGallery {
