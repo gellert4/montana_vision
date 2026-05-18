@@ -17,6 +17,12 @@
   --wrap: min(1180px, calc(100% - 64px));
 }
 
+/* Ensure any floating language control is hidden (languages shown only in mobile menu) */
+.mobileLangFloating { display: none !important; }
+@media (max-width: 620px) {
+  .mobileLangFloating { display: none !important; }
+}
+
 * { box-sizing: border-box; }
 html {
   height: 100%;
@@ -237,6 +243,7 @@ section[id] {
   pointer-events: none;
   z-index: 1;
 }
+    /* floating language control removed: languages are shown only inside the mobile menu */
 .section > .wrap {
   position: relative;
   z-index: 2;
@@ -1603,6 +1610,17 @@ button[onclick*="clearCookieConsent"] {
     border-radius: 8px;
   }
 
+  /* floating language control (fixed, non-intrusive) */
+  .mobileLangFloating { display: none; }
+  .mobileLangFloating .langSwitcher--floating { display: flex; gap: 6px; background: rgba(0,0,0,0.42); padding: 6px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
+  .mobileLangFloating .langBtn { padding: 6px 8px; font-size: 12px; border-radius: 8px; }
+
+
+/* show floating language control only on small phones (avoid overlapping on larger screens) */
+@media (max-width: 620px) {
+  .mobileLangFloating { display: block; position: fixed; top: env(safe-area-inset-top,12px); right: env(safe-area-inset-right,12px); z-index: 10050; }
+  .mobileLangFloating .langSwitcher--floating { box-shadow: 0 6px 20px rgba(0,0,0,0.36); }
+}
   .aboutGrid,
   .innovation,
   .future,
