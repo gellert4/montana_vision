@@ -508,6 +508,12 @@ img, video {
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .heroTagline {
+    display: none;
+  }
+}
+
 .hero__bg::after {
   content: "";
   position: absolute;
