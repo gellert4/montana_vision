@@ -114,15 +114,17 @@ const translations = {
       video2Title: "Company & Technology Video",
     },
     about: {
-      title: "The vision behind NEWGREEN –<br />technology with measurable impact",
-      sideTitle: "Clean environment,<br />reduced emissions,<br />practical innovation",
-      learnMore: "Learn More",
+      eyebrow: "About Us",
+      title: "Cleaning up<br />entire industries.",
+      lead: "Cleaner combustion. Lower emissions. Real engineering.",
+      cta: "Discover The Technology",
       p1:
-        "NEWGREEN develops innovative propulsion and combustion technologies for doers and visionaries. The mission is clear: cleaner environments, reduced emissions, and practical transition paths for road traffic, water traffic, and industrial energy systems.",
+        "MONTANA VISION develops next-generation propulsion and combustion technologies focused on efficiency, sustainability, and measurable real-world impact.",
       p2:
-        "Great technologies are often doubted at first. Like printing, cars, and the internet, NEWGREEN is built to prove value through real-world performance, strategic partnerships, and persistent engineering.",
+        "The company combines advanced engineering concepts with practical applications for automotive, marine, and industrial systems - creating solutions designed to reduce fuel consumption, optimize energy usage, and lower harmful emissions.",
+      quote: "Practical innovation, built to perform.",
       p3:
-        "The goal is not hype. The goal is measurable impact: lower fuel consumption, cleaner exhaust, broader compliance with strict standards, and scalable concepts that can be adapted across different engine platforms.",
+        "Built around innovation, persistence, and unconventional thinking, MONTANA VISION represents a long-term vision for cleaner and more efficient mobility.",
     },
     innovation: {
       subtitle: "Patent Portfolio Snapshot",
@@ -248,15 +250,17 @@ const translations = {
       video2Title: "Unternehmen & Technologie Video",
     },
     about: {
-      title: "Die Vision hinter Montana –<br />unsere Philosophie und Werte",
-      sideTitle: "Die Idee, die<br />Design und<br />Zukunft<br />verbindet",
-      learnMore: "Mehr erfahren",
+      eyebrow: "Über uns",
+      title: "Branchen sauberer machen.<br />Mit messbarer Wirkung.",
+      lead: "Sauberere Verbrennung. Weniger Emissionen. Echte Ingenieursarbeit.",
+      cta: "Technologie entdecken",
       p1:
-        "Montana Vision ist eine Firma mit vielen Projekten und basiert daher nicht nur auf einem Thema. Die Homepage von Montana Vision wird dazu da sein, die Ziele von Montana Vision und die Projekte zu erläutern.",
+        "MONTANA VISION entwickelt Antriebs- und Verbrennungstechnologien der nächsten Generation mit Fokus auf Effizienz, Nachhaltigkeit und messbare Wirkung im Alltag.",
       p2:
-        "Alle Firmen (Projekte) sollen unter der Montana Vision Homepage, als auch unter einer eigenen Homepage zu finden sein. Montana Vision besteht aus Projekten, das bedeutet alles was Montana Vision für Ideen hat, basierend auf jeglicher Thematik, werden in die Montana Vision gepackt.",
+        "Der Ansatz verbindet fortschrittliche Ingenieurskonzepte mit praxisnahen Anwendungen für Automotive-, Marine- und Industriesysteme - mit Lösungen, die Kraftstoffverbrauch senken, Energie optimieren und Emissionen reduzieren.",
+      quote: "Pragmatische Innovation, gebaut für echte Ergebnisse.",
       p3:
-        "Es ist keine Firma, die sich allein auf ein Thema festlegt. Es ist die Ideenquelle und Lösung für viele Probleme (Forschung und Entwicklung).",
+        "Auf Innovation, Beharrlichkeit und unkonventionelles Denken aufgebaut, steht MONTANA VISION für eine langfristige Vision sauberer und effizienterer Mobilität.",
     },
     innovation: {
       subtitle: "Patentportfolio Überblick",
@@ -383,15 +387,17 @@ const translations = {
       video2Title: "Cég és technológia videó",
     },
     about: {
-      title: "A Montana mögötti vízió –<br />filozófiánk és értékeink",
-      sideTitle: "Az ötlet, amely<br />összeköti a dizájnt és<br />a jövőt",
-      learnMore: "Tudjon meg többet",
+      eyebrow: "Rólunk",
+      title: "Egész iparágakat tisztábbá tenni.<br />Mérhető hatással.",
+      lead: "Tisztább égés. Kevesebb emisszió. Valódi mérnöki munka.",
+      cta: "Technológia felfedezése",
       p1:
-        "A Montana Vision egy sok projektből álló vállalat, ezért nem csak egyetlen témára épül. A Montana Vision honlapja arra szolgál, hogy bemutassa a Montana Vision céljait és projektjeit.",
+        "A MONTANA VISION a következő generációs hajtás- és égéstechnológiákat fejleszti, az eredményességre, a fenntarthatóságra és a mérhető, valós hatásra összpontosítva.",
       p2:
-        "Minden vállalatnak (projektnek) meg kell jelennie a Montana Vision főoldalán, valamint a saját külön honlapján is. A Montana Vision projektekből áll, vagyis bármi, amire a Montana Vision ötleteket dolgoz ki, bármilyen témában, a Montana Vision keretében jelenik meg.",
+        "A vállalat fejlett mérnöki koncepciókat ötvöz gyakorlati megoldásokkal az autóipari, tengeri és ipari rendszerek számára - olyan eredményekért, amelyek csökkentik az üzemanyag-felhasználást, optimalizálják az energiahasználatot és mérséklik a káros kibocsátásokat.",
+      quote: "Prémium innováció, amely a valós teljesítményben mutatkozik meg.",
       p3:
-        "Ez nem olyan vállalat, amely egyetlen témára fókuszál. Inkább ötletek és megoldások forrása sok problémára (kutatás és fejlesztés).",
+        "Az innovációra, kitartásra és szokatlan gondolkodásra építve a MONTANA VISION egy hosszú távú víziót képvisel a tisztább és hatékonyabb mobilitásért.",
     },
     innovation: {
       subtitle: "Szabadalmi portfólió áttekintés",
@@ -566,7 +572,7 @@ const initScrollAutoplayVideos = () => {
 
 const initRevealAnimations = () => {
   const revealTargets = document.querySelectorAll(
-    ".showcaseCard, .cvCard, .aboutGrid__mid p, .feature, .mediaCard, .personWrap, .contact__left, .form"
+    ".showcaseCard, .cvCard, .aboutGrid__mid p, .aboutQuote, .aboutLead, .aboutCta, .feature, .mediaCard, .personWrap, .contact__left, .form"
   );
 
   if (!revealTargets.length) return;

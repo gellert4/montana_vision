@@ -893,25 +893,89 @@ img, video {
 /* ========== About ========== */
 .aboutGrid {
   display: grid;
-  grid-template-columns: 1.2fr 1.1fr 0.9fr;
-  gap: 44px;
+  grid-template-columns: 1.12fr 1.08fr 0.9fr;
+  gap: 40px;
   align-items: start;
 }
-.sideNote { margin-top: 18px; }
-.sideNote__title {
-  font-family: var(--sans);
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.25;
-  color: rgba(46, 49, 44, 0.75);
-  margin-bottom: 18px;
+
+.aboutGrid__left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+
+.aboutEyebrow {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(46, 49, 44, 0.58);
+}
+
+.aboutTitle {
+  margin-bottom: 4px;
+}
+
+.aboutLead {
+  margin: 0;
+  max-width: 420px;
+  font-size: 18px;
+  line-height: 1.45;
+  color: rgba(29, 32, 29, 0.84);
+}
+
+.aboutActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.aboutCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(245, 242, 236, 0.95);
+  background: linear-gradient(135deg, rgba(18, 23, 20, 0.96), rgba(47, 93, 90, 0.94));
+  border: 1px solid rgba(18, 23, 20, 0.16);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.14);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+}
+
+.aboutCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(0,0,0,0.18);
+  filter: brightness(1.04);
+}
+
 .aboutGrid__mid p {
   margin: 0 0 18px;
   line-height: 1.75;
   font-size: 14px;
   color: rgba(40, 42, 40, 0.72);
 }
+
+.aboutQuote {
+  margin: 18px 0 22px;
+  padding: 18px 20px 18px 22px;
+  border-left: 3px solid rgba(47, 93, 90, 0.72);
+  background: rgba(255,255,255,0.34);
+  border-radius: 0 18px 18px 0;
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.15;
+  color: rgba(34, 39, 35, 0.88);
+  letter-spacing: 0.01em;
+}
+
 .mediaCard {
   border-radius: 26px;
   overflow: hidden;
