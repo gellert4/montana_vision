@@ -2286,12 +2286,70 @@ button[onclick*="clearCookieConsent"] {
   transition: transform 0.28s cubic-bezier(0.2, 0.72, 0.21, 1), opacity 0.28s ease;
 }
 
+.mediaLightbox__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.85fr);
+  gap: 0;
+  min-height: min(760px, calc(100vh - 56px));
+}
+
+.mediaLightbox__figure {
+  margin: 0;
+  min-width: 0;
+  background: #050805;
+}
+
 .mediaLightbox__image {
   width: 100%;
-  max-height: calc(100vh - 56px);
+  height: 100%;
+  min-height: min(760px, calc(100vh - 56px));
   object-fit: contain;
   display: block;
   background: #050805;
+}
+
+.mediaLightbox__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 30px 28px;
+  background:
+    radial-gradient(500px 280px at 100% 0%, rgba(143, 208, 105, 0.08), transparent 60%),
+    linear-gradient(180deg, rgba(12, 18, 13, 0.97), rgba(10, 14, 10, 0.98));
+  border-left: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.86);
+}
+
+.mediaLightbox__eyebrow {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(183, 239, 153, 0.72);
+}
+
+.mediaLightbox__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(28px, 2.6vw, 44px);
+  line-height: 1.06;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.96);
+}
+
+.mediaLightbox__text,
+.mediaLightbox__note {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 15px;
+  color: rgba(255,255,255,0.74);
+}
+
+.mediaLightbox__note {
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.62);
 }
 
 .mediaLightbox__close {
@@ -2353,8 +2411,24 @@ body.mediaLightboxOpen {
   }
 
   .mediaLightbox__panel,
+  .mediaLightbox__content,
   .mediaLightbox__image {
     max-height: calc(100vh - 16px);
+  }
+
+  .mediaLightbox__content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .mediaLightbox__image {
+    min-height: min(56vh, 560px);
+  }
+
+  .mediaLightbox__details {
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 22px 20px 24px;
   }
 }
 

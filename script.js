@@ -4,6 +4,7 @@ const cvModal = document.getElementById("cvModal");
 const openCvBtn = document.getElementById("openCvBtn");
 const cvFrame = cvModal?.querySelector(".cvModal__frame");
 const topbar = document.querySelector(".topbar");
+let currentMediaLightboxKey = null;
 
 // Cookie handling is now managed by TermsFeed Cookie Consent (script in head)
 // No custom cookie logic needed
@@ -112,6 +113,43 @@ const translations = {
       carsTitle: "Cars & Performance",
       video1Title: "Owner Video",
       video2Title: "Company & Technology Video",
+      lightbox: {
+        owner: {
+          eyebrow: "Owner story",
+          title: "Stephan Geschke at the 6 Heures de Paris",
+          text:
+            "This image connects the founder's racing roots to the long engineering path behind Montana Vision. His motorsport background shaped the focus on reliability, efficiency, and performance under pressure.",
+          note: "Use the fullscreen view to study the car, the posture, and the race context in more detail.",
+        },
+        concept: {
+          eyebrow: "Concept vision",
+          title: "Montana GT concept study",
+          text:
+            "A visual concept that translates the brand into a performance-oriented automotive language. The image emphasizes proportion, surface tension, and the feeling of a serious engineering project rather than a generic render.",
+          note: "Read it as a design direction: how the identity could look when carried into a finished vehicle.",
+        },
+        detail: {
+          eyebrow: "Automotive detail",
+          title: "Performance-focused close-up",
+          text:
+            "This shot is about precision rather than decoration. It highlights the material presence, lighting, and the kind of detail work that gives a performance car a finished, technical character.",
+          note: "Fullscreen helps reveal the edges, reflections, and small cues that define the overall impression.",
+        },
+        legacy: {
+          eyebrow: "Racing legacy",
+          title: "A racing background that still informs the brand",
+          text:
+            "The photo reflects the competitive environment that shaped the founder's thinking. That experience feeds directly into the way Montana Vision presents speed, endurance, and engineering discipline.",
+          note: "The composition is intentionally documentary, so the story stays tied to real motorsport history.",
+        },
+        identity: {
+          eyebrow: "Brand identity",
+          title: "Montana Vision visual identity",
+          text:
+            "This graphic acts as a compact brand marker. It is meant to communicate the project's direction quickly while still feeling technical, modern, and tied to the larger engineering story.",
+          note: "Open it fullscreen to inspect the composition and the relationship between symbol and surface.",
+        },
+      },
     },
     about: {
       eyebrow: "About Us",
@@ -517,6 +555,34 @@ const getTranslation = (lang, key) => {
   return value;
 };
 
+const updateMediaLightboxContent = () => {
+  const lightboxTitle = document.getElementById("mediaLightboxTitle");
+  const lightboxEyebrow = document.getElementById("mediaLightboxEyebrow");
+  const lightboxDescription = document.getElementById("mediaLightboxDescription");
+  const lightboxNote = document.getElementById("mediaLightboxNote");
+
+  if (!lightboxTitle || !lightboxEyebrow || !lightboxDescription || !lightboxNote) return;
+
+  if (!currentMediaLightboxKey) {
+    lightboxEyebrow.textContent = "Showcase story";
+    lightboxTitle.textContent = "";
+    lightboxDescription.textContent = "";
+    lightboxNote.textContent = "";
+    return;
+  }
+
+  const content =
+    getTranslation(currentLang, `showcase.lightbox.${currentMediaLightboxKey}`) ||
+    getTranslation("en", `showcase.lightbox.${currentMediaLightboxKey}`);
+
+  if (!content) return;
+
+  lightboxEyebrow.textContent = content.eyebrow || "Showcase story";
+  lightboxTitle.textContent = content.title || "";
+  lightboxDescription.textContent = content.text || "";
+  lightboxNote.textContent = content.note || "";
+};
+
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : "en";
   currentLang = activeLang;
@@ -551,6 +617,7 @@ const setLanguage = (lang) => {
   });
 
   document.documentElement.lang = activeLang;
+  updateMediaLightboxContent();
 };
 
 const initScrollAutoplayVideos = () => {
@@ -819,6 +886,8 @@ const initMediaLightbox = () => {
   const closeLightbox = () => {
     lightbox.classList.remove("is-open");
     document.body.classList.remove("mediaLightboxOpen");
+    currentMediaLightboxKey = null;
+    updateMediaLightboxContent();
 
     window.setTimeout(() => {
       lightbox.hidden = true;
@@ -838,8 +907,10 @@ const initMediaLightbox = () => {
     const image = tile.querySelector("img");
     if (!image) return;
 
+    currentMediaLightboxKey = image.getAttribute("data-lightbox-key") || null;
     lightboxImage.src = image.currentSrc || image.src;
     lightboxImage.alt = image.alt || "Media preview";
+    updateMediaLightboxContent();
     lightbox.hidden = false;
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("mediaLightboxOpen");

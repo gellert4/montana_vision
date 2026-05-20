@@ -140,7 +140,11 @@
               </article>
 
               <article class="mediaTile">
-                <img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan in racing setting" />
+                <img
+                  src="./assets/Stephan, 6 heures de Paris 1989.jpeg"
+                  alt="Stephan in racing setting"
+                  data-lightbox-key="owner"
+                />
                 <div class="mediaTile__caption">
                   <span>Owner</span>
                   <strong>Stephan Geschke</strong>
@@ -148,7 +152,7 @@
               </article>
 
               <article class="mediaTile">
-                <img src="./assets/innovation-car.jpg" alt="Ford GT Mk IV" />
+                <img src="./assets/innovation-car.jpg" alt="Ford GT Mk IV" data-lightbox-key="concept" />
                 <div class="mediaTile__caption">
                   <span>Concept</span>
                   <strong>Montana GT Visual</strong>
@@ -156,7 +160,7 @@
               </article>
 
               <article class="mediaTile">
-                <img src="./assets/vision-car.jpg" alt="Car closeup" />
+                <img src="./assets/vision-car.jpg" alt="Car closeup" data-lightbox-key="detail" />
                 <div class="mediaTile__caption">
                   <span>Automotive</span>
                   <strong>Performance Detail</strong>
@@ -164,7 +168,7 @@
               </article>
 
               <article class="mediaTile">
-                <img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing view" />
+                <img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing view" data-lightbox-key="legacy" />
                 <div class="mediaTile__caption">
                   <span>Legacy</span>
                   <strong>Racing Background</strong>
@@ -172,7 +176,7 @@
               </article>
 
               <article class="mediaTile">
-                <img src="./assets/new.png" alt="Montana concept visual" />
+                <img src="./assets/new.png" alt="Montana concept visual" data-lightbox-key="identity" />
                 <div class="mediaTile__caption">
                   <span>Identity</span>
                   <strong>Brand Visual</strong>
@@ -587,7 +591,17 @@
       <div class="mediaLightbox__backdrop" data-close-lightbox></div>
       <div class="mediaLightbox__panel" role="document">
         <button class="mediaLightbox__close" type="button" data-close-lightbox aria-label="Close preview">×</button>
-        <img class="mediaLightbox__image" id="mediaLightboxImage" alt="" />
+        <div class="mediaLightbox__content">
+          <figure class="mediaLightbox__figure">
+            <img class="mediaLightbox__image" id="mediaLightboxImage" alt="" />
+          </figure>
+          <aside class="mediaLightbox__details" aria-live="polite">
+            <p class="mediaLightbox__eyebrow" id="mediaLightboxEyebrow">Showcase story</p>
+            <h2 class="mediaLightbox__title" id="mediaLightboxTitle"></h2>
+            <p class="mediaLightbox__text" id="mediaLightboxDescription"></p>
+            <p class="mediaLightbox__note" id="mediaLightboxNote"></p>
+          </aside>
+        </div>
       </div>
     </div>
 
