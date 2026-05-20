@@ -2416,6 +2416,12 @@ body.mediaLightboxOpen {
     max-height: calc(100vh - 16px);
   }
 
+  /* Allow vertical scrolling on small screens so the details panel is reachable */
+  .mediaLightbox__panel {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .mediaLightbox__content {
     grid-template-columns: 1fr;
     min-height: auto;
