@@ -121,67 +121,45 @@
             </p>
           </div>
 
-          <div class="galleryShell">
-            <div class="galleryToolbar">
-              <button class="galleryBtn" type="button" id="galleryPrev">←</button>
-              <span class="galleryHint">Scroll / drag to explore media</span>
-              <button class="galleryBtn" type="button" id="galleryNext">→</button>
+          <div class="showcaseStage">
+            <div class="videoPanelControls" aria-label="Showcase controls">
+              <button class="galleryBtn" type="button" id="galleryPrev" aria-label="Previous showcase panel">←</button>
+              <span class="galleryHint">Swipe or use the arrows to move between panels</span>
+              <button class="galleryBtn" type="button" id="galleryNext" aria-label="Next showcase panel">→</button>
             </div>
 
-            <div class="mediaRail" id="mediaRail">
-              <article class="mediaTile mediaTile--large mediaTile--video">
-                <video controls preload="metadata" muted playsinline>
-                  <source src="./assets/NEWGREEN_03_English 2.mp4" type="video/mp4" />
-                </video>
-                <div class="mediaTile__caption">
-                  <span>Main Video</span>
-                  <strong>Technology Film</strong>
-                </div>
-              </article>
+            <div class="showcaseSwipe" id="showcaseSwipe" aria-label="Showcase panels">
+              <section class="swipePanel swipePanel--tech">
+                <p class="panelLabel">Technical Data</p>
+                <h3>Engineering Snapshot</h3>
+                <ul>
+                  <li>High-pressure injection concept</li>
+                  <li>Combustion optimization</li>
+                  <li>Automotive, marine and industrial use</li>
+                  <li>Patent-backed piston development</li>
+                </ul>
+              </section>
 
-              <article class="mediaTile">
-                <img
-                  src="./assets/Stephan, 6 heures de Paris 1989.jpeg"
-                  alt="Stephan in racing setting"
-                  data-lightbox-key="owner"
-                />
-                <div class="mediaTile__caption">
-                  <span>Owner</span>
-                  <strong>Stephan Geschke</strong>
+              <section class="swipePanel swipePanel--video">
+                <p class="swipeHint">Swipe left for technical data • Swipe right for photos</p>
+                <div class="videoFrame">
+                  <video controls autoplay muted loop preload="metadata" playsinline>
+                    <source src="./assets/NEWGREEN_03_English 2.mp4" type="video/mp4" />
+                  </video>
                 </div>
-              </article>
+              </section>
 
-              <article class="mediaTile">
-                <img src="./assets/fordgt.png" alt="Ford GT Mk IV" data-lightbox-key="concept" />
-                <div class="mediaTile__caption">
-                  <span>Concept</span>
-                  <strong>Montana GT Visual</strong>
+              <section class="swipePanel swipePanel--photos">
+                <p class="panelLabel">Photos & Story</p>
+                <div class="photoScroller" aria-label="Scrollable photo wall">
+                  <figure class="photoCard"><img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan racing" /><figcaption>Stephan racing</figcaption></figure>
+                  <figure class="photoCard"><img src="./assets/fordgt.png" alt="Montana GT visual" /><figcaption>Montana GT visual</figcaption></figure>
+                  <figure class="photoCard"><img src="./assets/fisker.png" alt="Performance detail" /><figcaption>Performance detail</figcaption></figure>
+                  <figure class="photoCard"><img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing background" /><figcaption>Racing background</figcaption></figure>
+                  <figure class="photoCard"><img src="./assets/IMG_3308 2.jpeg" alt="Race closeup" /><figcaption>Race closeup</figcaption></figure>
+                  <figure class="photoCard"><img src="./assets/IMG_5045 16.27.03 Kopie.jpeg" alt="Legacy moment" /><figcaption>Legacy moment</figcaption></figure>
                 </div>
-              </article>
-
-              <article class="mediaTile">
-                <img src="./assets/fisker.png" alt="Car closeup" data-lightbox-key="detail" />
-                <div class="mediaTile__caption">
-                  <span>Automotive</span>
-                  <strong>Performance Detail</strong>
-                </div>
-              </article>
-
-              <article class="mediaTile">
-                <img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing view" data-lightbox-key="legacy" />
-                <div class="mediaTile__caption">
-                  <span>Legacy</span>
-                  <strong>Racing Background</strong>
-                </div>
-              </article>
-
-              <article class="mediaTile">
-                <img src="./assets/new.png" alt="Montana concept visual" data-lightbox-key="identity" />
-                <div class="mediaTile__caption">
-                  <span>Identity</span>
-                  <strong>Brand Visual</strong>
-                </div>
-              </article>
+              </section>
             </div>
           </div>
         </div>

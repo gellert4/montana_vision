@@ -809,20 +809,22 @@ const initHeroEnergyCanvas = () => {
 initHeroEnergyCanvas();
 
 const initMediaRail = () => {
-  const rail = document.getElementById("mediaRail");
+  const rail = document.getElementById("showcaseSwipe") || document.getElementById("mediaRail");
   const prev = document.getElementById("galleryPrev");
   const next = document.getElementById("galleryNext");
 
   if (!rail) return;
 
-  const scrollByCard = (direction) => {
-    const firstTile = rail.querySelector(".mediaTile");
-    const amount = firstTile ? firstTile.offsetWidth + 18 : 420;
+  const scrollToPanel = (index) => {
+    const panelWidth = rail.clientWidth || 420;
+    const target = Math.round(index) * panelWidth;
+    rail.scrollTo({ left: target, behavior: "smooth" });
+  };
 
-    rail.scrollBy({
-      left: direction * amount,
-      behavior: "smooth",
-    });
+  const scrollByCard = (direction) => {
+    const panelWidth = rail.clientWidth || 420;
+    const currentIndex = Math.round(rail.scrollLeft / panelWidth);
+    scrollToPanel(currentIndex + direction);
   };
 
   prev?.addEventListener("click", () => scrollByCard(-1));
@@ -872,12 +874,19 @@ const initMediaRail = () => {
   rail.addEventListener("dragstart", (event) => {
     if (event.target.closest("img")) event.preventDefault();
   });
+
+  requestAnimationFrame(() => {
+    if (rail.scrollWidth > rail.clientWidth) {
+      // center on the middle panel by default (index 1)
+      scrollToPanel(1);
+    }
+  });
 };
 
 initMediaRail();
 
 const initMediaLightbox = () => {
-  const rail = document.getElementById("mediaRail");
+  const rail = document.getElementById("showcaseSwipe") || document.getElementById("mediaRail");
   const lightbox = document.getElementById("mediaLightbox");
   const lightboxImage = document.getElementById("mediaLightboxImage");
 
