@@ -954,7 +954,7 @@ img, video {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   border-radius: 30px;
-  background: linear-gradient(180deg, rgba(3, 8, 12, 0.72), rgba(7, 13, 18, 0.92));
+  background: linear-gradient(180deg, #000000 0%, #050608 42%, #0d2743 100%);
   border: 1px solid rgba(255,255,255,0.14);
   box-shadow: 0 34px 90px rgba(0,0,0,0.52);
   scrollbar-width: none;
@@ -2293,9 +2293,9 @@ button[onclick*="clearCookieConsent"] {
 .section--stone,
 .section--stone2 {
   background:
-    radial-gradient(900px 520px at 10% 0%, rgba(255,255,255,0.1), transparent 62%),
-    radial-gradient(900px 520px at 90% 100%, rgba(255,255,255,0.08), transparent 62%),
-    linear-gradient(180deg, rgba(7,11,8,0.88) 0%, rgba(16,24,16,0.84) 52%, rgba(23,33,23,0.82) 100%);
+    radial-gradient(900px 520px at 10% 0%, rgba(255,255,255,0.08), transparent 62%),
+    radial-gradient(900px 520px at 90% 100%, rgba(255,255,255,0.06), transparent 62%),
+    linear-gradient(180deg, #000000 0%, #050608 38%, #0d2743 100%);
   color: rgba(255,255,255,0.9);
 }
 
@@ -3093,7 +3093,7 @@ body.mediaLightboxOpen {
 
 .hero + .section.section--showcase {
   /* Continuation area: removed image to avoid seam; use a subtle dark fade */
-  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.85) 24%, rgba(0,0,0,0) 68%);
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.94) 34%, #0d2743 100%);
 }
 
 .hero + .section::before {
