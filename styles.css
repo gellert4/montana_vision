@@ -3325,15 +3325,9 @@ body.mediaLightboxOpen {
 
 /* SOFT CENTER BRIGHTENING */
 .heroLightPulse {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 50% 55%, rgba(130, 200, 255, 0.22), transparent 38%),
-    radial-gradient(circle at 50% 82%, rgba(255, 255, 255, 0.16), transparent 28%);
-  mix-blend-mode: screen;
-  animation: heroLightBreath 7s ease-in-out infinite;
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* RANDOM STAR LAYER */
