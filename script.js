@@ -815,9 +815,12 @@ const initMediaRail = () => {
 
   if (!rail) return;
 
+  const panels = Array.from(rail.children).filter((child) => child.classList?.contains("swipePanel"));
+
   const scrollToPanel = (index) => {
-    const panelWidth = rail.clientWidth || 420;
-    const target = Math.round(index) * panelWidth;
+    const panel = panels[Math.max(0, Math.min(panels.length - 1, Math.round(index)))];
+    if (!panel) return;
+    const target = Math.max(0, panel.offsetLeft - (rail.clientWidth - panel.clientWidth) / 2);
     rail.scrollTo({ left: target, behavior: "smooth" });
   };
 
@@ -910,13 +913,13 @@ const initMediaLightbox = () => {
     const blockClicksUntil = Number(rail.dataset.blockClicksUntil || "0");
     if (Date.now() < blockClicksUntil) return;
 
-    const tile = event.target.closest(".mediaTile");
+    const tile = event.target.closest(".mediaTile, .photoCard");
     if (!tile || tile.classList.contains("mediaTile--video")) return;
 
     const image = tile.querySelector("img");
     if (!image) return;
 
-    currentMediaLightboxKey = image.getAttribute("data-lightbox-key") || null;
+    currentMediaLightboxKey = image.getAttribute("data-lightbox-key") || tile.getAttribute("data-lightbox-key") || null;
     lightboxImage.src = image.currentSrc || image.src;
     lightboxImage.alt = image.alt || "Media preview";
     updateMediaLightboxContent();
@@ -943,3 +946,39 @@ const initMediaLightbox = () => {
 };
 
 initMediaLightbox();
+
+/* Patent swipe initializer: left=center-right panels */
+const initPatentSwipe = () => {
+  const rail = document.getElementById('patentSwipe');
+  if (!rail) return;
+  const prev = document.getElementById('patentPrev');
+  const next = document.getElementById('patentNext');
+  const panels = Array.from(rail.querySelectorAll('.swipePanel'));
+  let index = 1; // start center
+
+  const scrollToIndex = (i) => {
+    const panel = panels[i];
+    if (!panel) return;
+    rail.scrollTo({ left: panel.offsetLeft - (rail.clientWidth - panel.clientWidth)/2, behavior: 'smooth' });
+    index = i;
+  };
+
+  prev?.addEventListener('click', () => scrollToIndex(Math.max(0, index - 1)));
+  next?.addEventListener('click', () => scrollToIndex(Math.min(panels.length - 1, index + 1)));
+
+  // allow swipe via wheel/drag
+  let isDown = false, startX, scrollLeft;
+  rail.addEventListener('mousedown', (e) => { isDown = true; rail.classList.add('is-dragging'); startX = e.pageX - rail.offsetLeft; scrollLeft = rail.scrollLeft; });
+  window.addEventListener('mouseup', () => { isDown = false; rail.classList.remove('is-dragging'); });
+  rail.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - rail.offsetLeft; const walk = (x - startX) * 1.2; rail.scrollLeft = scrollLeft - walk; });
+
+  // center on the middle panel on load (immediate then smooth)
+  if (panels[1]) {
+    // immediate snap to center to avoid initial left-offset rendering
+    rail.scrollLeft = panels[1].offsetLeft - Math.max(0, (rail.clientWidth - panels[1].clientWidth) / 2);
+    // then apply a small smooth scroll to ensure consistent behavior across viewports
+    setTimeout(() => scrollToIndex(1), 80);
+  }
+};
+
+initPatentSwipe();

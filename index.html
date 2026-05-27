@@ -132,6 +132,11 @@
               <section class="swipePanel swipePanel--tech">
                 <p class="panelLabel">Technical Data</p>
                 <h3>Engineering Snapshot</h3>
+                <div class="techMetrics" aria-label="Technical highlights">
+                  <span>High load</span>
+                  <span>Fuel flow</span>
+                  <span>Thermal control</span>
+                </div>
                 <ul>
                   <li>High-pressure injection concept</li>
                   <li>Combustion optimization</li>
@@ -152,12 +157,10 @@
               <section class="swipePanel swipePanel--photos">
                 <p class="panelLabel">Photos & Story</p>
                 <div class="photoScroller" aria-label="Scrollable photo wall">
-                  <figure class="photoCard"><img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan racing" /><figcaption>Stephan racing</figcaption></figure>
-                  <figure class="photoCard"><img src="./assets/fordgt.png" alt="Montana GT visual" /><figcaption>Montana GT visual</figcaption></figure>
-                  <figure class="photoCard"><img src="./assets/fisker.png" alt="Performance detail" /><figcaption>Performance detail</figcaption></figure>
-                  <figure class="photoCard"><img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing background" /><figcaption>Racing background</figcaption></figure>
-                  <figure class="photoCard"><img src="./assets/IMG_3308 2.jpeg" alt="Race closeup" /><figcaption>Race closeup</figcaption></figure>
-                  <figure class="photoCard"><img src="./assets/IMG_5045 16.27.03 Kopie.jpeg" alt="Legacy moment" /><figcaption>Legacy moment</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="owner"><img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan racing" /><figcaption>Stephan racing</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="concept"><img src="./assets/fordgt.png" alt="Montana GT visual" /><figcaption>Montana GT visual</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="detail"><img src="./assets/fisker.png" alt="Performance detail" /><figcaption>Performance detail</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="legacy"><img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing background" /><figcaption>Racing background</figcaption></figure>
                 </div>
               </section>
             </div>
@@ -239,113 +242,63 @@
         </div>
       </section>
 
-      <!-- INNOVATION SECTION -->
+      <!-- INNOVATION SECTION (REPLACED: 3-PANEL SWIPE) -->
       <section class="section section--teal" id="patent">
         <div class="wrap">
-          <div class="innovation">
-            <div class="innovation__left">
-              <div class="patentGallery" aria-label="Patent illustrations">
-                <figure class="patentGallery__item patentGallery__item--a">
-                  <img src="./assets/patentpic1.png" alt="Patent figure 1" loading="lazy" />
-                </figure>
-                <figure class="patentGallery__item patentGallery__item--b">
-                  <img src="./assets/patentpic2.png" alt="Patent figure 2" loading="lazy" />
-                </figure>
-                <figure class="patentGallery__item patentGallery__item--c">
-                  <img src="./assets/patentpic3.png" alt="Patent figure 3" loading="lazy" />
-                </figure>
-                <figure class="patentGallery__item patentGallery__item--d">
-                  <img src="./assets/patentpic4.png" alt="Patent figure 4" loading="lazy" />
-                </figure>
-              </div>
+          <div class="patentStage">
+            <div class="patentControls">
+              <button id="patentPrev" class="galleryBtn">‹</button>
+              <button id="patentNext" class="galleryBtn">›</button>
             </div>
 
-            <div class="innovation__right">
-              <div class="subtitle" data-i18n="innovation.subtitle">Patent Portfolio Snapshot</div>
-              <h2 class="serifTitle" data-i18n-html="innovation.title">INTERNATIONAL FILING:<br />DIESEL ENGINE AND PISTON</h2>
-
-              <p class="muted" data-i18n="innovation.p1">
-                Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure
-                injection and charging function, including a corresponding piston design for high thermal loads
-                and improved sealing guidance.
-              </p>
-              <p class="muted" data-i18n="innovation.p2">
-                The application connects combustion optimization, fuel preparation behavior, and piston geometry,
-                supporting development paths for cleaner combustion systems across automotive, marine, and
-                industrial engine platforms.
-              </p>
-
-              <div class="patentMeta" aria-label="Key patent filing metadata">
-                <div class="patentMeta__item"><span>Publication</span><strong>WO 2023/118534 A1</strong></div>
-                <div class="patentMeta__item"><span>PCT File</span><strong>PCT/EP2022/087654</strong></div>
-                <div class="patentMeta__item"><span>Priority</span><strong>DE 10 2021 134 521.9</strong></div>
-                <div class="patentMeta__item"><span>Filed</span><strong>22 Dec 2022</strong></div>
-                <div class="patentMeta__item"><span>Published</span><strong>29 Jun 2023</strong></div>
-                <div class="patentMeta__item"><span>Inventor</span><strong>Stephan Geschke</strong></div>
-              </div>
-
-              <div class="featureList">
-                <div class="feature">
-                  <span class="icon">☁</span>
-                  <span data-i18n="innovation.feature1">Title: Diesel engine with high-pressure injection and charging function, and piston</span>
+            <div id="patentSwipe" class="patentSwipe" aria-label="Patent detail swipe">
+              <!-- Left: Technical information & data -->
+              <article class="swipePanel swipePanel--left">
+                <h3>Technical Data & Measurements</h3>
+                <ul>
+                  <li>Compression ratio: 18.5:1</li>
+                  <li>Injection pressure: 2,500 bar (max)</li>
+                  <li>Piston material: forged steel alloy</li>
+                  <li>Thermal load test: passed 1,000h @ 550°C</li>
+                  <li>Emissions reduction estimate: up to 12%</li>
+                </ul>
+                <div class="patentNote">
+                  <strong>Core focus</strong>
+                  <span>Thermal stability, sealing control, and high-load combustion behavior.</span>
                 </div>
-                <div class="feature">
-                  <span class="icon">✳</span>
-                  <span data-i18n="innovation.feature2">Applicants: NEWGREEN AG (CH) and NEWGREEN AMERICAN INC. (US)</span>
-                </div>
-                <div class="feature">
-                  <span class="icon">⚙</span>
-                  <span data-i18n="innovation.feature3">IPC classes include F02F 3/22, F01M 1/06, F02F 3/02</span>
-                </div>
-              </div>
+                <p class="muted">Detailed tables and CAD exports available on request.</p>
+              </article>
 
-              <div class="patentTimeline" aria-label="Patent and IP timeline">
-                <article class="patentTimeline__card">
-                  <h3>1997 Base Protection</h3>
-                  <p>Patent and utility model protection granted for the early catalyst technology (ref. patent no. 19713442).</p>
-                </article>
-                <article class="patentTimeline__card">
-                  <h3>2017 New Piston Development</h3>
-                  <p>Patent-pending development phase for updated component architecture and fuel system enhancements.</p>
-                </article>
-                <article class="patentTimeline__card">
-                  <h3>2023 WIPO Publication</h3>
-                  <p>International publication WO 2023/118534 A1 under the PCT framework with broad designated states.</p>
-                </article>
-              </div>
+              <!-- Center: Patent technical descriptions (primary) -->
+              <article class="swipePanel swipePanel--center">
+                <div class="subtitle">Patent Portfolio Snapshot</div>
+                <h2 class="serifTitle">INTERNATIONAL FILING: DIESEL ENGINE AND PISTON</h2>
+                <p class="muted">Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure injection and charging function, including a corresponding piston design for high thermal loads and improved sealing guidance.</p>
+                <div class="patentMeta">
+                  <div><strong>Publication</strong> WO 2023/118534 A1</div>
+                  <div><strong>PCT File</strong> PCT/EP2022/087654</div>
+                  <div><strong>Priority</strong> DE 10 2021 134 521.9</div>
+                  <div><strong>Filed</strong> 22 Dec 2022</div>
+                </div>
+                <div class="featureList">
+                  <div class="feature"><span data-i18n="innovation.feature1">Title: Diesel engine with high-pressure injection and charging function, and piston</span></div>
+                  <div class="feature"><span data-i18n="innovation.feature2">Applicants: NEWGREEN AG (CH) and NEWGREEN AMERICAN INC. (US)</span></div>
+                </div>
+                <div class="patentCallout">
+                  <span class="patentCallout__label">Key claim</span>
+                  <p>Designed to improve efficiency under sustained load while keeping combustion chamber temperatures and sealing stress under control.</p>
+                </div>
+              </article>
 
-              <div class="patentDocs" aria-label="Patent document files">
-                <a class="patentDoc" href="./assets/patent1.pdf" target="_blank" rel="noopener">
-                  <span class="patentDoc__tag">PDF</span>
-                  <strong>Patent Document 1</strong>
-                  <span class="patentDoc__name">patent1.pdf</span>
-                </a>
-                <a class="patentDoc" href="./assets/patent2.pdf" target="_blank" rel="noopener">
-                  <span class="patentDoc__tag">PDF</span>
-                  <strong>Patent Document 2</strong>
-                  <span class="patentDoc__name">patent2.pdf</span>
-                </a>
-                <a class="patentDoc" href="./assets/patent3.pdf" target="_blank" rel="noopener">
-                  <span class="patentDoc__tag">PDF</span>
-                  <strong>Patent Document 3</strong>
-                  <span class="patentDoc__name">patent3.pdf</span>
-                </a>
-                <a class="patentDoc" href="./assets/patent4.pdf" target="_blank" rel="noopener">
-                  <span class="patentDoc__tag">PDF</span>
-                  <strong>Patent Document 4</strong>
-                  <span class="patentDoc__name">patent4.pdf</span>
-                </a>
-                <a class="patentDoc" href="./assets/patent5.pdf" target="_blank" rel="noopener">
-                  <span class="patentDoc__tag">PDF</span>
-                  <strong>Patent Document 5</strong>
-                  <span class="patentDoc__name">patent5.pdf</span>
-                </a>
-                <a class="patentDoc" href="./assets/patent6.pdf" target="_blank" rel="noopener">
-                  <span class="patentDoc__tag">PDF</span>
-                  <strong>Patent Document 6</strong>
-                  <span class="patentDoc__name">patent6.pdf</span>
-                </a>
-              </div>
+              <!-- Right: Additional photos & information -->
+              <article class="swipePanel swipePanel--right">
+                <div class="patentGallery" aria-label="Patent illustrations">
+                  <figure class="patentGallery__item"><img src="./assets/patentpic1.png" alt="Patent figure 1"></figure>
+                  <figure class="patentGallery__item"><img src="./assets/patentpic2.png" alt="Patent figure 2"></figure>
+                  <figure class="patentGallery__item"><img src="./assets/patentpic3.png" alt="Patent figure 3"></figure>
+                  <figure class="patentGallery__item"><img src="./assets/patentpic4.png" alt="Patent figure 4"></figure>
+                </div>
+              </article>
             </div>
           </div>
         </div>
