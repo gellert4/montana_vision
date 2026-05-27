@@ -411,7 +411,7 @@ section[id] {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("./assets/try_4.png") center center / cover no-repeat;
+  background: url("./assets/try_5.png") center center / cover no-repeat;
   background-color: #0a0f0d;
   filter: saturate(0.95) contrast(1.05);
   transform: scale(calc(1 + (var(--hero-progress) * 0.05)));
@@ -578,7 +578,7 @@ img, video {
 
 /* Final hero overrides: remove green orb/scan, seams, and force full-bleed cover image */
 .hero {  height: 100vh;  min-height: 100vh;  background: #050912;  overflow: hidden; }
-.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/try_4.png") center center / cover no-repeat !important;  background-color: #050912 !important; }
+.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/try_5.png") center center / cover no-repeat !important;  background-color: #000 !important; }
 .hero__content,.hero__content::before,.hero__content::after,.hero__grid,.heroEnergyCanvas,.heroHologram,.hero__footer,.hero::before,.hero::after,.hero__bg::before,.hero__bg::after {  display: none !important;  content: none !important; }
 .hero + .section {  margin-top: 0 !important;  padding-top: 96px !important;  border-radius: 0 !important;  box-shadow: none !important; }
 .hero + .section::before {  display: none !important;  content: none !important; }
@@ -3093,9 +3093,8 @@ body.mediaLightboxOpen {
 }
 
 .hero + .section.section--showcase {
-  /* Keep the continuation image itself untouched: it should carry the water
-     from the hero into the second page without any extra overlay layers. */
-  background: url("./assets/page2.png") center top / cover no-repeat;
+  /* Continuation area: removed image to avoid seam; use a subtle dark fade */
+  background: linear-gradient(180deg, #000 0%, rgba(0,0,0,0.85) 24%, rgba(0,0,0,0) 68%);
 }
 
 .hero + .section::before {
@@ -3117,8 +3116,8 @@ body.mediaLightboxOpen {
   opacity: 1 !important;
   filter: none !important;
   background:
-    url("./assets/try_4.png") center center / cover no-repeat !important;
-  background-color: #0a0f0d !important;
+    url("./assets/try_5.png") center center / cover no-repeat !important;
+  background-color: #000 !important;
 }
 
 @keyframes fogMove {
@@ -3297,7 +3296,7 @@ body.mediaLightboxOpen {
   opacity: 1 !important;
   filter: none !important;
   transform: none !important;
-  background: url("./assets/try_4.png") center center / cover no-repeat !important;
+  background: url("./assets/try_5.png") center center / cover no-repeat !important;
   z-index: 0;
 }
 
