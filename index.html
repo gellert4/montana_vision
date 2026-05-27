@@ -103,8 +103,6 @@
         <div class="heroSpark heroSpark2"></div>
         <div class="heroSpark heroSpark3"></div>
         <div class="heroSpark heroSpark4"></div>
-        <p class="heroTagline">ADVANCED CLEAN ENERGY ENGINEERING</p>
-
         <div class="hero__content">
           <!-- Hero content intentionally removed to keep only the background visual -->
         </div>
@@ -124,29 +122,29 @@
           <div class="showcaseStage">
             <div class="videoPanelControls" aria-label="Showcase controls">
               <button class="galleryBtn" type="button" id="galleryPrev" aria-label="Previous showcase panel">←</button>
-              <span class="galleryHint">Swipe or use the arrows to move between panels</span>
+              <span class="galleryHint" data-i18n="showcase.galleryHint">Swipe or use the arrows</span>
               <button class="galleryBtn" type="button" id="galleryNext" aria-label="Next showcase panel">→</button>
             </div>
 
             <div class="showcaseSwipe" id="showcaseSwipe" aria-label="Showcase panels">
               <section class="swipePanel swipePanel--tech">
-                <p class="panelLabel">Technical Data</p>
-                <h3>Engineering Snapshot</h3>
+                <p class="panelLabel" data-i18n="showcase.techLabel">Technical Data</p>
+                <h3 data-i18n="showcase.techTitle">Engineering Snapshot</h3>
                 <div class="techMetrics" aria-label="Technical highlights">
-                  <span>High load</span>
-                  <span>Fuel flow</span>
-                  <span>Thermal control</span>
+                  <span data-i18n="showcase.techMetric1">High load</span>
+                  <span data-i18n="showcase.techMetric2">Fuel flow</span>
+                  <span data-i18n="showcase.techMetric3">Thermal control</span>
                 </div>
                 <ul>
-                  <li>High-pressure injection concept</li>
-                  <li>Combustion optimization</li>
-                  <li>Automotive, marine and industrial use</li>
-                  <li>Patent-backed piston development</li>
+                  <li data-i18n="showcase.techItem1">High-pressure injection concept</li>
+                  <li data-i18n="showcase.techItem2">Combustion optimization</li>
+                  <li data-i18n="showcase.techItem3">Automotive, marine and industrial use</li>
+                  <li data-i18n="showcase.techItem4">Patent-backed piston development</li>
                 </ul>
               </section>
 
               <section class="swipePanel swipePanel--video">
-                <p class="swipeHint">Swipe left for technical data • Swipe right for photos</p>
+                <p class="swipeHint" data-i18n="showcase.videoHint">Swipe left for technical data • Swipe right for photos</p>
                 <div class="videoFrame">
                   <video controls autoplay muted loop preload="metadata" playsinline>
                     <source src="./assets/NEWGREEN_03_English 2.mp4" type="video/mp4" />
@@ -155,12 +153,12 @@
               </section>
 
               <section class="swipePanel swipePanel--photos">
-                <p class="panelLabel">Photos & Story</p>
+                <p class="panelLabel" data-i18n="showcase.photoLabel">Photos & Story</p>
                 <div class="photoScroller" aria-label="Scrollable photo wall">
-                  <figure class="photoCard" data-lightbox-key="owner"><img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan racing" /><figcaption>Stephan racing</figcaption></figure>
-                  <figure class="photoCard" data-lightbox-key="concept"><img src="./assets/fordgt.png" alt="Montana GT visual" /><figcaption>Montana GT visual</figcaption></figure>
-                  <figure class="photoCard" data-lightbox-key="detail"><img src="./assets/fisker.png" alt="Performance detail" /><figcaption>Performance detail</figcaption></figure>
-                  <figure class="photoCard" data-lightbox-key="legacy"><img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing background" /><figcaption>Racing background</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="owner"><img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan racing" /><figcaption data-i18n="showcase.photoCaption1">Stephan racing</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="concept"><img src="./assets/fordgt.png" alt="Montana GT visual" /><figcaption data-i18n="showcase.photoCaption2">Montana GT visual</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="detail"><img src="./assets/fisker.png" alt="Performance detail" /><figcaption data-i18n="showcase.photoCaption3">Performance detail</figcaption></figure>
+                  <figure class="photoCard" data-lightbox-key="legacy"><img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing background" /><figcaption data-i18n="showcase.photoCaption4">Racing background</figcaption></figure>
                 </div>
               </section>
             </div>
@@ -254,39 +252,39 @@
             <div id="patentSwipe" class="patentSwipe" aria-label="Patent detail swipe">
               <!-- Left: Technical information & data -->
               <article class="swipePanel swipePanel--left">
-                <h3>Technical Data & Measurements</h3>
+                <h3 data-i18n="patent.leftTitle">Technical Data & Measurements</h3>
                 <ul>
-                  <li>Compression ratio: 18.5:1</li>
-                  <li>Injection pressure: 2,500 bar (max)</li>
-                  <li>Piston material: forged steel alloy</li>
-                  <li>Thermal load test: passed 1,000h @ 550°C</li>
-                  <li>Emissions reduction estimate: up to 12%</li>
+                  <li data-i18n="patent.leftItem1">Compression ratio: 18.5:1</li>
+                  <li data-i18n="patent.leftItem2">Injection pressure: 2,500 bar (max)</li>
+                  <li data-i18n="patent.leftItem3">Piston material: forged steel alloy</li>
+                  <li data-i18n="patent.leftItem4">Thermal load test: passed 1,000h @ 550°C</li>
+                  <li data-i18n="patent.leftItem5">Emissions reduction estimate: up to 12%</li>
                 </ul>
                 <div class="patentNote">
-                  <strong>Core focus</strong>
-                  <span>Thermal stability, sealing control, and high-load combustion behavior.</span>
+                  <strong data-i18n="patent.leftNoteLabel">Core focus</strong>
+                  <span data-i18n="patent.leftNoteText">Thermal stability, sealing control, and high-load combustion behavior.</span>
                 </div>
-                <p class="muted">Detailed tables and CAD exports available on request.</p>
+                <p class="muted" data-i18n="patent.leftMuted">Detailed tables and CAD exports available on request.</p>
               </article>
 
               <!-- Center: Patent technical descriptions (primary) -->
               <article class="swipePanel swipePanel--center">
-                <div class="subtitle">Patent Portfolio Snapshot</div>
-                <h2 class="serifTitle">INTERNATIONAL FILING: DIESEL ENGINE AND PISTON</h2>
-                <p class="muted">Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure injection and charging function, including a corresponding piston design for high thermal loads and improved sealing guidance.</p>
+                <div class="subtitle" data-i18n="patent.centerSubtitle">Patent Portfolio Snapshot</div>
+                <h2 class="serifTitle" data-i18n="patent.centerTitle">INTERNATIONAL FILING: DIESEL ENGINE AND PISTON</h2>
+                <p class="muted" data-i18n="patent.centerIntro">Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure injection and charging function, including a corresponding piston design for high thermal loads and improved sealing guidance.</p>
                 <div class="patentMeta">
-                  <div><strong>Publication</strong> WO 2023/118534 A1</div>
-                  <div><strong>PCT File</strong> PCT/EP2022/087654</div>
-                  <div><strong>Priority</strong> DE 10 2021 134 521.9</div>
-                  <div><strong>Filed</strong> 22 Dec 2022</div>
+                  <div data-i18n-html="patent.metaPublication">Publication WO 2023/118534 A1</div>
+                  <div data-i18n-html="patent.metaPct">PCT File PCT/EP2022/087654</div>
+                  <div data-i18n-html="patent.metaPriority">Priority DE 10 2021 134 521.9</div>
+                  <div data-i18n-html="patent.metaFiled">Filed 22 Dec 2022</div>
                 </div>
                 <div class="featureList">
-                  <div class="feature"><span data-i18n="innovation.feature1">Title: Diesel engine with high-pressure injection and charging function, and piston</span></div>
-                  <div class="feature"><span data-i18n="innovation.feature2">Applicants: NEWGREEN AG (CH) and NEWGREEN AMERICAN INC. (US)</span></div>
+                  <div class="feature"><span data-i18n="patent.centerFeature1">Title: Diesel engine with high-pressure injection and charging function, and piston</span></div>
+                  <div class="feature"><span data-i18n="patent.centerFeature2">Applicants: NEWGREEN AG (CH) and NEWGREEN AMERICAN INC. (US)</span></div>
                 </div>
                 <div class="patentCallout">
-                  <span class="patentCallout__label">Key claim</span>
-                  <p>Designed to improve efficiency under sustained load while keeping combustion chamber temperatures and sealing stress under control.</p>
+                  <span class="patentCallout__label" data-i18n="patent.centerClaimLabel">Key claim</span>
+                  <p data-i18n="patent.centerClaimText">Designed to improve efficiency under sustained load while keeping combustion chamber temperatures and sealing stress under control.</p>
                 </div>
               </article>
 
