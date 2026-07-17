@@ -294,7 +294,7 @@ const translations = {
     },
     footer: {
       brand: "Montana Vision | NEWGREEN",
-      rights: "All Rights Reserved © Your Company — 2025",
+      rights: "All Rights Reserved © Montana Vision — 2026",
       home: "Homepage",
       about: "About Us",
       contact: "Contact",
