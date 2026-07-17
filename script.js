@@ -165,40 +165,40 @@ const translations = {
             "This graphic acts as a compact brand marker. It is meant to communicate the project's direction quickly while still feeling technical, modern, and tied to the larger engineering story.",
           note: "Open it fullscreen to inspect the composition and the relationship between symbol and surface.",
         },
-        roadTraffic: {
-          eyebrow: "Road Traffic",
-          title: "Cleaner and more efficient road transport",
+        metalCatalyticConverter: {
+          eyebrow: "Automotive Component",
+          title: "Metal Catalytic Converter",
           text:
-            "Montana Vision technology can be applied to passenger cars, commercial vehicles, buses, trucks, and performance fleets. The objective is to improve combustion efficiency, reduce fuel consumption, and support lower emissions under real operating conditions.",
+            "This image shows a metal catalytic converter. The component is designed to support exhaust-gas treatment by reducing harmful emissions before they leave the exhaust system.",
           note:
-            "This space can later contain detailed test results, vehicle applications, efficiency figures, and partnership information.",
+            "Additional information about its materials, construction, technical specifications, and possible applications can be added here.",
         },
 
-        waterTraffic: {
-          eyebrow: "Water Traffic",
-          title: "Propulsion solutions for marine applications",
+        speedBike: {
+          eyebrow: "Performance Mobility",
+          title: "Speed Bike",
           text:
-            "Marine applications range from smaller motor boats to commercial vessels operating for long periods under sustained load. Improved combustion behavior can help reduce fuel usage, operating costs, and harmful emissions.",
+            "This image shows a high-performance speed bike. Its lightweight construction and aerodynamic design represent efficient, fast, and technically focused mobility.",
           note:
-            "This area can later include marine engine specifications, vessel examples, test data, and development plans.",
+            "Additional information about the bicycle, its materials, performance characteristics, and intended use can be added here.",
         },
 
-        powerGeneration: {
-          eyebrow: "Power Generation",
-          title: "Efficient systems for reliable power production",
+        waterBottle: {
+          eyebrow: "Everyday Product",
+          title: "Bottle of Water",
           text:
-            "Generator sets and backup power systems depend on reliability, fuel quality, and stable operation. Montana Vision concepts are intended to support more efficient combustion and improved performance in stationary power applications.",
+            "This image shows a bottle of water. It represents clean resources, everyday sustainability, and the importance of efficient product and packaging solutions.",
           note:
-            "This area can later include generator sizes, operating conditions, fuel-consumption data, and technical measurements.",
+            "Additional information about the bottle, its materials, production, sustainability, or intended application can be added here.",
         },
 
-        industrialTurbines: {
-          eyebrow: "Industrial Turbines",
-          title: "Combustion optimization for industrial systems",
+        winterSports: {
+          eyebrow: "Winter Sports",
+          title: "Skis and Snowboards",
           text:
-            "Industrial turbines and thermal systems operate under demanding conditions where small improvements in efficiency can create meaningful reductions in fuel cost and emissions. Montana Vision focuses on technologies designed for sustained high-load operation.",
+            "This image shows skis and snowboards. These products represent performance-focused materials, durability, lightweight construction, and equipment designed for demanding winter conditions.",
           note:
-            "This area can later contain turbine applications, engineering specifications, efficiency calculations, and project information.",
+            "Additional information about the products, their materials, manufacturing process, and performance characteristics can be added here.",
         },
       },
     },
