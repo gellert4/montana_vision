@@ -165,6 +165,41 @@ const translations = {
             "This graphic acts as a compact brand marker. It is meant to communicate the project's direction quickly while still feeling technical, modern, and tied to the larger engineering story.",
           note: "Open it fullscreen to inspect the composition and the relationship between symbol and surface.",
         },
+        roadTraffic: {
+          eyebrow: "Road Traffic",
+          title: "Cleaner and more efficient road transport",
+          text:
+            "Montana Vision technology can be applied to passenger cars, commercial vehicles, buses, trucks, and performance fleets. The objective is to improve combustion efficiency, reduce fuel consumption, and support lower emissions under real operating conditions.",
+          note:
+            "This space can later contain detailed test results, vehicle applications, efficiency figures, and partnership information.",
+        },
+
+        waterTraffic: {
+          eyebrow: "Water Traffic",
+          title: "Propulsion solutions for marine applications",
+          text:
+            "Marine applications range from smaller motor boats to commercial vessels operating for long periods under sustained load. Improved combustion behavior can help reduce fuel usage, operating costs, and harmful emissions.",
+          note:
+            "This area can later include marine engine specifications, vessel examples, test data, and development plans.",
+        },
+
+        powerGeneration: {
+          eyebrow: "Power Generation",
+          title: "Efficient systems for reliable power production",
+          text:
+            "Generator sets and backup power systems depend on reliability, fuel quality, and stable operation. Montana Vision concepts are intended to support more efficient combustion and improved performance in stationary power applications.",
+          note:
+            "This area can later include generator sizes, operating conditions, fuel-consumption data, and technical measurements.",
+        },
+
+        industrialTurbines: {
+          eyebrow: "Industrial Turbines",
+          title: "Combustion optimization for industrial systems",
+          text:
+            "Industrial turbines and thermal systems operate under demanding conditions where small improvements in efficiency can create meaningful reductions in fuel cost and emissions. Montana Vision focuses on technologies designed for sustained high-load operation.",
+          note:
+            "This area can later contain turbine applications, engineering specifications, efficiency calculations, and project information.",
+        },
       },
     },
     about: {
@@ -771,7 +806,7 @@ const initScrollAutoplayVideos = () => {
 
 const initRevealAnimations = () => {
   const revealTargets = document.querySelectorAll(
-    ".showcaseCard, .cvCard, .aboutGrid__mid p, .aboutQuote, .aboutLead, .aboutCta, .feature, .mediaCard, .personWrap, .contact__left, .form"
+    ".mediaTile, .showcaseCard, .cvCard, .aboutGrid__mid p, .aboutQuote, .aboutLead, .aboutCta, .feature, .mediaCard, .personWrap, .contact__left, .form"
   );
 
   if (!revealTargets.length) return;
@@ -929,25 +964,20 @@ const initHeroEnergyCanvas = () => {
 initHeroEnergyCanvas();
 
 const initMediaRail = () => {
-  const rail = document.getElementById("showcaseSwipe") || document.getElementById("mediaRail");
+  const rail = document.getElementById("mediaRail");
   const prev = document.getElementById("galleryPrev");
   const next = document.getElementById("galleryNext");
 
   if (!rail) return;
 
-  const panels = Array.from(rail.children).filter((child) => child.classList?.contains("swipePanel"));
-
-  const scrollToPanel = (index) => {
-    const panel = panels[Math.max(0, Math.min(panels.length - 1, Math.round(index)))];
-    if (!panel) return;
-    const target = Math.max(0, panel.offsetLeft - (rail.clientWidth - panel.clientWidth) / 2);
-    rail.scrollTo({ left: target, behavior: "smooth" });
-  };
-
   const scrollByCard = (direction) => {
-    const panelWidth = rail.clientWidth || 420;
-    const currentIndex = Math.round(rail.scrollLeft / panelWidth);
-    scrollToPanel(currentIndex + direction);
+    const firstTile = rail.querySelector(".mediaTile");
+    const amount = firstTile ? firstTile.offsetWidth + 18 : 420;
+
+    rail.scrollBy({
+      left: direction * amount,
+      behavior: "smooth",
+    });
   };
 
   prev?.addEventListener("click", () => scrollByCard(-1));
@@ -960,9 +990,11 @@ const initMediaRail = () => {
 
   rail.addEventListener("mousedown", (event) => {
     if (event.button !== 0) return;
+
     isDown = true;
     didDrag = false;
     rail.classList.add("is-dragging");
+
     startX = event.pageX - rail.offsetLeft;
     scrollLeft = rail.scrollLeft;
   });
@@ -975,33 +1007,41 @@ const initMediaRail = () => {
   rail.addEventListener("mouseup", () => {
     isDown = false;
     rail.classList.remove("is-dragging");
-    if (didDrag) rail.dataset.blockClicksUntil = String(Date.now() + 180);
+
+    if (didDrag) {
+      rail.dataset.blockClicksUntil = String(Date.now() + 180);
+    }
   });
 
   window.addEventListener("mouseup", () => {
     if (!isDown) return;
+
     isDown = false;
     rail.classList.remove("is-dragging");
-    if (didDrag) rail.dataset.blockClicksUntil = String(Date.now() + 180);
+
+    if (didDrag) {
+      rail.dataset.blockClicksUntil = String(Date.now() + 180);
+    }
   });
 
   rail.addEventListener("mousemove", (event) => {
     if (!isDown) return;
+
     event.preventDefault();
+
     const x = event.pageX - rail.offsetLeft;
     const walk = (x - startX) * 1.4;
-    if (Math.abs(walk) > 4) didDrag = true;
+
+    if (Math.abs(walk) > 4) {
+      didDrag = true;
+    }
+
     rail.scrollLeft = scrollLeft - walk;
   });
 
   rail.addEventListener("dragstart", (event) => {
-    if (event.target.closest("img")) event.preventDefault();
-  });
-
-  requestAnimationFrame(() => {
-    if (rail.scrollWidth > rail.clientWidth) {
-      // center on the middle panel by default (index 1)
-      scrollToPanel(1);
+    if (event.target.closest("img")) {
+      event.preventDefault();
     }
   });
 };
@@ -1009,15 +1049,37 @@ const initMediaRail = () => {
 initMediaRail();
 
 const initMediaLightbox = () => {
-  const rail = document.getElementById("showcaseSwipe") || document.getElementById("mediaRail");
+  const rail = document.getElementById("mediaRail");
+  const usecasesGrid = document.querySelector(".usecasesGrid");
+
   const lightbox = document.getElementById("mediaLightbox");
   const lightboxImage = document.getElementById("mediaLightboxImage");
 
-  if (!rail || !lightbox || !lightboxImage) return;
+  if ((!rail && !usecasesGrid) || !lightbox || !lightboxImage) return;
+
+  const openLightbox = (key, imageSource, imageAlt) => {
+    if (!key || !imageSource) return;
+
+    currentMediaLightboxKey = key;
+
+    lightboxImage.src = imageSource;
+    lightboxImage.alt = imageAlt || "Media preview";
+
+    updateMediaLightboxContent();
+
+    lightbox.hidden = false;
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("mediaLightboxOpen");
+
+    requestAnimationFrame(() => {
+      lightbox.classList.add("is-open");
+    });
+  };
 
   const closeLightbox = () => {
     lightbox.classList.remove("is-open");
     document.body.classList.remove("mediaLightboxOpen");
+
     currentMediaLightboxKey = null;
     updateMediaLightboxContent();
 
@@ -1029,32 +1091,63 @@ const initMediaLightbox = () => {
     }, 280);
   };
 
-  rail.addEventListener("click", (event) => {
-    const blockClicksUntil = Number(rail.dataset.blockClicksUntil || "0");
+  rail?.addEventListener("click", (event) => {
+    const blockClicksUntil = Number(
+      rail.dataset.blockClicksUntil || "0"
+    );
+
     if (Date.now() < blockClicksUntil) return;
 
-    const tile = event.target.closest(".mediaTile, .photoCard");
-    if (!tile || tile.classList.contains("mediaTile--video")) return;
+    const tile = event.target.closest(".mediaTile");
+
+    if (!tile || tile.classList.contains("mediaTile--video")) {
+      return;
+    }
 
     const image = tile.querySelector("img");
+
     if (!image) return;
 
-    currentMediaLightboxKey = image.getAttribute("data-lightbox-key") || tile.getAttribute("data-lightbox-key") || null;
-    lightboxImage.src = image.currentSrc || image.src;
-    lightboxImage.alt = image.alt || "Media preview";
-    updateMediaLightboxContent();
-    lightbox.hidden = false;
-    lightbox.setAttribute("aria-hidden", "false");
-    document.body.classList.add("mediaLightboxOpen");
+    openLightbox(
+      image.getAttribute("data-lightbox-key"),
+      image.currentSrc || image.src,
+      image.alt
+    );
+  });
 
-    requestAnimationFrame(() => {
-      lightbox.classList.add("is-open");
-    });
+  const openUsecaseCard = (card) => {
+    if (!card) return;
+
+    openLightbox(
+      card.getAttribute("data-lightbox-key"),
+      card.getAttribute("data-lightbox-image"),
+      card.querySelector("h3")?.textContent || "Use case"
+    );
+  };
+
+  usecasesGrid?.addEventListener("click", (event) => {
+    const card = event.target.closest(".usecaseCard");
+    openUsecaseCard(card);
+  });
+
+  usecasesGrid?.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+
+    const card = event.target.closest(".usecaseCard");
+
+    if (!card) return;
+
+    event.preventDefault();
+    openUsecaseCard(card);
   });
 
   lightbox.addEventListener("click", (event) => {
-    const closeTarget = event.target.closest("[data-close-lightbox]");
+    const closeTarget = event.target.closest(
+      "[data-close-lightbox]"
+    );
+
     if (!closeTarget) return;
+
     closeLightbox();
   });
 

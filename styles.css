@@ -2420,20 +2420,17 @@ button[onclick*="clearCookieConsent"] {
   color: rgba(255,255,255,0.56);
 }
 
-.galleryBtn {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  border: 1px solid rgba(183,239,153,0.28);
-  background: rgba(8, 12, 10, 0.75);
-  color: rgba(255,255,255,0.92);
+.patentControls .galleryBtn {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
-.galleryBtn:hover {
-  background: rgba(143,208,105,0.18);
-  transform: translateY(-2px);
+.patentControls .galleryBtn:hover {
+  background: rgba(0,0,0,0.8);
 }
 
 .mediaRail {
@@ -3535,4 +3532,13 @@ body.mediaLightboxOpen {
   }
 }
 
+.usecaseCard {
+  cursor: pointer;
+}
+
+.usecaseCard:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.95);
+  outline-offset: 4px;
+  transform: translateY(-4px);
+}
 

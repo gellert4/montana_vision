@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./styles.css?v=20260518" />
+    <link rel="stylesheet" href="./styles.css?v=20260717-2" />
 
     <!-- TermsFeed Cookie Consent -->
     <script src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
@@ -109,58 +109,129 @@
       </section>
 
       <!-- MEDIA SHOWCASE -->
+      <!-- MEDIA SHOWCASE -->
       <section class="section section--ink section--showcase" id="showcase">
         <div class="wrap">
           <div class="showcase__head">
-            <p class="showcase__eyebrow" data-i18n="showcase.eyebrow">Owner, Cars, Company Story</p>
-            <h2 class="showcase__title" data-i18n="showcase.title">Media Showcase</h2>
+            <p class="showcase__eyebrow" data-i18n="showcase.eyebrow">
+              Owner, Cars, Company Story
+            </p>
+
+            <h2 class="showcase__title" data-i18n="showcase.title">
+              Media Showcase
+            </h2>
+
             <p class="showcase__intro" data-i18n="showcase.intro">
               A closer look at the cars, the owner, and the technology behind Montana Vision.
             </p>
           </div>
 
-          <div class="showcaseStage">
-            <div class="videoPanelControls" aria-label="Showcase controls">
-              <button class="galleryBtn" type="button" id="galleryPrev" aria-label="Previous showcase panel">←</button>
-              <span class="galleryHint" data-i18n="showcase.galleryHint">Swipe or use the arrows</span>
-              <button class="galleryBtn" type="button" id="galleryNext" aria-label="Next showcase panel">→</button>
+          <div class="galleryShell">
+            <div class="galleryToolbar">
+              <button
+                class="galleryBtn"
+                type="button"
+                id="galleryPrev"
+                aria-label="Previous media item"
+              >
+                ←
+              </button>
+
+              <span class="galleryHint">
+                Scroll / drag to explore media
+              </span>
+
+              <button
+                class="galleryBtn"
+                type="button"
+                id="galleryNext"
+                aria-label="Next media item"
+              >
+                →
+              </button>
             </div>
 
-            <div class="showcaseSwipe" id="showcaseSwipe" aria-label="Showcase panels">
-              <section class="swipePanel swipePanel--tech">
-                <p class="panelLabel" data-i18n="showcase.techLabel">Technical Data</p>
-                <h3 data-i18n="showcase.techTitle">Engineering Snapshot</h3>
-                <div class="techMetrics" aria-label="Technical highlights">
-                  <span data-i18n="showcase.techMetric1">High load</span>
-                  <span data-i18n="showcase.techMetric2">Fuel flow</span>
-                  <span data-i18n="showcase.techMetric3">Thermal control</span>
-                </div>
-                <ul>
-                  <li data-i18n="showcase.techItem1">High-pressure injection concept</li>
-                  <li data-i18n="showcase.techItem2">Combustion optimization</li>
-                  <li data-i18n="showcase.techItem3">Automotive, marine and industrial use</li>
-                  <li data-i18n="showcase.techItem4">Patent-backed piston development</li>
-                </ul>
-              </section>
+            <div class="mediaRail" id="mediaRail">
 
-              <section class="swipePanel swipePanel--video">
-                <p class="swipeHint" data-i18n="showcase.videoHint">Swipe left for technical data • Swipe right for photos</p>
-                <div class="videoFrame">
-                  <video controls autoplay muted loop preload="metadata" playsinline>
-                    <source src="./assets/NEWGREEN_03_English 2.mp4" type="video/mp4" />
-                  </video>
-                </div>
-              </section>
+              <article class="mediaTile mediaTile--large mediaTile--video">
+                <video controls preload="metadata" muted playsinline>
+                  <source
+                    src="./assets/NEWGREEN_03_English 2.mp4"
+                    type="video/mp4"
+                  />
+                </video>
 
-              <section class="swipePanel swipePanel--photos">
-                <p class="panelLabel" data-i18n="showcase.photoLabel">Photos & Story</p>
-                <div class="photoScroller" aria-label="Scrollable photo wall">
-                  <figure class="photoCard" data-lightbox-key="owner"><img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan racing" /><figcaption data-i18n="showcase.photoCaption1">Stephan racing</figcaption></figure>
-                  <figure class="photoCard" data-lightbox-key="concept"><img src="./assets/fordgt.png" alt="Montana GT visual" /><figcaption data-i18n="showcase.photoCaption2">Montana GT visual</figcaption></figure>
-                  <figure class="photoCard" data-lightbox-key="detail"><img src="./assets/fisker.png" alt="Performance detail" /><figcaption data-i18n="showcase.photoCaption3">Performance detail</figcaption></figure>
-                  <figure class="photoCard" data-lightbox-key="legacy"><img src="./assets/IMG_5040 Kopie.jpeg" alt="Racing background" /><figcaption data-i18n="showcase.photoCaption4">Racing background</figcaption></figure>
+                <div class="mediaTile__caption">
+                  <span>Main Video</span>
+                  <strong>Technology Film</strong>
                 </div>
-              </section>
+              </article>
+
+              <article class="mediaTile">
+                <img
+                  src="./assets/Stephan, 6 heures de Paris 1989.jpeg"
+                  alt="Stephan in racing setting"
+                  data-lightbox-key="owner"
+                />
+
+                <div class="mediaTile__caption">
+                  <span>Owner</span>
+                  <strong>Stephan Geschke</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img
+                  src="./assets/fordgt.png"
+                  alt="Montana GT visual"
+                  data-lightbox-key="concept"
+                />
+
+                <div class="mediaTile__caption">
+                  <span>Concept</span>
+                  <strong>Montana GT Visual</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img
+                  src="./assets/fisker.png"
+                  alt="Montana performance car"
+                  data-lightbox-key="detail"
+                />
+
+                <div class="mediaTile__caption">
+                  <span>Automotive</span>
+                  <strong>Performance Detail</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img
+                  src="./assets/IMG_5040 Kopie.jpeg"
+                  alt="Racing background"
+                  data-lightbox-key="legacy"
+                />
+
+                <div class="mediaTile__caption">
+                  <span>Legacy</span>
+                  <strong>Racing Background</strong>
+                </div>
+              </article>
+
+              <article class="mediaTile">
+                <img
+                  src="./assets/new.png"
+                  alt="Montana Vision logo"
+                  data-lightbox-key="identity"
+                />
+
+                <div class="mediaTile__caption">
+                  <span>Identity</span>
+                  <strong>Brand Visual</strong>
+                </div>
+              </article>
+
             </div>
           </div>
         </div>
@@ -173,21 +244,60 @@
             <h2 class="serifTitle">WHERE THE PLATFORM CREATES VALUE</h2>
           </div>
           <div class="usecasesGrid" aria-label="Primary use-case domains">
-            <article class="usecaseCard">
+            <article
+              class="usecaseCard"
+              role="button"
+              tabindex="0"
+              data-lightbox-key="roadTraffic"
+              data-lightbox-image="./assets/fisker.png"
+              aria-label="Open Road Traffic details"
+            >
               <h3>Road Traffic</h3>
-              <p>Cars, trucks, buses, and performance fleets with stronger fuel efficiency targets.</p>
+              <p>
+                Cars, trucks, buses, and performance fleets with stronger fuel efficiency targets.
+              </p>
             </article>
-            <article class="usecaseCard">
+
+            <article
+              class="usecaseCard"
+              role="button"
+              tabindex="0"
+              data-lightbox-key="waterTraffic"
+              data-lightbox-image="./assets/boat2.png"
+              aria-label="Open Water Traffic details"
+            >
               <h3>Water Traffic</h3>
-              <p>From small motor boats to commercial vessels requiring emissions-focused upgrades.</p>
+              <p>
+                From small motor boats to commercial vessels requiring emissions-focused upgrades.
+              </p>
             </article>
-            <article class="usecaseCard">
+
+            <article
+              class="usecaseCard"
+              role="button"
+              tabindex="0"
+              data-lightbox-key="powerGeneration"
+              data-lightbox-image="./assets/patentpic1.png"
+              aria-label="Open Power Generation details"
+            >
               <h3>Power Generation</h3>
-              <p>Generator sets and backup systems where uptime and fuel quality are critical.</p>
+              <p>
+                Generator sets and backup systems where uptime and fuel quality are critical.
+              </p>
             </article>
-            <article class="usecaseCard">
+
+            <article
+              class="usecaseCard"
+              role="button"
+              tabindex="0"
+              data-lightbox-key="industrialTurbines"
+              data-lightbox-image="./assets/patentpic2.png"
+              aria-label="Open Industrial Turbines details"
+            >
               <h3>Industrial Turbines</h3>
-              <p>Broader thermal systems where combustion optimization impacts operating cost.</p>
+              <p>
+                Broader thermal systems where combustion optimization impacts operating cost.
+              </p>
             </article>
           </div>
         </div>
@@ -534,7 +644,7 @@
       </div>
     </div>
 
-    <script src="./script.js?v=20260518"></script>
+    <script src="./script.js?v=20260717-2"></script>
 
     <!-- Web3Forms client submit handler (keeps user on page and shows inline status) -->
     <script>
