@@ -15,12 +15,16 @@ menuBtn?.addEventListener("click", () => {
 
   if (isHidden) mobileNav.removeAttribute("hidden");
   else mobileNav.setAttribute("hidden", "true");
+  menuBtn.setAttribute("aria-expanded", String(Boolean(isHidden)));
+  menuBtn.setAttribute("aria-label", isHidden ? "Close menu" : "Open menu");
 });
 
 mobileNav?.addEventListener("click", (e) => {
   const a = e.target.closest("a");
   if (!a) return;
   mobileNav.setAttribute("hidden", "true");
+  menuBtn?.setAttribute("aria-expanded", "false");
+  menuBtn?.setAttribute("aria-label", "Open menu");
 });
 
 const openCvModal = () => {
@@ -42,7 +46,10 @@ const closeCvModal = () => {
   if (cvFrame) cvFrame.removeAttribute("src");
 };
 
-openCvBtn?.addEventListener("click", openCvModal);
+openCvBtn?.addEventListener("click", (event) => {
+  event.preventDefault();
+  openCvModal();
+});
 
 cvModal?.addEventListener("click", (event) => {
   const closeTarget = event.target.closest("[data-close-cv]");
@@ -775,6 +782,25 @@ const setLanguage = (lang) => {
   updateMediaLightboxContent();
 };
 
+document.addEventListener("click", (event) => {
+  if (event.target.closest("#footerCookieSettings")) {
+    document.getElementById("open_preferences_center")?.click();
+    return;
+  }
+  if (!mobileNav || mobileNav.hidden || !menuBtn) return;
+  if (mobileNav.contains(event.target) || menuBtn.contains(event.target)) return;
+  mobileNav.hidden = true;
+  menuBtn.setAttribute("aria-expanded", "false");
+  menuBtn.setAttribute("aria-label", "Open menu");
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape" || !mobileNav || mobileNav.hidden) return;
+  mobileNav.hidden = true;
+  menuBtn?.setAttribute("aria-expanded", "false");
+  menuBtn?.focus();
+});
+
 const initScrollAutoplayVideos = () => {
   const videos = Array.from(document.querySelectorAll("#showcase video"));
   if (!videos.length) return;
@@ -1174,6 +1200,8 @@ const initPatentSwipe = () => {
     if (!panel) return;
     rail.scrollTo({ left: panel.offsetLeft - (rail.clientWidth - panel.clientWidth)/2, behavior: 'smooth' });
     index = i;
+    prev?.toggleAttribute('disabled', index === 0);
+    next?.toggleAttribute('disabled', index === panels.length - 1);
   };
 
   prev?.addEventListener('click', () => scrollToIndex(Math.max(0, index - 1)));
@@ -1192,6 +1220,12 @@ const initPatentSwipe = () => {
     // then apply a small smooth scroll to ensure consistent behavior across viewports
     setTimeout(() => scrollToIndex(1), 80);
   }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => scrollToIndex(index), 120);
+  });
 };
 
 initPatentSwipe();

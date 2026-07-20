@@ -69,7 +69,7 @@
           <button class="langBtn" data-lang="hu">HU</button>
         </div>
 
-        <button class="menuBtn" type="button" aria-label="Open menu" id="menuBtn">
+        <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false" id="menuBtn">
           <span></span><span></span><span></span>
         </button>
         
@@ -137,7 +137,7 @@
                 ←
               </button>
 
-              <span class="galleryHint">
+              <span class="galleryHint" data-i18n="showcase.galleryHint">
                 Scroll / drag to explore media
               </span>
 
@@ -347,8 +347,8 @@
         <div class="wrap">
           <div class="patentStage">
             <div class="patentControls">
-              <button id="patentPrev" class="galleryBtn">‹</button>
-              <button id="patentNext" class="galleryBtn">›</button>
+              <button id="patentPrev" class="galleryBtn" type="button" aria-label="Previous patent panel">‹</button>
+              <button id="patentNext" class="galleryBtn" type="button" aria-label="Next patent panel">›</button>
             </div>
 
             <div id="patentSwipe" class="patentSwipe" aria-label="Patent detail swipe">
@@ -469,6 +469,7 @@
 
               <a
                 class="btn btn--solid ownerCvBtn"
+                id="openCvBtn"
                 href="./assets/Final%20CV%202.05.%2025%20pdf.pdf"
                 target="_blank"
                 rel="noopener"
@@ -515,12 +516,12 @@
               <h2 class="bigBlockTitle" data-i18n-html="contact.title">REACH OUT TO US TO BE<br />A PART OF THE CHANGE</h2>
               <div class="contactMeta">
                 <div class="contactMeta__item">
-                  <span class="icon">📞</span>
-                  <span data-i18n="contact.phone">+41 76 505 09 00</span>
+                  <span class="icon" aria-hidden="true">📞</span>
+                  <a href="tel:+41765050900" data-i18n="contact.phone">+41 76 505 09 00</a>
                 </div>
                 <div class="contactMeta__item">
-                  <span class="icon">✉</span>
-                  <span data-i18n="contact.email">office@newgreen.eu</span>
+                  <span class="icon" aria-hidden="true">✉</span>
+                  <a href="mailto:office@newgreen.eu" data-i18n="contact.email">office@newgreen.eu</a>
                 </div>
               </div>
             </div>

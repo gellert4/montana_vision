@@ -3542,3 +3542,112 @@ body.mediaLightboxOpen {
   transform: translateY(-4px);
 }
 
+/* 2026 interface refresh: compact consistency layer over the legacy styles. */
+:root {
+  --wrap: min(1240px, calc(100% - 48px));
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 34px;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+a, button, input, textarea { -webkit-tap-highlight-color: transparent; }
+button, input, textarea { font: inherit; }
+:focus-visible { outline: 3px solid #b7ef99; outline-offset: 4px; }
+.topbar {
+  height: 86px;
+  background: linear-gradient(180deg, rgba(4,9,12,.92), rgba(4,9,12,.58));
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+.topbar.topbar--scrolled { height: 72px; }
+.brand__mark { height: 68px; width: clamp(118px,14vw,190px); animation: none; }
+.nav { gap: clamp(14px,2vw,28px); }
+.nav__link { font-size: 12px; font-weight: 600; }
+.nav__link.is-active::after { bottom: -7px; height: 2px; background: #b7ef99; }
+.langBtn, .menuBtn, .galleryBtn { min-width: 42px; min-height: 42px; border-radius: 999px; }
+.galleryBtn:disabled { opacity: .35; cursor: not-allowed; }
+.section { padding-block: clamp(76px,9vw,132px); }
+.section + .section { margin-top: 0; padding-top: clamp(76px,9vw,132px); border-radius: 0; }
+.showcase__title, .serifTitle, .aboutTitle, .ownerTitle, .bigBlockTitle { text-wrap: balance; }
+.galleryShell, .mediaCard, .form, .ownerQuote, .ownerTimeline article,
+.ownerStats div, .ownerQuickGrid div, .patentMeta > div, .feature,
+.patentCallout, .patentNote { border-radius: var(--radius-md); }
+.mediaRail { scrollbar-width: thin; overscroll-behavior-inline: contain; scroll-padding-inline: 2px; }
+.mediaTile {
+  border-radius: var(--radius-md);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+}
+.mediaTile:hover { transform: translateY(-6px); }
+.usecaseCard { min-height: 190px; padding: 24px; border-radius: var(--radius-md); }
+.usecaseCard p { font-size: 14px; }
+.aboutGrid { gap: clamp(28px,5vw,72px); }
+.aboutGrid__mid p, .aboutLead, .ownerLead, .contact__left p {
+  font-size: clamp(15px,1.3vw,18px);
+  line-height: 1.75;
+}
+.contactMeta__item a { color: inherit; text-decoration: none; }
+.contactMeta__item a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.form input, .form textarea {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(7,14,19,.34);
+  color: #fff;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.form input:focus, .form textarea:focus {
+  outline: none;
+  border-color: #b7ef99;
+  background: rgba(7,14,19,.5);
+  box-shadow: 0 0 0 4px rgba(183,239,153,.13);
+}
+.form .btn--solid {
+  min-height: 52px;
+  border-radius: 999px;
+  background: #b7ef99;
+  color: #102018;
+  font-weight: 700;
+}
+.cvModal__panel, .mediaLightbox__panel { border-radius: var(--radius-lg); }
+@media (max-width: 980px) {
+  :root { --wrap: min(100% - 36px,760px); }
+  .topbar { height: 76px; }
+  .topbar__inner > .langSwitcher, .nav { display: none; }
+  .menuBtn { display: block; margin-left: auto; }
+  .mobileNav {
+    position: fixed; top: 76px; left: 18px; right: 18px; width: auto;
+    max-height: calc(100dvh - 94px); overflow-y: auto;
+    border-radius: var(--radius-md); box-shadow: 0 24px 60px rgba(0,0,0,.48);
+  }
+  .mobileNav a { padding: 14px 16px; }
+  .usecasesGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 620px) {
+  :root { --wrap: calc(100% - 28px); }
+  .section { padding-block: 72px; }
+  .hero { height: min(78svh,720px) !important; min-height: 560px !important; overflow: hidden !important; }
+  .hero__bg { background-size: cover !important; background-position: center !important; }
+  .galleryToolbar { align-items: center; }
+  .galleryHint { font-size: 11px; text-align: center; }
+  .usecasesGrid { grid-template-columns: 1fr; }
+  .usecaseCard { min-height: 0; }
+  .ownerTitle { font-size: clamp(38px,12vw,52px); overflow-wrap: anywhere; }
+  .ownerHero__visual { min-height: 420px; }
+  .ownerBoatCard--main { height: 290px; }
+  .patentControls { position: static; justify-content: flex-end; margin-bottom: 8px; }
+  .swipePanel { padding-right: 0; }
+  .patentMeta, .patentGallery { grid-template-columns: 1fr; }
+  .patentGallery__item { height: 220px; }
+  .form__row { gap: 12px; }
+  .footer__inner { align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
