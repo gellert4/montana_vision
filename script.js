@@ -334,6 +334,41 @@ const translations = {
       marketingText: "Would enable advertising and retargeting tags.",
       saveSelection: "Save Selection",
     },
+    ui: {
+      media: {
+        mainLabel: "Main Video", mainTitle: "Technology Film", ownerLabel: "Owner",
+        conceptLabel: "Concept", conceptTitle: "Montana GT Visual",
+        automotiveLabel: "Automotive", automotiveTitle: "Performance Detail",
+        legacyLabel: "Legacy", legacyTitle: "Racing Background",
+        identityLabel: "Identity", identityTitle: "Brand Visual",
+      },
+      usecases: {
+        eyebrow: "What Else We Do", title: "FURTHER TECHNOLOGY'S PROGRESS",
+        metalTitle: "Metal Catalytic Converter",
+        metalText: "A metal catalytic converter designed for automotive and industrial applications.",
+        bikeTitle: "Speed Bike",
+        bikeText: "A high-performance speed bike representing efficient and lightweight mobility.",
+        waterTitle: "Bottle of Water",
+        waterText: "A bottle of water representing clean resources and sustainable everyday products.",
+        winterTitle: "Skis and Snowboards",
+        winterText: "Skis and snowboards representing performance materials and winter-sports equipment.",
+      },
+      patent: {
+        eyebrow: "Patent explorer", hint: "Swipe or use the arrows to explore all three views.",
+        leftLabel: "01 — Technical description", centerLabel: "02 — Main patent page",
+        rightLabel: "03 — Pictures & visualizations", visualTitle: "Patent visual library",
+        visualText: "Add the final renders, technical drawings, diagrams, or prototype photography here.",
+        slot1Title: "Hero visualization", slot1Text: "Recommended: 1600 × 1200 px",
+        slot2Title: "Technical drawing", slot2Text: "PNG, JPG, WebP, or SVG",
+        slot3Title: "Component detail", slot3Text: "Close-up or sectional view",
+        slot4Title: "Additional visualization", slot4Text: "Diagram, render, or prototype",
+      },
+      cookiePreferences: "Cookie Preferences", cvTitle: "Curriculum Vitae",
+      showcaseStory: "Showcase story", sending: "Sending...",
+      sent: "Message sent successfully. Thank you!",
+      formError: "Something went wrong. Please try again.",
+      networkError: "Network error — please try again.",
+    },
     footer: {
       brand: "Montana Vision | NEWGREEN",
       rights: "All Rights Reserved © Montana Vision — 2026",
@@ -511,6 +546,52 @@ const translations = {
       marketingTitle: "Marketing",
       marketingText: "Wuerde Werbe- und Retargeting-Tags aktivieren.",
       saveSelection: "Auswahl speichern",
+    },
+    ui: {
+      media: {
+        mainLabel: "Hauptvideo", mainTitle: "Technologiefilm", ownerLabel: "Inhaber",
+        conceptLabel: "Konzept", conceptTitle: "Montana-GT-Visualisierung",
+        automotiveLabel: "Automobil", automotiveTitle: "Leistungsdetail",
+        legacyLabel: "Tradition", legacyTitle: "Rennsport-Hintergrund",
+        identityLabel: "Identität", identityTitle: "Markenvisualisierung",
+      },
+      lightbox: {
+        owner: { eyebrow: "Geschichte des Inhabers", title: "Stephan Geschke bei den 6 Heures de Paris", text: "Das Bild verbindet die Rennsportwurzeln des Gründers mit dem langen technischen Entwicklungsweg von Montana Vision.", note: "In der Vollbildansicht lassen sich Fahrzeug, Haltung und Rennumfeld genauer betrachten." },
+        concept: { eyebrow: "Konzeptvision", title: "Montana-GT-Konzeptstudie", text: "Die Studie überträgt die Marke in eine leistungsorientierte automobile Designsprache.", note: "Sie zeigt eine mögliche Gestaltungsrichtung für ein fertiges Fahrzeug." },
+        detail: { eyebrow: "Automobildetail", title: "Leistungsorientierte Nahaufnahme", text: "Diese Aufnahme betont Präzision, Materialwirkung, Licht und technische Detailarbeit.", note: "Die Vollbildansicht macht Kanten, Reflexionen und kleine Gestaltungselemente sichtbar." },
+        legacy: { eyebrow: "Rennsporttradition", title: "Ein Rennsporthintergrund, der die Marke weiterhin prägt", text: "Das Foto zeigt das Wettbewerbsumfeld, das die Denkweise des Gründers formte.", note: "Die dokumentarische Bildsprache hält die Geschichte mit dem realen Motorsport verbunden." },
+        identity: { eyebrow: "Markenidentität", title: "Visuelle Identität von Montana Vision", text: "Die Grafik vermittelt die technische und moderne Ausrichtung des Projekts in kompakter Form.", note: "In der Vollbildansicht lassen sich Komposition, Symbol und Oberfläche genauer prüfen." },
+        metalCatalyticConverter: { eyebrow: "Automobilkomponente", title: "Metallkatalysator", text: "Der Metallkatalysator unterstützt die Abgasnachbehandlung und reduziert schädliche Emissionen vor dem Austritt.", note: "Materialien, Aufbau, technische Daten und Anwendungen können hier ergänzt werden." },
+        speedBike: { eyebrow: "Leistungsmobilität", title: "Hochgeschwindigkeitsfahrrad", text: "Die leichte Konstruktion und aerodynamische Form stehen für effiziente, schnelle und technisch ausgerichtete Mobilität.", note: "Materialien, Leistungsdaten und Einsatzzweck können hier ergänzt werden." },
+        waterBottle: { eyebrow: "Alltagsprodukt", title: "Wasserflasche", text: "Die Flasche steht für saubere Ressourcen, Alltagstauglichkeit und nachhaltige Produktlösungen.", note: "Informationen zu Material, Herstellung und Nachhaltigkeit können hier ergänzt werden." },
+        winterSports: { eyebrow: "Wintersport", title: "Skier und Snowboards", text: "Diese Produkte stehen für belastbare Hochleistungsmaterialien und leichte Konstruktionen unter anspruchsvollen Winterbedingungen.", note: "Materialien, Fertigung und Leistungsmerkmale können hier ergänzt werden." },
+      },
+      usecases: {
+        eyebrow: "Weitere Anwendungsbereiche", title: "WEITERENTWICKLUNG DER TECHNOLOGIE",
+        metalTitle: "Metallkatalysator",
+        metalText: "Ein Metallkatalysator für Anwendungen im Automobil- und Industriesektor.",
+        bikeTitle: "Hochgeschwindigkeitsfahrrad",
+        bikeText: "Ein leistungsstarkes Fahrrad als Beispiel für effiziente und leichte Mobilität.",
+        waterTitle: "Wasserflasche",
+        waterText: "Eine Wasserflasche als Beispiel für saubere Ressourcen und nachhaltige Alltagsprodukte.",
+        winterTitle: "Skier und Snowboards",
+        winterText: "Skier und Snowboards als Beispiele für Hochleistungsmaterialien und Wintersportausrüstung.",
+      },
+      patent: {
+        eyebrow: "Patentübersicht", hint: "Wischen Sie oder verwenden Sie die Pfeile, um alle drei Ansichten zu erkunden.",
+        leftLabel: "01 — Technische Beschreibung", centerLabel: "02 — Patent-Hauptseite",
+        rightLabel: "03 — Bilder und Visualisierungen", visualTitle: "Visuelle Patentbibliothek",
+        visualText: "Hier werden die finalen Renderings, technischen Zeichnungen, Diagramme oder Prototypenfotos eingefügt.",
+        slot1Title: "Hauptvisualisierung", slot1Text: "Empfohlen: 1600 × 1200 px",
+        slot2Title: "Technische Zeichnung", slot2Text: "PNG, JPG, WebP oder SVG",
+        slot3Title: "Bauteildetail", slot3Text: "Nahaufnahme oder Schnittansicht",
+        slot4Title: "Weitere Visualisierung", slot4Text: "Diagramm, Rendering oder Prototyp",
+      },
+      cookiePreferences: "Cookie-Einstellungen", cvTitle: "Lebenslauf",
+      showcaseStory: "Geschichte zur Präsentation", sending: "Wird gesendet...",
+      sent: "Nachricht erfolgreich gesendet. Vielen Dank!",
+      formError: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      networkError: "Netzwerkfehler — bitte versuchen Sie es erneut.",
     },
     footer: {
       brand: "Montana Vision",
@@ -691,6 +772,52 @@ const translations = {
       marketingText: "Hirdetesi es retargeting tagek engedelyezese.",
       saveSelection: "Valasztas mentese",
     },
+    ui: {
+      media: {
+        mainLabel: "Fő videó", mainTitle: "Technológiai film", ownerLabel: "Tulajdonos",
+        conceptLabel: "Koncepció", conceptTitle: "Montana GT látványterv",
+        automotiveLabel: "Autóipar", automotiveTitle: "Teljesítményrészlet",
+        legacyLabel: "Örökség", legacyTitle: "Versenyzői háttér",
+        identityLabel: "Arculat", identityTitle: "Márkaarculat",
+      },
+      lightbox: {
+        owner: { eyebrow: "Az alapító története", title: "Stephan Geschke a 6 Heures de Paris versenyen", text: "A kép összeköti az alapító versenyzői múltját a Montana Vision hosszú mérnöki fejlesztési útjával.", note: "Teljes képernyőn az autó, a testtartás és a versenykörnyezet részletesebben megfigyelhető." },
+        concept: { eyebrow: "Koncepció", title: "Montana GT koncepciótanulmány", text: "A látványterv a márkát egy teljesítményközpontú autóipari formanyelvre ülteti át.", note: "A terv egy lehetséges irányt mutat arra, hogyan jelenhet meg az arculat egy kész járművön." },
+        detail: { eyebrow: "Autóipari részlet", title: "Teljesítményközpontú közeli kép", text: "A felvétel a precizitást, az anyaghasználatot, a fényeket és a műszaki részleteket emeli ki.", note: "Teljes képernyőn az élek, tükröződések és apró formai jegyek is láthatók." },
+        legacy: { eyebrow: "Versenyzői örökség", title: "A márkát ma is formáló versenyzői háttér", text: "A fotó azt a versenykörnyezetet mutatja be, amely az alapító gondolkodásmódját kialakította.", note: "A dokumentarista kompozíció a történetet a valódi motorsportmúlthoz köti." },
+        identity: { eyebrow: "Márkaarculat", title: "A Montana Vision vizuális arculata", text: "A grafika tömören közvetíti a projekt műszaki, modern és jövőbe mutató irányát.", note: "Teljes képernyőn a kompozíció, a szimbólum és a felület kapcsolata is megvizsgálható." },
+        metalCatalyticConverter: { eyebrow: "Autóipari alkatrész", title: "Fém katalizátor", text: "A fém katalizátor támogatja a kipufogógáz kezelését, és csökkenti a károsanyag-kibocsátást.", note: "Az anyagok, a felépítés, a műszaki adatok és az alkalmazások itt egészíthetők ki." },
+        speedBike: { eyebrow: "Teljesítményorientált mobilitás", title: "Gyorsasági kerékpár", text: "Könnyű szerkezete és aerodinamikus kialakítása a hatékony, gyors és műszakilag fejlett mobilitást képviseli.", note: "Az anyagok, teljesítményadatok és tervezett felhasználás itt egészíthetők ki." },
+        waterBottle: { eyebrow: "Hétköznapi termék", title: "Vizespalack", text: "A palack a tiszta erőforrásokat, a mindennapi fenntarthatóságot és a hatékony termékmegoldásokat képviseli.", note: "Az anyag, a gyártás és a fenntarthatóság részletei itt egészíthetők ki." },
+        winterSports: { eyebrow: "Téli sportok", title: "Sílécek és snowboardok", text: "Ezek a termékek nagy teljesítményű, tartós és könnyű anyagokat képviselnek a téli körülmények között.", note: "Az anyagok, a gyártási folyamat és a teljesítményjellemzők itt egészíthetők ki." },
+      },
+      usecases: {
+        eyebrow: "További tevékenységeink", title: "A TECHNOLÓGIA TOVÁBBFEJLESZTÉSE",
+        metalTitle: "Fém katalizátor",
+        metalText: "Autóipari és ipari alkalmazásokhoz tervezett fém katalizátor.",
+        bikeTitle: "Gyorsasági kerékpár",
+        bikeText: "Nagy teljesítményű kerékpár, amely a hatékony és könnyű mobilitást képviseli.",
+        waterTitle: "Vizespalack",
+        waterText: "A tiszta erőforrásokat és a fenntartható hétköznapi termékeket képviselő vizespalack.",
+        winterTitle: "Sílécek és snowboardok",
+        winterText: "Nagy teljesítményű anyagokat és téli sportfelszereléseket képviselő sílécek és snowboardok.",
+      },
+      patent: {
+        eyebrow: "Szabadalmi áttekintő", hint: "Húzd el, vagy használd a nyilakat mindhárom nézet felfedezéséhez.",
+        leftLabel: "01 — Műszaki leírás", centerLabel: "02 — Fő szabadalmi oldal",
+        rightLabel: "03 — Képek és látványtervek", visualTitle: "Szabadalmi képtár",
+        visualText: "Ide kerülnek a végleges látványtervek, műszaki rajzok, diagramok és prototípusfotók.",
+        slot1Title: "Fő látványterv", slot1Text: "Ajánlott: 1600 × 1200 px",
+        slot2Title: "Műszaki rajz", slot2Text: "PNG, JPG, WebP vagy SVG",
+        slot3Title: "Alkatrészrészlet", slot3Text: "Közeli kép vagy metszeti nézet",
+        slot4Title: "További látványterv", slot4Text: "Diagram, render vagy prototípus",
+      },
+      cookiePreferences: "Süti beállítások", cvTitle: "Önéletrajz",
+      showcaseStory: "Bemutató történet", sending: "Küldés...",
+      sent: "Az üzenetet sikeresen elküldtük. Köszönjük!",
+      formError: "Hiba történt. Kérjük, próbáld újra.",
+      networkError: "Hálózati hiba — kérjük, próbáld újra.",
+    },
     footer: {
       brand: "Montana Vision",
       rights: "Minden jog fenntartva © Az Ön cége — 2025",
@@ -726,7 +853,7 @@ const updateMediaLightboxContent = () => {
   if (!lightboxTitle || !lightboxEyebrow || !lightboxDescription || !lightboxNote) return;
 
   if (!currentMediaLightboxKey) {
-    lightboxEyebrow.textContent = "Showcase story";
+    lightboxEyebrow.textContent = getTranslation(currentLang, "ui.showcaseStory") || "Showcase story";
     lightboxTitle.textContent = "";
     lightboxDescription.textContent = "";
     lightboxNote.textContent = "";
@@ -734,12 +861,16 @@ const updateMediaLightboxContent = () => {
   }
 
   const content =
+    getTranslation(currentLang, `ui.lightbox.${currentMediaLightboxKey}`) ||
     getTranslation(currentLang, `showcase.lightbox.${currentMediaLightboxKey}`) ||
     getTranslation("en", `showcase.lightbox.${currentMediaLightboxKey}`);
 
   if (!content) return;
 
-  lightboxEyebrow.textContent = content.eyebrow || "Showcase story";
+  lightboxEyebrow.textContent =
+    content.eyebrow ||
+    getTranslation(currentLang, "ui.showcaseStory") ||
+    "Showcase story";
   lightboxTitle.textContent = content.title || "";
   lightboxDescription.textContent = content.text || "";
   lightboxNote.textContent = content.note || "";
@@ -1193,15 +1324,24 @@ const initPatentSwipe = () => {
   const prev = document.getElementById('patentPrev');
   const next = document.getElementById('patentNext');
   const panels = Array.from(rail.querySelectorAll('.swipePanel'));
+  const dots = Array.from(document.querySelectorAll('[data-patent-dot]'));
   let index = 1; // start center
+
+  const updatePatentState = (newIndex) => {
+    index = Math.max(0, Math.min(panels.length - 1, newIndex));
+    prev?.toggleAttribute('disabled', index === 0);
+    next?.toggleAttribute('disabled', index === panels.length - 1);
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === index);
+    });
+    rail.setAttribute('aria-label', `Patent view ${index + 1} of ${panels.length}: ${panels[index]?.dataset.panelLabel || ''}`);
+  };
 
   const scrollToIndex = (i) => {
     const panel = panels[i];
     if (!panel) return;
     rail.scrollTo({ left: panel.offsetLeft - (rail.clientWidth - panel.clientWidth)/2, behavior: 'smooth' });
-    index = i;
-    prev?.toggleAttribute('disabled', index === 0);
-    next?.toggleAttribute('disabled', index === panels.length - 1);
+    updatePatentState(i);
   };
 
   prev?.addEventListener('click', () => scrollToIndex(Math.max(0, index - 1)));
@@ -1213,6 +1353,29 @@ const initPatentSwipe = () => {
   window.addEventListener('mouseup', () => { isDown = false; rail.classList.remove('is-dragging'); });
   rail.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - rail.offsetLeft; const walk = (x - startX) * 1.2; rail.scrollLeft = scrollLeft - walk; });
 
+  let scrollTimer;
+  rail.addEventListener('scroll', () => {
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      const railCenter = rail.scrollLeft + rail.clientWidth / 2;
+      const closestIndex = panels.reduce((bestIndex, panel, panelIndex) => {
+        const panelCenter = panel.offsetLeft + panel.clientWidth / 2;
+        const bestPanel = panels[bestIndex];
+        const bestCenter = bestPanel.offsetLeft + bestPanel.clientWidth / 2;
+        return Math.abs(panelCenter - railCenter) < Math.abs(bestCenter - railCenter)
+          ? panelIndex
+          : bestIndex;
+      }, 0);
+      updatePatentState(closestIndex);
+    }, 100);
+  }, { passive: true });
+
+  rail.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    scrollToIndex(index + (event.key === 'ArrowRight' ? 1 : -1));
+  });
+
   // center on the middle panel on load (immediate then smooth)
   if (panels[1]) {
     // immediate snap to center to avoid initial left-offset rendering
@@ -1220,6 +1383,7 @@ const initPatentSwipe = () => {
     // then apply a small smooth scroll to ensure consistent behavior across viewports
     setTimeout(() => scrollToIndex(1), 80);
   }
+  updatePatentState(1);
 
   let resizeTimer;
   window.addEventListener('resize', () => {

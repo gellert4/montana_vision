@@ -162,8 +162,8 @@
                 </video>
 
                 <div class="mediaTile__caption">
-                  <span>Main Video</span>
-                  <strong>Technology Film</strong>
+                  <span data-i18n="ui.media.mainLabel">Main Video</span>
+                  <strong data-i18n="ui.media.mainTitle">Technology Film</strong>
                 </div>
               </article>
 
@@ -175,7 +175,7 @@
                 />
 
                 <div class="mediaTile__caption">
-                  <span>Owner</span>
+                  <span data-i18n="ui.media.ownerLabel">Owner</span>
                   <strong>Stephan Geschke</strong>
                 </div>
               </article>
@@ -188,8 +188,8 @@
                 />
 
                 <div class="mediaTile__caption">
-                  <span>Concept</span>
-                  <strong>Montana GT Visual</strong>
+                  <span data-i18n="ui.media.conceptLabel">Concept</span>
+                  <strong data-i18n="ui.media.conceptTitle">Montana GT Visual</strong>
                 </div>
               </article>
 
@@ -201,8 +201,8 @@
                 />
 
                 <div class="mediaTile__caption">
-                  <span>Automotive</span>
-                  <strong>Performance Detail</strong>
+                  <span data-i18n="ui.media.automotiveLabel">Automotive</span>
+                  <strong data-i18n="ui.media.automotiveTitle">Performance Detail</strong>
                 </div>
               </article>
 
@@ -214,8 +214,8 @@
                 />
 
                 <div class="mediaTile__caption">
-                  <span>Legacy</span>
-                  <strong>Racing Background</strong>
+                  <span data-i18n="ui.media.legacyLabel">Legacy</span>
+                  <strong data-i18n="ui.media.legacyTitle">Racing Background</strong>
                 </div>
               </article>
 
@@ -227,8 +227,8 @@
                 />
 
                 <div class="mediaTile__caption">
-                  <span>Identity</span>
-                  <strong>Brand Visual</strong>
+                  <span data-i18n="ui.media.identityLabel">Identity</span>
+                  <strong data-i18n="ui.media.identityTitle">Brand Visual</strong>
                 </div>
               </article>
 
@@ -240,8 +240,8 @@
       <section class="section section--stone2 section--usecases" id="usecases">
         <div class="wrap">
           <div class="usecasesHead">
-            <p class="usecasesHead__eyebrow">What Else We Do</p>
-            <h2 class="serifTitle">FURTHER TECHNOLOGY'S PROGRESS</h2>
+            <p class="usecasesHead__eyebrow" data-i18n="ui.usecases.eyebrow">What Else We Do</p>
+            <h2 class="serifTitle" data-i18n="ui.usecases.title">FURTHER TECHNOLOGY'S PROGRESS</h2>
           </div>
           <div class="usecasesGrid" aria-label="Primary use-case domains">
             <article
@@ -252,8 +252,8 @@
               data-lightbox-image="./assets/section22.jpeg"
               aria-label="Open metal catalytic converter details"
             >
-              <h3>Metal Catalytic Converter</h3>
-              <p>A metal catalytic converter designed for automotive and industrial applications.</p>
+              <h3 data-i18n="ui.usecases.metalTitle">Metal Catalytic Converter</h3>
+              <p data-i18n="ui.usecases.metalText">A metal catalytic converter designed for automotive and industrial applications.</p>
             </article>
 
             <article
@@ -264,8 +264,8 @@
               data-lightbox-image="./assets/section21.jpeg"
               aria-label="Open speed bike details"
             >
-              <h3>Speed Bike</h3>
-              <p>A high-performance speed bike representing efficient and lightweight mobility.</p>
+              <h3 data-i18n="ui.usecases.bikeTitle">Speed Bike</h3>
+              <p data-i18n="ui.usecases.bikeText">A high-performance speed bike representing efficient and lightweight mobility.</p>
             </article>
 
             <article
@@ -276,8 +276,8 @@
               data-lightbox-image="./assets/section23.jpeg"
               aria-label="Open water bottle details"
             >
-              <h3>Bottle of Water</h3>
-              <p>A bottle of water representing clean resources and sustainable everyday products.</p>
+              <h3 data-i18n="ui.usecases.waterTitle">Bottle of Water</h3>
+              <p data-i18n="ui.usecases.waterText">A bottle of water representing clean resources and sustainable everyday products.</p>
             </article>
 
             <article
@@ -288,8 +288,8 @@
               data-lightbox-image="./assets/section24.jpeg"
               aria-label="Open skis and snowboards details"
             >
-              <h3>Skis and Snowboards</h3>
-              <p>Skis and snowboards representing performance materials and winter-sports equipment.</p>
+              <h3 data-i18n="ui.usecases.winterTitle">Skis and Snowboards</h3>
+              <p data-i18n="ui.usecases.winterText">Skis and snowboards representing performance materials and winter-sports equipment.</p>
             </article>
           </div>
         </div>
@@ -346,14 +346,26 @@
       <section class="section section--teal" id="patent">
         <div class="wrap">
           <div class="patentStage">
+            <div class="patentStage__header">
+              <div>
+                <p class="patentStage__eyebrow" data-i18n="ui.patent.eyebrow">Patent explorer</p>
+                <p class="patentStage__hint" data-i18n="ui.patent.hint">Swipe or use the arrows to explore all three views.</p>
+              </div>
+              <div class="patentProgress" aria-label="Patent panel position">
+                <span class="patentProgress__dot" data-patent-dot="0"></span>
+                <span class="patentProgress__dot is-active" data-patent-dot="1"></span>
+                <span class="patentProgress__dot" data-patent-dot="2"></span>
+              </div>
+            </div>
             <div class="patentControls">
               <button id="patentPrev" class="galleryBtn" type="button" aria-label="Previous patent panel">‹</button>
               <button id="patentNext" class="galleryBtn" type="button" aria-label="Next patent panel">›</button>
             </div>
 
-            <div id="patentSwipe" class="patentSwipe" aria-label="Patent detail swipe">
+            <div id="patentSwipe" class="patentSwipe" aria-label="Patent detail swipe" tabindex="0">
               <!-- Left: Technical information & data -->
-              <article class="swipePanel swipePanel--left">
+              <article class="swipePanel swipePanel--left" data-panel-label="Technical description">
+                <p class="swipePanel__label" data-i18n="ui.patent.leftLabel">01 — Technical description</p>
                 <h3 data-i18n="patent.leftTitle">Technical Data & Measurements</h3>
                 <ul>
                   <li data-i18n="patent.leftItem1">Compression ratio: 18.5:1</li>
@@ -370,7 +382,8 @@
               </article>
 
               <!-- Center: Patent technical descriptions (primary) -->
-              <article class="swipePanel swipePanel--center">
+              <article class="swipePanel swipePanel--center" data-panel-label="Patent overview">
+                <p class="swipePanel__label" data-i18n="ui.patent.centerLabel">02 — Main patent page</p>
                 <div class="subtitle" data-i18n="patent.centerSubtitle">Patent Portfolio Snapshot</div>
                 <h2 class="serifTitle" data-i18n="patent.centerTitle">INTERNATIONAL FILING: DIESEL ENGINE AND PISTON</h2>
                 <p class="muted" data-i18n="patent.centerIntro">Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure injection and charging function, including a corresponding piston design for high thermal loads and improved sealing guidance.</p>
@@ -391,12 +404,33 @@
               </article>
 
               <!-- Right: Additional photos & information -->
-              <article class="swipePanel swipePanel--right">
+              <article class="swipePanel swipePanel--right" data-panel-label="Pictures and visualizations">
+                <div class="patentVisualsHead">
+                  <p class="swipePanel__label" data-i18n="ui.patent.rightLabel">03 — Pictures & visualizations</p>
+                  <h3 data-i18n="ui.patent.visualTitle">Patent visual library</h3>
+                  <p data-i18n="ui.patent.visualText">Add the final renders, technical drawings, diagrams, or prototype photography here.</p>
+                </div>
                 <div class="patentGallery" aria-label="Patent illustrations">
-                  <figure class="patentGallery__item"><img src="./assets/patentpic1.png" alt="Patent figure 1"></figure>
-                  <figure class="patentGallery__item"><img src="./assets/patentpic2.png" alt="Patent figure 2"></figure>
-                  <figure class="patentGallery__item"><img src="./assets/patentpic3.png" alt="Patent figure 3"></figure>
-                  <figure class="patentGallery__item"><img src="./assets/patentpic4.png" alt="Patent figure 4"></figure>
+                  <figure class="patentGallery__item patentPlaceholder">
+                    <span class="patentPlaceholder__number">01</span>
+                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
+                    <figcaption><strong data-i18n="ui.patent.slot1Title">Hero visualization</strong><span data-i18n="ui.patent.slot1Text">Recommended: 1600 × 1200 px</span></figcaption>
+                  </figure>
+                  <figure class="patentGallery__item patentPlaceholder">
+                    <span class="patentPlaceholder__number">02</span>
+                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
+                    <figcaption><strong data-i18n="ui.patent.slot2Title">Technical drawing</strong><span data-i18n="ui.patent.slot2Text">PNG, JPG, WebP, or SVG</span></figcaption>
+                  </figure>
+                  <figure class="patentGallery__item patentPlaceholder">
+                    <span class="patentPlaceholder__number">03</span>
+                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
+                    <figcaption><strong data-i18n="ui.patent.slot3Title">Component detail</strong><span data-i18n="ui.patent.slot3Text">Close-up or sectional view</span></figcaption>
+                  </figure>
+                  <figure class="patentGallery__item patentPlaceholder">
+                    <span class="patentPlaceholder__number">04</span>
+                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
+                    <figcaption><strong data-i18n="ui.patent.slot4Title">Additional visualization</strong><span data-i18n="ui.patent.slot4Text">Diagram, render, or prototype</span></figcaption>
+                  </figure>
                 </div>
               </article>
             </div>
@@ -583,7 +617,7 @@
             <a href="./datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
             <a href="#faq" data-i18n="footer.terms">Terms</a>
             <button class="footerCookieBtn" type="button" id="footerCookieSettings" data-i18n="footer.cookies">Cookie Settings</button>
-            <a href="#" id="open_preferences_center">Cookie Preferences</a>
+            <a href="#" id="open_preferences_center" data-i18n="ui.cookiePreferences">Cookie Preferences</a>
           </div>
         </div>
       </footer>
@@ -597,7 +631,7 @@
         <div class="cvModal__header">
           <div>
             <p class="cvModal__eyebrow">Stephan Geschke</p>
-            <h2 class="cvModal__title">Curriculum Vitae</h2>
+            <h2 class="cvModal__title" data-i18n="ui.cvTitle">Curriculum Vitae</h2>
           </div>
           <button class="cvModal__close" type="button" data-close-cv aria-label="Close CV preview">×</button>
         </div>
@@ -628,7 +662,7 @@
             <img class="mediaLightbox__image" id="mediaLightboxImage" alt="" />
           </figure>
           <aside class="mediaLightbox__details" aria-live="polite">
-            <p class="mediaLightbox__eyebrow" id="mediaLightboxEyebrow">Showcase story</p>
+            <p class="mediaLightbox__eyebrow" id="mediaLightboxEyebrow" data-i18n="ui.showcaseStory">Showcase story</p>
             <h2 class="mediaLightbox__title" id="mediaLightboxTitle"></h2>
             <p class="mediaLightbox__text" id="mediaLightboxDescription"></p>
             <p class="mediaLightbox__note" id="mediaLightboxNote"></p>
@@ -657,7 +691,7 @@
           }
 
           const originalText = submitBtn.textContent;
-          submitBtn.textContent = 'Sending...';
+          submitBtn.textContent = getTranslation(currentLang, 'ui.sending') || 'Sending...';
           submitBtn.disabled = true;
           result.textContent = '';
 
@@ -667,15 +701,15 @@
 
             if (response.ok && data.success) {
               result.style.color = 'var(--hero-newgreen)';
-              result.textContent = 'Message sent successfully. Thank you!';
+              result.textContent = getTranslation(currentLang, 'ui.sent') || 'Message sent successfully. Thank you!';
               form.reset();
             } else {
               result.style.color = 'salmon';
-              result.textContent = data.message || 'Something went wrong. Please try again.';
+              result.textContent = data.message || getTranslation(currentLang, 'ui.formError') || 'Something went wrong. Please try again.';
             }
           } catch (err) {
             result.style.color = 'salmon';
-            result.textContent = 'Network error — please try again.';
+            result.textContent = getTranslation(currentLang, 'ui.networkError') || 'Network error — please try again.';
           } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;

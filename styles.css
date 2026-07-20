@@ -3227,6 +3227,81 @@ body.mediaLightboxOpen {
 .galleryBtn { background: rgba(0,0,0,0.6); color: #fff; border: none; padding: 8px 12px; border-radius:8px; cursor: pointer; }
 .galleryBtn:hover { background: rgba(0,0,0,0.8); }
 
+.patentStage__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-right: 118px;
+  margin-bottom: 18px;
+}
+.patentStage__eyebrow, .swipePanel__label {
+  margin: 0 0 7px;
+  color: #315d7a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.patentStage__hint { margin: 0; color: rgba(5,5,5,.62); font-size: 14px; }
+.patentProgress { display: flex; align-items: center; gap: 7px; }
+.patentProgress__dot {
+  width: 7px; height: 7px; border-radius: 999px;
+  background: rgba(5,5,5,.22);
+  transition: width .25s ease, background .25s ease;
+}
+.patentProgress__dot.is-active { width: 28px; background: #315d7a; }
+.patentSwipe {
+  scrollbar-width: none;
+  border-top: 1px solid rgba(5,5,5,.1);
+}
+.patentSwipe::-webkit-scrollbar { display: none; }
+.patentSwipe:focus-visible { outline-offset: 8px; border-radius: 12px; }
+.swipePanel { min-height: 550px; padding-top: 34px; }
+.swipePanel__label { width: 100% !important; }
+.patentVisualsHead {
+  align-self: stretch;
+  width: min(100%, 760px);
+  margin: 0 0 24px auto;
+  color: #050505;
+}
+.patentVisualsHead h3 {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+}
+.patentVisualsHead p:last-child { max-width: 620px; margin: 0; line-height: 1.65; opacity: .68; }
+.patentGallery { gap: 14px; }
+.patentGallery__item.patentPlaceholder {
+  position: relative;
+  height: 230px;
+  display: grid;
+  place-items: center;
+  color: #173043;
+  border: 1px dashed rgba(23,48,67,.32);
+  background:
+    linear-gradient(rgba(49,93,122,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49,93,122,.055) 1px, transparent 1px),
+    rgba(255,255,255,.42);
+  background-size: 24px 24px;
+}
+.patentPlaceholder__number {
+  position: absolute; top: 14px; left: 16px;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; opacity: .55;
+}
+.patentPlaceholder__icon {
+  width: 52px; height: 52px; display: grid; place-items: center;
+  border: 1px solid rgba(23,48,67,.25); border-radius: 50%;
+  font-size: 26px; font-weight: 300;
+}
+.patentPlaceholder figcaption {
+  position: absolute; left: 16px; right: 16px; bottom: 14px;
+  display: flex; justify-content: space-between; align-items: end; gap: 12px;
+}
+.patentPlaceholder figcaption strong { font-size: 13px; }
+.patentPlaceholder figcaption span { font-size: 10px; opacity: .58; text-align: right; }
+
 /* Safety overrides: prevent third-party widgets from covering the entire site */
 #termsfeed-com---nb,
 .termsfeed-com---reset,
@@ -3641,6 +3716,19 @@ button, input, textarea { font: inherit; }
   .patentGallery__item { height: 220px; }
   .form__row { gap: 12px; }
   .footer__inner { align-items: flex-start; }
+  .patentStage__header {
+    align-items: flex-start;
+    padding-right: 0;
+  }
+  .patentProgress { padding-top: 4px; }
+  .swipePanel { min-height: 0; padding-top: 26px; }
+  .patentGallery__item.patentPlaceholder { height: 250px; }
+  .patentPlaceholder figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .patentPlaceholder figcaption span { text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
