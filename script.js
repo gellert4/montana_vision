@@ -297,9 +297,9 @@ const translations = {
       timeline4Text: "Advanced combustion technologies, patent development, and next-generation propulsion concepts.",
     },
     contact: {
-      title: "REACH OUT TO SHAPE<br />YOUR INDUSTRY",
+      title: "REACH OUT TO US TO BE<br />A PART OF THE CHANGE",
       phone: "+41 76 505 09 00",
-      email: "s.geschke@newgreen.eu",
+      email: "office@newgreen.eu",
       body:
         "NEWGREEN is actively building strategic partnerships in research, engineering, prototyping, and commercialization. For patent, investment, pilot, and technical collaboration requests, contact the founder team directly.",
       name: "Name",
