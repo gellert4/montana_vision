@@ -1218,6 +1218,7 @@ const initMediaLightbox = () => {
     if (!key || !imageSource) return;
 
     currentMediaLightboxKey = key;
+    lightbox.dataset.mediaKey = key;
 
     lightboxImage.src = imageSource;
     lightboxImage.alt = imageAlt || "Media preview";
@@ -1245,6 +1246,7 @@ const initMediaLightbox = () => {
       lightbox.setAttribute("aria-hidden", "true");
       lightboxImage.removeAttribute("src");
       lightboxImage.alt = "";
+      lightbox.removeAttribute("data-media-key");
     }, 280);
   };
 
