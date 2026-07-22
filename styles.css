@@ -3286,8 +3286,20 @@ body.mediaLightboxOpen {
   font-family: var(--serif);
   font-size: clamp(32px, 4vw, 52px);
   line-height: 1;
+  color: #050505 !important;
 }
 .patentVisualsHead p:last-child { max-width: 620px; margin: 0; line-height: 1.65; opacity: .68; }
+
+/* Keep the racing-photo caption readable over its dark image gradient. */
+#faq .ownerBoatCard--main span {
+  color: #d8c58f !important;
+  text-shadow: 0 1px 12px rgba(0,0,0,.7);
+}
+
+#faq .ownerBoatCard--main strong {
+  color: #fff !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.85);
+}
 .patentGallery { gap: 14px; }
 .patentGallery__item.patentPlaceholder {
   position: relative;
