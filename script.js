@@ -595,7 +595,7 @@ const translations = {
     },
     footer: {
       brand: "Montana Vision",
-      rights: "Alle Rechte vorbehalten © Ihr Unternehmen — 2025",
+      rights: "Alle Rechte vorbehalten © Montana Vision — 2026",
       home: "Startseite",
       about: "Über Uns",
       contact: "Kontakt",
@@ -820,7 +820,7 @@ const translations = {
     },
     footer: {
       brand: "Montana Vision",
-      rights: "Minden jog fenntartva © Az Ön cége — 2025",
+      rights: "Minden jog fenntartva © Montana Vision — 2026",
       home: "Kezdőlap",
       about: "Rólunk",
       contact: "Kapcsolat",
