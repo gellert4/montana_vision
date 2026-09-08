@@ -1,76 +1,13 @@
 (() => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const root = document.documentElement;
-  const hero = document.querySelector('.hero');
-  const topbar = document.querySelector('.topbar');
-
-  const progress = document.createElement('div');
-  progress.className = 'scroll-progress';
-  progress.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(progress);
-
-  const glow = document.createElement('div');
-  glow.className = 'ambient-glow';
-  glow.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(glow);
-
-  const sections = [...document.querySelectorAll('main > section:not(.hero)')];
-  sections.forEach((section) => section.classList.add('motion-section'));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => entry.target.classList.toggle('is-inview', entry.isIntersecting));
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  sections.forEach((section) => observer.observe(section));
-
-  const depthTargets = [...document.querySelectorAll('.mediaCard img, .mediaTile img, .personWrap img')];
-  depthTargets.forEach((element, index) => element.dataset.depth = String(.035 + (index % 3) * .012));
-
-  let ticking = false;
-  const renderScroll = () => {
-    const y = window.scrollY;
-    const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    progress.style.transform = `scaleX(${Math.min(1, y / max)})`;
-    topbar?.classList.toggle('is-scrolled', y > 28);
-    if (hero) {
-      const amount = Math.min(1, Math.max(0, y / Math.max(1, hero.offsetHeight)));
-      root.style.setProperty('--mv-motion', amount.toFixed(3));
-    }
-    if (!reduceMotion) {
-      depthTargets.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-        const distance = rect.top + rect.height / 2 - window.innerHeight / 2;
-        element.style.setProperty('--depth-y', `${(-distance * Number(element.dataset.depth)).toFixed(1)}px`);
-      });
-    }
-    ticking = false;
-  };
-
-  window.addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(renderScroll);
-  }, { passive: true });
-
-  if (!reduceMotion) {
-    window.addEventListener('pointermove', (event) => {
-      root.style.setProperty('--mv-pointer-x', `${event.clientX}px`);
-      root.style.setProperty('--mv-pointer-y', `${event.clientY}px`);
-    }, { passive: true });
-
-    document.querySelectorAll('.mediaTile, .usecaseCard, .mediaCard, .swipePanel').forEach((card) => {
-      card.addEventListener('pointermove', (event) => {
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - .5;
-        const y = (event.clientY - rect.top) / rect.height - .5;
-        card.style.setProperty('--tilt-x', `${(-y * 5).toFixed(2)}deg`);
-        card.style.setProperty('--tilt-y', `${(x * 7).toFixed(2)}deg`);
-      });
-      card.addEventListener('pointerleave', () => {
-        card.style.removeProperty('--tilt-x');
-        card.style.removeProperty('--tilt-y');
-      });
-    });
-  }
-  renderScroll();
+  const hero=document.querySelector('.hero'),showcase=document.querySelector('#showcase');if(!hero||!showcase)return;
+  document.body.insertAdjacentHTML('afterbegin','<div class="mv-progress" aria-hidden="true"></div>');
+  hero.insertAdjacentHTML('beforeend',`<canvas id="mv-webgl" aria-hidden="true"></canvas><div class="mv-hero-vignette"></div><div class="mv-hero-copy"><p class="mv-kicker">Engineering motion since 1989</p><h1 class="mv-title">MONTANA<span>VISION</span></h1><p class="mv-subtitle">Advanced combustion technology, engineered for a cleaner and more efficient future.</p></div><div class="mv-scroll">Scroll to enter</div>`);
+  showcase.insertAdjacentHTML('beforebegin',`<section class="mv-world" aria-label="Montana Vision story"><div class="mv-world__sticky"><div class="mv-world__image"></div><div class="mv-world__veil"></div><div class="mv-orbit"></div><div class="mv-world__rail"><article class="mv-scene"><span class="mv-scene__no">01 / VISION</span><h2>Less fuel.<br>More force.</h2><p>A new approach to combustion turns efficiency into performance, without treating sustainability as a compromise.</p></article><article class="mv-scene"><span class="mv-scene__no">02 / ENGINEERING</span><h2>Pressure,<br>controlled.</h2><p>High-pressure injection, thermal stability and precise sealing work as one engineered system.</p></article><article class="mv-scene"><span class="mv-scene__no">03 / IMPACT</span><h2>Built beyond<br>the road.</h2><p>Automotive, marine and industrial applications connected by one goal: measurable real-world efficiency.</p></article></div></div></section>`);
+  const root=document.documentElement,world=document.querySelector('.mv-world'),scenes=[...document.querySelectorAll('.mv-scene')],topbar=document.querySelector('.topbar'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let sceneProgress=0,raf=0;const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+  const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;root.style.setProperty('--mv-progress',clamp(scrollY/Math.max(1,max)).toFixed(4));topbar?.classList.toggle('is-scrolled',scrollY>30);const rect=world.getBoundingClientRect();sceneProgress=clamp(-rect.top/Math.max(1,world.offsetHeight-innerHeight));world.style.setProperty('--scene-progress',sceneProgress.toFixed(4));scenes.forEach((scene,i)=>{const center=i/(scenes.length-1),d=Math.abs(sceneProgress-center),opacity=clamp(1-d*5.2);scene.style.setProperty('--scene-opacity',opacity.toFixed(3));scene.style.setProperty('--scene-y',`${((center-sceneProgress)*150).toFixed(1)}px`);scene.style.setProperty('--scene-z',`${(-d*350).toFixed(1)}px`);scene.style.setProperty('--scene-scale',(1-d*.35).toFixed(3));scene.style.setProperty('--scene-blur',`${(d*14).toFixed(1)}px`)});raf=0};
+  addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(update)},{passive:true});update();
+  if(!reduce)document.querySelectorAll('.mediaTile,.usecaseCard,.mediaCard,.swipePanel').forEach(el=>{el.classList.add('mv-tilt');el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(1000px) rotateX(${-y*7}deg) rotateY(${x*9}deg) translateY(-6px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});
+  if(reduce)return;
+  import('https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js').then(THREE=>{const canvas=document.querySelector('#mv-webgl'),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));renderer.outputColorSpace=THREE.SRGBColorSpace;const scene=new THREE.Scene();scene.fog=new THREE.FogExp2(0x02050a,.055);const camera=new THREE.PerspectiveCamera(42,1,.1,100);camera.position.set(0,0,14);const group=new THREE.Group();scene.add(group);const core=new THREE.Mesh(new THREE.TorusKnotGeometry(3.15,.72,220,32,2,5),new THREE.MeshPhysicalMaterial({color:0xc8d4e8,metalness:.92,roughness:.2,clearcoat:1,clearcoatRoughness:.12}));group.add(core);const cage=new THREE.Mesh(new THREE.IcosahedronGeometry(4.8,2),new THREE.MeshBasicMaterial({color:0x4dbdff,wireframe:true,transparent:true,opacity:.13}));group.add(cage);const count=900,pos=new Float32Array(count*3);for(let i=0;i<count;i++){const r=5+Math.random()*12,a=Math.random()*Math.PI*2,b=(Math.random()-.5)*Math.PI;pos[i*3]=Math.cos(a)*Math.cos(b)*r;pos[i*3+1]=Math.sin(b)*r;pos[i*3+2]=Math.sin(a)*Math.cos(b)*r}const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));const stars=new THREE.Points(geo,new THREE.PointsMaterial({color:0x8fdfff,size:.035,transparent:true,opacity:.75}));scene.add(stars);scene.add(new THREE.AmbientLight(0x7d9fc9,1.4));const blue=new THREE.PointLight(0x277dff,85,30);blue.position.set(6,4,7);scene.add(blue);const red=new THREE.PointLight(0xff2424,75,25);red.position.set(-7,-3,5);scene.add(red);const resize=()=>{const r=hero.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};resize();addEventListener('resize',resize);let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});const clock=new THREE.Clock();const draw=()=>{const t=clock.getElapsedTime();group.rotation.x=t*.08+my*.22;group.rotation.y=t*.16+mx*.32+sceneProgress*1.8;cage.rotation.z=-t*.08;stars.rotation.y=t*.012;camera.position.z=14-sceneProgress*1.5;renderer.render(scene,camera);requestAnimationFrame(draw)};draw()}).catch(()=>hero.classList.add('mv-webgl-fallback'));
 })();
