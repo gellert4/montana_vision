@@ -1,5 +1,5 @@
 (() => {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matchesles;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const root = document.documentElement;
   const hero = document.querySelector('.hero');
   const topbar = document.querySelector('.topbar');
