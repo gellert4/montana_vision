@@ -6,8 +6,7 @@ const cvFrame = cvModal?.querySelector(".cvModal__frame");
 const topbar = document.querySelector(".topbar");
 let currentMediaLightboxKey = null;
 
-// Cookie handling is now managed by TermsFeed Cookie Consent (script in head)
-// No custom cookie logic needed
+// This site does not load analytics, advertising, external fonts or a consent vendor.
 
 menuBtn?.addEventListener("click", () => {
   const isHidden = mobileNav?.hasAttribute("hidden");
@@ -832,7 +831,17 @@ const translations = {
   },
 };
 
-let currentLang = localStorage.getItem("lang") || "en";
+// Reviewed content overrides. Source evidence and release gates: docs/REVIEW.md.
+const reviewedContent = {"en": {"refine": {"skip": "Skip to content", "eyebrow": "MONTANA VISION / ENGINEERING", "title": "From racing experience to propulsion research.", "intro": "Explore the people, technical concepts and original publications behind Montana Vision.", "explore": "Explore the technology ↗", "discuss": "Discuss a collaboration →", "all": "All media", "engineering": "Engineering", "heritage": "Heritage", "concepts": "Concepts & identity", "film": "Open technology film", "figure": "Source illustration", "priorArt": "The image collection includes background material. An illustration alone does not establish ownership or current patent protection.", "sources": "ORIGINAL SOURCE MATERIAL", "documents": "The technical library.", "search": "Find a publication", "documentNote": "Publication is not proof of a granted or currently enforceable patent. Older third-party documents are background references, not Montana Vision assets.", "empty": "No matching documents. Try a publication number or year.", "source": "Read the original publication (PDF) ↗", "message": "Your inquiry", "topic": "What would you like to discuss?", "technical": "Technical collaboration", "patentTopic": "Patent information", "partnership": "Partnership", "other": "Other inquiry", "formNotice": "Your details are sent via Web3Forms to handle your inquiry. Please do not submit confidential technical material.", "emailInstead": "Email instead", "storage": "Cookies & browser storage"}, "patent": {"leftTitle": "What the publication describes", "leftItem1": "Diesel engine with high-pressure injection and charging", "leftItem2": "Piston and connecting-rod interface", "leftItem3": "Circumferential collar and piston-ring arrangement", "leftItem4": "Source: WO 2023/118534 A1, abstract", "leftItem5": "Published 29 June 2023", "leftMuted": "Performance figures require test reports, operating conditions and independent validation.", "centerClaimLabel": "Publication status", "centerClaimText": "This is a published patent application. It is not a certification of performance or confirmation of current patent rights."}, "ui": {"patent": {"visualTitle": "Original technical illustrations", "visualText": "Open an illustration for a closer look. See the source library below for publication context."}, "usecases": {"title": "BEYOND PROPULSION"}, "media": {"legacyLabel": "Engineering", "legacyTitle": "Vehicle test setup"}}, "showcase": {"lightbox": {"owner": {"note": ""}, "metalCatalyticConverter": {"note": ""}, "speedBike": {"note": ""}, "waterBottle": {"note": ""}, "winterSports": {"note": ""}, "legacy": {"eyebrow": "Engineering", "title": "Vehicle test setup", "text": "A vehicle on a test rig, from the supplied project archive. The photograph does not establish a particular measured result.", "note": ""}}}, "footer": {"terms": "Website terms"}}, "de": {"refine": {"skip": "Zum Inhalt", "eyebrow": "MONTANA VISION / ENTWICKLUNG", "title": "Vom Rennsport zur Antriebsforschung.", "intro": "Entdecken Sie die Menschen, technischen Konzepte und Originalveröffentlichungen hinter Montana Vision.", "explore": "Technologie entdecken ↗", "discuss": "Zusammenarbeit besprechen →", "all": "Alle Medien", "engineering": "Technik", "heritage": "Geschichte", "concepts": "Konzepte & Identität", "film": "Technologiefilm öffnen", "figure": "Quellenabbildung", "priorArt": "Die Bildsammlung enthält auch Hintergrundmaterial. Eine Abbildung belegt weder die Inhaberschaft noch einen aktuellen Patentschutz.", "sources": "ORIGINALDOKUMENTE", "documents": "Die technische Bibliothek.", "search": "Veröffentlichung suchen", "documentNote": "Eine Veröffentlichung belegt kein erteiltes oder aktuell durchsetzbares Patent. Ältere Dokumente Dritter dienen als Hintergrundquellen und sind keine Schutzrechte von Montana Vision.", "empty": "Keine passenden Dokumente. Suchen Sie nach Nummer oder Jahr.", "source": "Originalveröffentlichung lesen (PDF) ↗", "message": "Ihre Anfrage", "topic": "Worüber möchten Sie sprechen?", "technical": "Technische Zusammenarbeit", "patentTopic": "Patentinformationen", "partnership": "Partnerschaft", "other": "Andere Anfrage", "formNotice": "Ihre Angaben werden zur Bearbeitung Ihrer Anfrage über Web3Forms übermittelt. Bitte senden Sie keine vertraulichen technischen Unterlagen.", "emailInstead": "Alternativ per E-Mail", "storage": "Cookies & Browserspeicher"}, "patent": {"leftTitle": "Inhalt der Veröffentlichung", "leftItem1": "Dieselmotor mit Hochdruck-Einspritzung und Aufladung", "leftItem2": "Verbindung zwischen Kolben und Pleuelstange", "leftItem3": "Umfangskragen und Kolbenringanordnung", "leftItem4": "Quelle: WO 2023/118534 A1, Zusammenfassung", "leftItem5": "Veröffentlicht am 29. Juni 2023", "leftMuted": "Leistungsangaben erfordern Prüfberichte, Betriebsbedingungen und unabhängige Validierung.", "centerClaimLabel": "Veröffentlichungsstatus", "centerClaimText": "Dies ist eine veröffentlichte Patentanmeldung. Sie ist weder ein Leistungszertifikat noch eine Bestätigung aktueller Schutzrechte."}, "ui": {"patent": {"visualTitle": "Technische Originalabbildungen", "visualText": "Öffnen Sie eine Abbildung zur Detailansicht. Den Kontext finden Sie in der Dokumentenbibliothek."}, "usecases": {"title": "ÜBER DEN ANTRIEB HINAUS"}, "media": {"legacyLabel": "Technik", "legacyTitle": "Fahrzeugprüfstand"}}, "showcase": {"lightbox": {"owner": {"note": ""}, "metalCatalyticConverter": {"note": ""}, "speedBike": {"note": ""}, "waterBottle": {"note": ""}, "winterSports": {"note": ""}, "legacy": {"eyebrow": "Technik", "title": "Fahrzeug auf dem Prüfstand", "text": "Ein Fahrzeug auf einem Prüfstand aus dem Projektarchiv. Das Foto belegt kein bestimmtes Messergebnis.", "note": ""}}}, "footer": {"terms": "Nutzungshinweise"}}, "hu": {"refine": {"skip": "Ugrás a tartalomhoz", "eyebrow": "MONTANA VISION / MÉRNÖKI FEJLESZTÉS", "title": "A versenysporttól a hajtástechnikai kutatásig.", "intro": "Ismerje meg a Montana Vision mögött álló embereket, műszaki koncepciókat és eredeti publikációkat.", "explore": "A technológia megismerése ↗", "discuss": "Beszéljünk az együttműködésről →", "all": "Összes média", "engineering": "Műszaki anyagok", "heritage": "Történet", "concepts": "Koncepciók és arculat", "film": "Technológiai film megnyitása", "figure": "Forrásábra", "priorArt": "A képgyűjtemény háttéranyagokat is tartalmaz. Egy ábra önmagában nem igazolja a jogosultságot vagy a fennálló szabadalmi oltalmat.", "sources": "EREDETI FORRÁSOK", "documents": "Műszaki dokumentumtár.", "search": "Publikáció keresése", "documentNote": "A közzététel nem bizonyít megadott vagy jelenleg érvényesíthető szabadalmat. A régebbi, harmadik féltől származó dokumentumok háttéranyagok, nem a Montana Vision saját oltalmai.", "empty": "Nincs találat. Próbáljon publikációs számra vagy évre keresni.", "source": "Eredeti publikáció megnyitása (PDF) ↗", "message": "Az Ön megkeresése", "topic": "Miben segíthetünk?", "technical": "Műszaki együttműködés", "patentTopic": "Szabadalmi információ", "partnership": "Partnerség", "other": "Egyéb megkeresés", "formNotice": "A megadott adatokat a Web3Forms továbbítja a megkeresés kezeléséhez. Kérjük, ne küldjön bizalmas műszaki anyagokat.", "emailInstead": "Inkább e-mailt írok", "storage": "Sütik és böngészőtárhely"}, "patent": {"leftTitle": "A publikáció tartalma", "leftItem1": "Dízelmotor nagynyomású befecskendezéssel és feltöltéssel", "leftItem2": "Dugattyú és hajtórúd kapcsolata", "leftItem3": "Kerületi gallér és dugattyúgyűrű-elrendezés", "leftItem4": "Forrás: WO 2023/118534 A1, kivonat", "leftItem5": "Közzétéve: 2023. június 29.", "leftMuted": "A teljesítményadatokhoz mérési jegyzőkönyv, üzemállapotok és független ellenőrzés szükséges.", "centerClaimLabel": "A publikáció státusza", "centerClaimText": "Ez közzétett szabadalmi bejelentés, nem teljesítménytanúsítvány és nem a jelenlegi oltalom igazolása."}, "ui": {"patent": {"visualTitle": "Eredeti műszaki ábrák", "visualText": "Nyissa meg az ábrákat a részletekhez. A forrásokat az alábbi dokumentumtár tartalmazza."}, "usecases": {"title": "A HAJTÁSTECHNIKÁN TÚL"}, "media": {"legacyLabel": "Műszaki fejlesztés", "legacyTitle": "Jármű-próbapad"}}, "showcase": {"lightbox": {"owner": {"note": ""}, "metalCatalyticConverter": {"note": ""}, "speedBike": {"note": ""}, "waterBottle": {"note": ""}, "winterSports": {"note": ""}, "legacy": {"eyebrow": "Műszaki fejlesztés", "title": "Jármű a próbapadon", "text": "Jármű próbapadon a projekt archívumából. A fotó önmagában nem igazol konkrét mérési eredményt.", "note": ""}}}, "footer": {"terms": "Felhasználási feltételek"}}};
+const mergeContent = (target, patch) => {
+  for (const [key, value] of Object.entries(patch)) {
+    if (value && typeof value === 'object') mergeContent(target[key] ||= {}, value);
+    else target[key] = value;
+  }
+};
+for (const [language, patch] of Object.entries(reviewedContent)) mergeContent(translations[language], patch);
+
+let currentLang = "en";
 const langBtns = document.querySelectorAll(".langBtn");
 
 const getTranslation = (lang, key) => {
@@ -879,7 +888,7 @@ const updateMediaLightboxContent = () => {
 const setLanguage = (lang) => {
   const activeLang = translations[lang] ? lang : "en";
   currentLang = activeLang;
-  localStorage.setItem("lang", activeLang);
+  // Language selection is deliberately not persisted on the device.
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
@@ -910,6 +919,7 @@ const setLanguage = (lang) => {
   });
 
   document.documentElement.lang = activeLang;
+  langBtns.forEach(btn => btn.setAttribute("aria-pressed", String(btn.dataset.lang === activeLang)));
   updateMediaLightboxContent();
 };
 
@@ -962,6 +972,7 @@ const initScrollAutoplayVideos = () => {
 };
 
 const initRevealAnimations = () => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
   const revealTargets = document.querySelectorAll(
     ".mediaTile, .showcaseCard, .cvCard, .aboutGrid__mid p, .aboutQuote, .aboutLead, .aboutCta, .feature, .mediaCard, .personWrap, .contact__left, .form"
   );
@@ -991,7 +1002,7 @@ langBtns.forEach((btn) => {
 });
 
 setLanguage(currentLang);
-initScrollAutoplayVideos();
+// Video playback is visitor-controlled; do not override pause or reduced-motion preferences.
 initRevealAnimations();
 
 const initHeroEnergyCanvas = () => {
@@ -1133,7 +1144,7 @@ const initMediaRail = () => {
 
     rail.scrollBy({
       left: direction * amount,
-      behavior: "smooth",
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     });
   };
 
@@ -1146,7 +1157,7 @@ const initMediaRail = () => {
   let scrollLeft = 0;
 
   rail.addEventListener("mousedown", (event) => {
-    if (event.button !== 0) return;
+    if (event.button !== 0 || event.target.closest("video, button, a")) return;
 
     isDown = true;
     didDrag = false;
@@ -1342,7 +1353,7 @@ const initPatentSwipe = () => {
   const scrollToIndex = (i) => {
     const panel = panels[i];
     if (!panel) return;
-    rail.scrollTo({ left: panel.offsetLeft - (rail.clientWidth - panel.clientWidth)/2, behavior: 'smooth' });
+    rail.scrollTo({ left: panel.offsetLeft - (rail.clientWidth - panel.clientWidth)/2, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     updatePatentState(i);
   };
 
@@ -1351,7 +1362,7 @@ const initPatentSwipe = () => {
 
   // allow swipe via wheel/drag
   let isDown = false, startX, scrollLeft;
-  rail.addEventListener('mousedown', (e) => { isDown = true; rail.classList.add('is-dragging'); startX = e.pageX - rail.offsetLeft; scrollLeft = rail.scrollLeft; });
+  rail.addEventListener('mousedown', (e) => { if(e.target.closest('a, button, input')) return; isDown = true; rail.classList.add('is-dragging'); startX = e.pageX - rail.offsetLeft; scrollLeft = rail.scrollLeft; });
   window.addEventListener('mouseup', () => { isDown = false; rail.classList.remove('is-dragging'); });
   rail.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - rail.offsetLeft; const walk = (x - startX) * 1.2; rail.scrollLeft = scrollLeft - walk; });
 

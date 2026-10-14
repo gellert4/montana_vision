@@ -390,7 +390,7 @@ section[id] {
 }
 
 .hero::before {
-  --hero-panel-image: url("./assets/innovation-car.jpg");
+  --hero-panel-image: url("./assets/web/innovation-car.webp");
   width: clamp(180px, 24vw, 320px);
   height: clamp(180px, 24vw, 320px);
   right: 8%;
@@ -400,7 +400,7 @@ section[id] {
 }
 
 .hero::after {
-  --hero-panel-image: url("./assets/vision-car.jpg");
+  --hero-panel-image: url("./assets/web/vision-car.webp");
   width: clamp(120px, 16vw, 220px);
   height: clamp(120px, 16vw, 220px);
   left: 10%;
@@ -411,7 +411,7 @@ section[id] {
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("./assets/try_5.png") center center / cover no-repeat;
+  background: url("./assets/web/try_5.webp") center center / cover no-repeat;
   background-color: #0a0f0d;
   filter: saturate(0.95) contrast(1.05);
   transform: scale(calc(1 + (var(--hero-progress) * 0.05)));
@@ -578,7 +578,7 @@ img, video {
 
 /* Final hero overrides: remove green orb/scan, seams, and force full-bleed cover image */
 .hero {  height: 100vh;  min-height: 100vh;  background: #050912;  overflow: hidden; }
-.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/try_5.png") center center / cover no-repeat !important;  background-color: #000 !important; }
+.hero__bg {  position: absolute;  inset: 0;  opacity: 1 !important;  filter: none !important;  transform: none !important;  background: url("./assets/web/try_5.webp") center center / cover no-repeat !important;  background-color: #000 !important; }
 .hero__content,.hero__content::before,.hero__content::after,.hero__grid,.heroEnergyCanvas,.heroHologram,.hero__footer,.hero::before,.hero::after,.hero__bg::before,.hero__bg::after {  display: none !important;  content: none !important; }
 .hero + .section {  margin-top: 0 !important;  padding-top: 96px !important;  border-radius: 0 !important;  box-shadow: none !important; }
 .hero + .section::before {  display: none !important;  content: none !important; }
@@ -3191,7 +3191,7 @@ body.mediaLightboxOpen {
   opacity: 1 !important;
   filter: none !important;
   background:
-    url("./assets/try_5.png") center center / cover no-repeat !important;
+    url("./assets/web/try_5.webp") center center / cover no-repeat !important;
   background-color: #000 !important;
 }
 
@@ -3517,7 +3517,7 @@ body.mediaLightboxOpen {
   opacity: 1 !important;
   filter: none !important;
   transform: none !important;
-  background: url("./assets/try_5.png") center center / cover no-repeat !important;
+  background: url("./assets/web/try_5.webp") center center / cover no-repeat !important;
   z-index: 0;
 }
 

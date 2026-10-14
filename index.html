@@ -1,57 +1,25 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Montana Vision</title>
 
-    <!-- Fonts (close to the look in your screenshots: elegant serif + clean sans) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="./styles.css?v=20260717-2" />
-
-    <!-- TermsFeed Cookie Consent -->
-    <script src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        cookieconsent.run({
-          "notice_banner_type": "simple",
-          "consent_type": "implied",
-          "palette": "dark",
-          "language": "en",
-          "page_load_consent_levels": ["strictly-necessary","functionality","tracking","targeting"],
-          "notice_banner_reject_button_hide": false,
-          "preferences_center_close_button_hide": false,
-          "page_refresh_confirmation_buttons": false,
-          "website_name": "https://gellert4.github.io",
-          "colors": {
-            "popup": { "background": "#f5e4d2", "text": "#282834" },
-            "button": { "background": "#670907", "text": "#ffffff" }
-          },
-          "position": "bottom",
-          "content": {
-            "message": "This website uses cookies to provide you the best experience.",
-            "dismiss": "Accept",
-            "deny": "Reject",
-            "link": "Learn more",
-            "href": "./datenschutz.html"
-          }
-        });
-      });
-    </script>
+    <meta name="description" content="Montana Vision: propulsion engineering, founder Stephan Geschke, and original patent publications for technical collaboration." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#080f16" />
+    <link rel="icon" href="./assets/web/new.webp" />
+    <link rel="stylesheet" href="./styles.css?v=20261014" />
+    <link rel="stylesheet" href="./refinement.css?v=20261014" />
   </head>
 
   <body>
+    <a class="skipLink" href="#main" data-i18n="refine.skip">Skip to content</a>
     <!-- Top Nav -->
     <header class="topbar" id="top">
       <div class="topbar__inner">
         <a class="brand" href="#home" aria-label="Montana Vision Home">
-          <img class="brand__mark" src="./assets/new.png" alt="Montana Vision Logo" />
+          <img decoding="async" fetchpriority="high" class="brand__mark" src="./assets/web/new.webp" alt="Montana Vision Logo" />
         </a>
 
         <nav class="nav" aria-label="Primary navigation">
@@ -72,7 +40,7 @@
         <button class="menuBtn" type="button" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false" id="menuBtn">
           <span></span><span></span><span></span>
         </button>
-        
+
       </div>
 
       <!-- Mobile Menu -->
@@ -94,7 +62,7 @@
     </header>
 
     <!-- HERO -->
-    <main>
+    <main id="main">
       <section class="hero" id="home" aria-label="Hero">
         <div class="hero__bg" role="img" aria-label="Hero background"></div>
         <div class="heroLightPulse"></div>
@@ -104,10 +72,16 @@
         <div class="heroSpark heroSpark3"></div>
         <div class="heroSpark heroSpark4"></div>
         <div class="hero__content">
-          <!-- Hero content intentionally removed to keep only the background visual -->
+
         </div>
       </section>
 
+      <section class="introBand" aria-labelledby="introTitle">
+        <div class="wrap introBand__inner"><div><p class="eyebrow" data-i18n="refine.eyebrow">MONTANA VISION / ENGINEERING</p>
+        <h1 id="introTitle" data-i18n="refine.title">From racing experience to propulsion research.</h1>
+        <p data-i18n="refine.intro">Explore the people, technical concepts and original publications behind Montana Vision.</p></div>
+        <div class="introActions"><a class="btn btn--solid" href="#patent" data-i18n="refine.explore">Explore the technology ↗</a><a href="#contact" data-i18n="refine.discuss">Discuss a collaboration →</a></div></div>
+      </section>
       <!-- MEDIA SHOWCASE -->
       <!-- MEDIA SHOWCASE -->
       <section class="section section--ink section--showcase" id="showcase">
@@ -126,7 +100,12 @@
             </p>
           </div>
 
-          <div class="galleryShell">
+          <div class="filterBar" role="group" aria-label="Media filters">
+<button type="button" data-filter="all" aria-pressed="true" data-i18n="refine.all">All media</button>
+<button type="button" data-filter="engineering" aria-pressed="false" data-i18n="refine.engineering">Engineering</button>
+<button type="button" data-filter="heritage" aria-pressed="false" data-i18n="refine.heritage">Heritage</button>
+<button type="button" data-filter="concept" aria-pressed="false" data-i18n="refine.concepts">Concepts & identity</button></div>
+<div class="galleryShell">
             <div class="galleryToolbar">
               <button
                 class="galleryBtn"
@@ -153,13 +132,13 @@
 
             <div class="mediaRail" id="mediaRail">
 
-              <article class="mediaTile mediaTile--large mediaTile--video">
-                <video controls preload="metadata" muted playsinline>
+              <article class="mediaTile mediaTile--large mediaTile--video" data-category="engineering">
+                <video controls preload="none" playsinline poster="./assets/web/IMG_5045 16.27.03 Kopie.webp">
                   <source
-                    src="./assets/NEWGREEN_03_English 2.mp4"
+                    src="./assets/web/technology-film.mp4"
                     type="video/mp4"
                   />
-                </video>
+                <p><a href="./assets/web/technology-film.mp4" data-i18n="refine.film">Open technology film</a></p></video>
 
                 <div class="mediaTile__caption">
                   <span data-i18n="ui.media.mainLabel">Main Video</span>
@@ -167,9 +146,8 @@
                 </div>
               </article>
 
-              <article class="mediaTile">
-                <img
-                  src="./assets/Stephan, 6 heures de Paris 1989.jpeg"
+              <article class="mediaTile" data-category="heritage">
+                <img loading="lazy" decoding="async"                   src="./assets/web/Stephan, 6 heures de Paris 1989.webp"
                   alt="Stephan in racing setting"
                   data-lightbox-key="owner"
                 />
@@ -180,9 +158,8 @@
                 </div>
               </article>
 
-              <article class="mediaTile">
-                <img
-                  src="./assets/fordgt.png"
+              <article class="mediaTile" data-category="concept">
+                <img loading="lazy" decoding="async"                   src="./assets/web/fordgt.webp"
                   alt="Montana GT visual"
                   data-lightbox-key="concept"
                 />
@@ -193,9 +170,8 @@
                 </div>
               </article>
 
-              <article class="mediaTile">
-                <img
-                  src="./assets/fisker.png"
+              <article class="mediaTile" data-category="concept">
+                <img loading="lazy" decoding="async"                   src="./assets/web/fisker.webp"
                   alt="Montana performance car"
                   data-lightbox-key="detail"
                 />
@@ -206,9 +182,8 @@
                 </div>
               </article>
 
-              <article class="mediaTile">
-                <img
-                  src="./assets/IMG_5040 Kopie.jpeg"
+              <article class="mediaTile" data-category="engineering">
+                <img loading="lazy" decoding="async"                   src="./assets/web/IMG_5040 Kopie.webp"
                   alt="Racing background"
                   data-lightbox-key="legacy"
                 />
@@ -219,9 +194,8 @@
                 </div>
               </article>
 
-              <article class="mediaTile">
-                <img
-                  src="./assets/new.png"
+              <article class="mediaTile" data-category="concept">
+                <img loading="lazy" decoding="async"                   src="./assets/web/new.webp"
                   alt="Montana Vision logo"
                   data-lightbox-key="identity"
                 />
@@ -249,9 +223,9 @@
               role="button"
               tabindex="0"
               data-lightbox-key="metalCatalyticConverter"
-              data-lightbox-image="./assets/section22.jpeg"
+              data-lightbox-image="./assets/web/section22.webp"
               aria-label="Open metal catalytic converter details"
-            >
+            ><img class="usecaseThumb" loading="lazy" decoding="async" src="./assets/web/section22.webp" alt="" />
               <h3 data-i18n="ui.usecases.metalTitle">Metal Catalytic Converter</h3>
               <p data-i18n="ui.usecases.metalText">A metal catalytic converter designed for automotive and industrial applications.</p>
             </article>
@@ -261,9 +235,9 @@
               role="button"
               tabindex="0"
               data-lightbox-key="speedBike"
-              data-lightbox-image="./assets/section21.jpeg"
+              data-lightbox-image="./assets/web/section21.webp"
               aria-label="Open speed bike details"
-            >
+            ><img class="usecaseThumb" loading="lazy" decoding="async" src="./assets/web/section21.webp" alt="" />
               <h3 data-i18n="ui.usecases.bikeTitle">Speed Bike</h3>
               <p data-i18n="ui.usecases.bikeText">A high-performance speed bike representing efficient and lightweight mobility.</p>
             </article>
@@ -273,9 +247,9 @@
               role="button"
               tabindex="0"
               data-lightbox-key="waterBottle"
-              data-lightbox-image="./assets/section23.jpeg"
+              data-lightbox-image="./assets/web/section23.webp"
               aria-label="Open water bottle details"
-            >
+            ><img class="usecaseThumb" loading="lazy" decoding="async" src="./assets/web/section23.webp" alt="" />
               <h3 data-i18n="ui.usecases.waterTitle">Bottle of Water</h3>
               <p data-i18n="ui.usecases.waterText">A bottle of water representing clean resources and sustainable everyday products.</p>
             </article>
@@ -285,9 +259,9 @@
               role="button"
               tabindex="0"
               data-lightbox-key="winterSports"
-              data-lightbox-image="./assets/section24.jpeg"
+              data-lightbox-image="./assets/web/section24.webp"
               aria-label="Open skis and snowboards details"
-            >
+            ><img class="usecaseThumb" loading="lazy" decoding="async" src="./assets/web/section24.webp" alt="" />
               <h3 data-i18n="ui.usecases.winterTitle">Skis and Snowboards</h3>
               <p data-i18n="ui.usecases.winterText">Skis and snowboards representing performance materials and winter-sports equipment.</p>
             </article>
@@ -335,7 +309,7 @@
 
             <div class="aboutGrid__right">
               <div class="mediaCard">
-                <img src="./assets/fisker.png" alt="Montana Vision Visual" />
+                <img loading="lazy" decoding="async" src="./assets/web/fisker.webp" alt="Montana Vision Visual" />
               </div>
             </div>
           </div>
@@ -366,19 +340,19 @@
               <!-- Left: Technical information & data -->
               <article class="swipePanel swipePanel--left" data-panel-label="Technical description">
                 <p class="swipePanel__label" data-i18n="ui.patent.leftLabel">01 — Technical description</p>
-                <h3 data-i18n="patent.leftTitle">Technical Data & Measurements</h3>
+                <h3 data-i18n="patent.leftTitle">What the publication describes</h3>
                 <ul>
-                  <li data-i18n="patent.leftItem1">Compression ratio: 18.5:1</li>
-                  <li data-i18n="patent.leftItem2">Injection pressure: 2,500 bar (max)</li>
-                  <li data-i18n="patent.leftItem3">Piston material: forged steel alloy</li>
-                  <li data-i18n="patent.leftItem4">Thermal load test: passed 1,000h @ 550°C</li>
-                  <li data-i18n="patent.leftItem5">Emissions reduction estimate: up to 12%</li>
+                  <li data-i18n="patent.leftItem1">Diesel engine with high-pressure injection and charging</li>
+                  <li data-i18n="patent.leftItem2">Piston and connecting-rod interface</li>
+                  <li data-i18n="patent.leftItem3">Circumferential collar and piston-ring arrangement</li>
+                  <li data-i18n="patent.leftItem4">Source: WO 2023/118534 A1, abstract</li>
+                  <li data-i18n="patent.leftItem5">Published 29 June 2023</li>
                 </ul>
                 <div class="patentNote">
                   <strong data-i18n="patent.leftNoteLabel">Core focus</strong>
                   <span data-i18n="patent.leftNoteText">Thermal stability, sealing control, and high-load combustion behavior.</span>
                 </div>
-                <p class="muted" data-i18n="patent.leftMuted">Detailed tables and CAD exports available on request.</p>
+                <p class="muted" data-i18n="patent.leftMuted">Performance figures require test reports, operating conditions and independent validation.</p>
               </article>
 
               <!-- Center: Patent technical descriptions (primary) -->
@@ -387,7 +361,7 @@
                 <div class="subtitle" data-i18n="patent.centerSubtitle">Patent Portfolio Snapshot</div>
                 <h2 class="serifTitle" data-i18n="patent.centerTitle">INTERNATIONAL FILING: DIESEL ENGINE AND PISTON</h2>
                 <p class="muted" data-i18n="patent.centerIntro">Published under the PCT route by WIPO, this filing covers a diesel engine with high-pressure injection and charging function, including a corresponding piston design for high thermal loads and improved sealing guidance.</p>
-                <div class="patentMeta">
+                <a class="sourceLink" href="./assets/patent6.pdf" target="_blank" rel="noopener" data-i18n="refine.source">Read the original publication (PDF) ↗</a><div class="patentMeta">
                   <div data-i18n-html="patent.metaPublication">Publication WO 2023/118534 A1</div>
                   <div data-i18n-html="patent.metaPct">PCT File PCT/EP2022/087654</div>
                   <div data-i18n-html="patent.metaPriority">Priority DE 10 2021 134 521.9</div>
@@ -398,8 +372,8 @@
                   <div class="feature"><span data-i18n="patent.centerFeature2">Applicants: NEWGREEN AG (CH) and NEWGREEN AMERICAN INC. (US)</span></div>
                 </div>
                 <div class="patentCallout">
-                  <span class="patentCallout__label" data-i18n="patent.centerClaimLabel">Key claim</span>
-                  <p data-i18n="patent.centerClaimText">Designed to improve efficiency under sustained load while keeping combustion chamber temperatures and sealing stress under control.</p>
+                  <span class="patentCallout__label" data-i18n="patent.centerClaimLabel">Publication status</span>
+                  <p data-i18n="patent.centerClaimText">This is a published patent application. It is not a certification of performance or confirmation of current patent rights.</p>
                 </div>
               </article>
 
@@ -410,34 +384,20 @@
                   <h3 data-i18n="ui.patent.visualTitle">Patent visual library</h3>
                   <p data-i18n="ui.patent.visualText">Add the final renders, technical drawings, diagrams, or prototype photography here.</p>
                 </div>
-                <div class="patentGallery" aria-label="Patent illustrations">
-                  <figure class="patentGallery__item patentPlaceholder">
-                    <span class="patentPlaceholder__number">01</span>
-                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
-                    <figcaption><strong data-i18n="ui.patent.slot1Title">Hero visualization</strong><span data-i18n="ui.patent.slot1Text">Recommended: 1600 × 1200 px</span></figcaption>
-                  </figure>
-                  <figure class="patentGallery__item patentPlaceholder">
-                    <span class="patentPlaceholder__number">02</span>
-                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
-                    <figcaption><strong data-i18n="ui.patent.slot2Title">Technical drawing</strong><span data-i18n="ui.patent.slot2Text">PNG, JPG, WebP, or SVG</span></figcaption>
-                  </figure>
-                  <figure class="patentGallery__item patentPlaceholder">
-                    <span class="patentPlaceholder__number">03</span>
-                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
-                    <figcaption><strong data-i18n="ui.patent.slot3Title">Component detail</strong><span data-i18n="ui.patent.slot3Text">Close-up or sectional view</span></figcaption>
-                  </figure>
-                  <figure class="patentGallery__item patentPlaceholder">
-                    <span class="patentPlaceholder__number">04</span>
-                    <span class="patentPlaceholder__icon" aria-hidden="true">＋</span>
-                    <figcaption><strong data-i18n="ui.patent.slot4Title">Additional visualization</strong><span data-i18n="ui.patent.slot4Text">Diagram, render, or prototype</span></figcaption>
-                  </figure>
-                </div>
+                <div class="patentGallery" aria-label="Source illustrations">
+<figure class="patentGallery__item"><a href="./assets/web/patentpic1.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="./assets/web/patentpic1.webp" alt="Technical source illustration 1" loading="lazy" /></a><figcaption><span data-i18n="refine.figure">Source illustration</span> 01 ↗</figcaption></figure><figure class="patentGallery__item"><a href="./assets/web/patentpic2.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="./assets/web/patentpic2.webp" alt="Technical source illustration 2" loading="lazy" /></a><figcaption><span data-i18n="refine.figure">Source illustration</span> 02 ↗</figcaption></figure><figure class="patentGallery__item"><a href="./assets/web/patentpic3.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="./assets/web/patentpic3.webp" alt="Technical source illustration 3" loading="lazy" /></a><figcaption><span data-i18n="refine.figure">Source illustration</span> 03 ↗</figcaption></figure><figure class="patentGallery__item"><a href="./assets/web/patentpic4.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="./assets/web/patentpic4.webp" alt="Technical source illustration 4" loading="lazy" /></a><figcaption><span data-i18n="refine.figure">Source illustration</span> 04 ↗</figcaption></figure></div><p class="sourceNote" data-i18n="refine.priorArt">The image collection includes background material. An illustration alone does not establish ownership or current patent protection.</p>
               </article>
             </div>
           </div>
         </div>
       </section>
 
+<section class="documentSection section" id="documents" aria-labelledby="documentsTitle"><div class="wrap">
+<div class="documentHead"><div><p class="eyebrow" data-i18n="refine.sources">ORIGINAL SOURCE MATERIAL</p><h2 id="documentsTitle" data-i18n="refine.documents">The technical library.</h2></div>
+<label class="documentSearch"><span data-i18n="refine.search">Find a publication</span><input type="search" id="documentSearch" placeholder="WO, piston, 2023…" /></label></div>
+<p class="sourceNote" data-i18n="refine.documentNote">Publication is not proof of a granted or currently enforceable patent. Older third-party documents are background references, not Montana Vision assets.</p>
+<div class="documentGrid"><a class="documentCard" href="./assets/patent6.pdf" target="_blank" rel="noopener" data-search="WO 2023/118534 A1 2023 · WIPO / PCT Diesel engine and piston"><span>2023 · WIPO / PCT</span><h3>WO 2023/118534 A1</h3><p>Diesel engine and piston</p><strong>PDF · 83 KB ↗</strong></a><a class="documentCard" href="./assets/patent2.pdf" target="_blank" rel="noopener" data-search="WO 2023/118525 A1 2023 · WIPO / PCT Connecting rod and crank drive"><span>2023 · WIPO / PCT</span><h3>WO 2023/118525 A1</h3><p>Connecting rod and crank drive</p><strong>PDF · 81 KB ↗</strong></a><a class="documentCard" href="./assets/patent3.pdf" target="_blank" rel="noopener" data-search="DE 10 2021 134 521 A1 2023 · DE Diesel engine"><span>2023 · DE</span><h3>DE 10 2021 134 521 A1</h3><p>Diesel engine</p><strong>PDF · 135 KB ↗</strong></a><a class="documentCard" href="./assets/patent1.pdf" target="_blank" rel="noopener" data-search="US 2025/0341180 A1 2025 · US Connecting rod, piston and crank drive"><span>2025 · US</span><h3>US 2025/0341180 A1</h3><p>Connecting rod, piston and crank drive</p><strong>PDF · 1669 KB ↗</strong></a><a class="documentCard" href="./assets/patent4.pdf" target="_blank" rel="noopener" data-search="AT 007 203 U1 2004 · AT · Background reference Combustion process"><span>2004 · AT · Background reference</span><h3>AT 007 203 U1</h3><p>Combustion process</p><strong>PDF · 50 KB ↗</strong></a><a class="documentCard" href="./assets/patent5.pdf" target="_blank" rel="noopener" data-search="DE 34 05 715 A1 1985 · DE · Background reference Internal combustion engine"><span>1985 · DE · Background reference</span><h3>DE 34 05 715 A1</h3><p>Internal combustion engine</p><strong>PDF · 35 KB ↗</strong></a></div><p id="documentEmpty" role="status" hidden data-i18n="refine.empty">No matching documents. Try a publication number or year.</p>
+</div></section>
       <!-- GALLERY / TEAM LOOK SECTION -->
       <section class="section section--stone ownerSection" id="faq">
         <div class="wrap">
@@ -488,10 +448,10 @@
 
             <div class="ownerHero__right">
             <div class="ownerHero__visual">
-              <img class="ownerPortrait" src="./assets/stephan.png" alt="Stephan Geschke portrait" />
+              <img loading="lazy" decoding="async" class="ownerPortrait" src="./assets/web/stephan.webp" alt="Stephan Geschke portrait" />
 
               <div class="ownerBoatCard ownerBoatCard--main">
-                <img src="./assets/Stephan, 6 heures de Paris 1989.jpeg" alt="Stephan Geschke powerboat racing" />
+                <img loading="lazy" decoding="async" src="./assets/web/Stephan, 6 heures de Paris 1989.webp" alt="Stephan Geschke powerboat racing" />
                 <div>
                   <span data-i18n="owner.racingLabel">Racing Legacy</span>
                   <strong data-i18n="owner.racingValue">Powerboat performance background</strong>
@@ -499,7 +459,7 @@
               </div>
 
               <div class="ownerBoatCard ownerBoatCard--small">
-                <img src="./assets/boat2.png" alt="Race boat detail" />
+                <img loading="lazy" decoding="async" src="./assets/web/boat2.webp" alt="Race boat detail" />
               </div>
 
               <a
@@ -568,7 +528,7 @@
                 </p>
 
               <div class="officeImg officeImg--logo">
-                  <img src="./assets/new.png" alt="Montana Vision logo" />
+                  <img loading="lazy" decoding="async" src="./assets/web/new.webp" alt="Montana Vision logo" />
                 </div>
               </div>
 
@@ -579,19 +539,22 @@
                 <input type="hidden" name="subject" value="New Montana Vision Inquiry" data-i18n-value="contact.subject" />
                 <input type="hidden" name="from_name" value="Montana Vision" />
 
-                <div class="form__row">
-                  <input type="text" name="name" placeholder="Full Name" data-i18n-placeholder="contact.name" required />
-                  <input type="email" name="email" placeholder="Email Address" data-i18n-placeholder="contact.emailPlaceholder" required />
+                <label class="field"><span data-i18n="refine.topic">What would you like to discuss?</span><select name="topic"><option value="Technical collaboration" data-i18n="refine.technical">Technical collaboration</option><option value="Patent information" data-i18n="refine.patentTopic">Patent information</option><option value="Partnership" data-i18n="refine.partnership">Partnership</option><option value="Other" data-i18n="refine.other">Other inquiry</option></select></label>
+<input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+<div class="form__row">
+                  <label class="field"><span data-i18n="contact.name">Full name</span><input type="text" name="name" autocomplete="name" maxlength="200" placeholder="Full Name" data-i18n-placeholder="contact.name" required /></label>
+                  <label class="field"><span data-i18n="contact.emailPlaceholder">Email address</span><input type="email" name="email" autocomplete="email" maxlength="200" placeholder="Email Address" data-i18n-placeholder="contact.emailPlaceholder" required /></label>
                 </div>
 
                 <div class="form__row">
-                  <input type="text" name="company" placeholder="Company" data-i18n-placeholder="contact.company" />
-                  <input type="text" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.phonePlaceholder" />
+                  <label class="field"><span data-i18n="contact.company">Company (optional)</span><input type="text" name="company" autocomplete="organization" maxlength="200" placeholder="Company" data-i18n-placeholder="contact.company" /></label>
+                  <label class="field"><span data-i18n="contact.phonePlaceholder">Phone (optional)</span><input type="text" name="phone" autocomplete="tel" maxlength="200" placeholder="Phone Number" data-i18n-placeholder="contact.phonePlaceholder" /></label>
                 </div>
 
-                <textarea name="message" rows="7" placeholder="Tell us about your project, partnership, or inquiry..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+                <label class="field"><span data-i18n="refine.message">Your inquiry</span><textarea maxlength="5000" name="message" rows="7" placeholder="Tell us about your project, partnership, or inquiry..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea></label>
 
-                <button type="submit" class="btn btn--solid" data-i18n="contact.send">Send Inquiry</button>
+                <p class="formDisclosure"><span data-i18n="refine.formNotice">Your details are sent via Web3Forms to handle your inquiry. Please do not submit confidential technical material.</span> <a href="./datenschutz.html" data-i18n="footer.privacy">Privacy</a> · <a href="mailto:office@newgreen.eu" data-i18n="refine.emailInstead">Email instead</a></p>
+<button type="submit" class="btn btn--solid" data-i18n="contact.send">Send Inquiry</button>
               </form>
 
               <div id="contactResult" role="status" aria-live="polite" style="margin-top:12px;color:var(--paperText);"></div>
@@ -614,8 +577,8 @@
             <a href="#contact" data-i18n="footer.contact">Contact</a>
             <a href="./impressum.html" data-i18n="footer.impressum">Impressum</a>
             <a href="./datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
-            <button class="footerCookieBtn" type="button" id="footerCookieSettings" data-i18n="footer.cookies">Cookie Settings</button>
-            <a href="#" id="open_preferences_center" data-i18n="ui.cookiePreferences">Cookie Preferences</a>
+            <a href="./datenschutz.html#storage" data-i18n="refine.storage">Cookies & browser storage</a>
+            <a href="./terms.html" data-i18n="footer.terms">Website terms</a>
           </div>
         </div>
       </footer>
@@ -657,7 +620,7 @@
         <button class="mediaLightbox__close" type="button" data-close-lightbox aria-label="Close preview">×</button>
         <div class="mediaLightbox__content">
           <figure class="mediaLightbox__figure">
-            <img class="mediaLightbox__image" id="mediaLightboxImage" alt="" />
+            <img loading="lazy" decoding="async" class="mediaLightbox__image" id="mediaLightboxImage" alt="" />
           </figure>
           <aside class="mediaLightbox__details" aria-live="polite">
             <p class="mediaLightbox__eyebrow" id="mediaLightboxEyebrow" data-i18n="ui.showcaseStory">Showcase story</p>
@@ -669,8 +632,9 @@
       </div>
     </div>
 
-    <script src="./script.js?v=20260717-2"></script>
+    <script src="./script.js?v=20261014"></script>
 
+    <script src="./refinement.js?v=20261014"></script>
     <!-- Web3Forms client submit handler (keeps user on page and shows inline status) -->
     <script>
       (function () {
@@ -681,7 +645,9 @@
 
         form.addEventListener('submit', async function (e) {
           e.preventDefault();
+          if (submitBtn.disabled || !form.reportValidity()) return;
           const formData = new FormData(form);
+          if (formData.get('botcheck')) return;
 
           // ensure access_key is present (hidden input already added)
           if (!formData.get('access_key')) {
@@ -694,7 +660,7 @@
           result.textContent = '';
 
           try {
-            const response = await fetch(form.action, { method: 'POST', body: formData });
+            const response = await fetch(form.action, { method: 'POST', body: formData, signal: AbortSignal.timeout(20000) });
             const data = await response.json();
 
             if (response.ok && data.success) {
